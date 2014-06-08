@@ -1,0 +1,177 @@
+/* Modules
+----------------------------------------------- */
+.module-container {
+	clear: both;
+	width: 100%;
+}
+.module {
+	.module-header {
+		background: $purple;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		border: 1px solid $purple;
+		color: #fff;
+		font-size: 15px;
+		padding: 12px 20px;
+
+		section {
+			border-left: none;
+		}
+	}
+
+	.module-body {
+		background: #fff;
+		border: 1px solid $light-gray-border;
+		border-top: none;
+		margin: 0 0 25px;
+		min-height: 120px;
+		overflow: hidden;
+		padding: 20px 0;
+	}
+
+	.module-list {
+		list-style: none;
+		border-left: 1px solid $light-gray-border;
+		border-right: 1px solid $light-gray-border;
+	}
+
+	.module-list-item {
+		background: #fff;
+		clear: both;
+		position: relative;
+		border-bottom: 1px solid $light-gray-border;
+		font-size: 14px;
+		color: #777;
+		height: 35px;
+
+		.icon {
+			font-size: 35px;
+			position: absolute;
+			top: -5px;
+		}
+
+		section {
+			padding: 9px 15px;
+			height: 100%;
+		}
+	}
+
+	.no-padding {
+		padding: 0;
+	}
+
+	.no-border {
+		border: none;
+		border-left: none;
+		border-right: none;
+		border-top: none;
+		border-bottom: none;
+	}
+}
+
+/* List Constants
+----------------------------------------------- */
+.moveable {
+	width: 1.5%;
+}
+
+/* Clients List
+----------------------------------------------- */
+.client-company {
+	width: 35%;
+}
+
+.client-contact {
+	width: 25%;
+}
+
+.client-phone {
+	width: 14%;
+}
+
+.client-email {
+	width: 23%;
+}
+
+/* Task List
+----------------------------------------------- */
+.task-name {
+	padding: 0 20px;
+	width: 60%;
+}
+
+.task-hours {
+	border-left: 1px solid #eaeaea;
+	width: 20%;
+}
+
+.task-due {
+	border-left: 1px solid #eaeaea;
+	width: 18%;
+}
+
+/* Project List
+----------------------------------------------- */
+.completed {
+	width: 3%;
+}
+
+.due-date {
+	width: 10%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.project-client {
+	width: 18%;
+}
+
+.project-hours {
+	width: 10%;
+}
+
+.project-name {
+	border-left: none !important;
+	width: 57%;
+}
+
+/* Leftover Selectors -- These need to be sorted through
+----------------------------------------------- */
+.moveable {
+	color: #aaa;
+	cursor: move;
+	padding: 14px 0 0 !important;
+	text-align: center;
+	width: 2%;
+}
+
+.completed {
+	width: 3%;
+}
+
+.due-date {
+	width: 10%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.project-client {
+	width: 18%;
+}
+
+.project-hours {
+	width: 10%;
+}
+
+.project-name {
+	border-left: none !important;
+	width: 57%;
+}
+
+/* Dashboard
+----------------------------------------------- */
+.billing-chart {
+	margin-left: -5px;
+}

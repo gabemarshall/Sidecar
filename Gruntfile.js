@@ -37,8 +37,23 @@ module.exports = function(grunt) {
                 options: {
                     livereload: true
                 }
-            }
+            },
         },
+        compass: {                  // Task
+		    dist: {                   // Target
+		    	options: {              // Target options
+		    		sassDir: '/public/system/assets/sass',
+		    		cssDir: '/public/system/assets/stylesheets',
+		        	environment: 'production'
+		      	}
+		    },
+		    dev: {                    // Another target
+		     	options: {
+		        	sassDir: '/public/system/assets/sass',
+		        	cssDir: '/public/system/assets/stylesheets'
+		    	}
+		    }
+		},
         jshint: {
             all: {
                 src: paths.js,
@@ -108,13 +123,14 @@ module.exports = function(grunt) {
     });
 
     //Load NPM tasks
+    grunt.loadNpmTasks('grunt-contrib-compass');
     require('load-grunt-tasks')(grunt);
 
     //Default task(s).
     if (process.env.NODE_ENV === 'production') {
-        grunt.registerTask('default', ['clean','cssmin', 'uglify', 'concurrent']);
+        grunt.registerTask('default', ['clean','cssmin', 'uglify', 'concurrent', 'compass']);
     } else {
-        grunt.registerTask('default', ['clean','jshint', 'csslint', 'concurrent']);
+        grunt.registerTask('default', ['clean','jshint', 'csslint', 'concurrent', 'compass']);
     }
 
     //Test task.

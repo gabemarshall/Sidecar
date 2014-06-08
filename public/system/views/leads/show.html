@@ -1,0 +1,30 @@
+<%= render "shared/header" %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Client:</b>
+  <%= @lead.client %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @lead.contact %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @lead.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @lead.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_lead_path(@lead) %> |
+<%= link_to 'Back', leads_path %>
+
+<%= render "shared/sidebar" %>
+<%= render "shared/footer" %>

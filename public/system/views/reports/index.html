@@ -1,0 +1,51 @@
+<%= render "shared/header" %>
+<%= render "shared/sidebar" %>
+
+<!-- MAIN CONTENT -->
+<section class="content content-documents">
+
+  <section class="content-wrap inactive">
+
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+      <div class="container">
+        <section class="page-title">
+          <h2>Reports</h2>
+        </section>
+
+        <section class="button-wrap">
+          <%= link_to new_document_path do %><button class="button button-green"><span class="add-task-icon icon" aria-hidden="true" data-icon="&#57347;"></span></button><% end %>
+          <button class="button button-gray"><span class="tag-task-icon icon" aria-hidden="true" data-icon="&#59148;"></span></button>
+          <button class="button button-gray"><span class="share-task-icon icon" aria-hidden="true" data-icon="&#59136;"></span></button>
+        </section>
+      </div>
+    </header>
+
+    <!-- PROJECTS LIST -->
+    <section class="module-container">
+        <div class="container">
+<table>
+  <tr>
+    <th>Client</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reports.each do |report| %>
+  <tr>
+    <td><%= report.client %></td>
+    <td><%= link_to 'Show', report %></td>
+    <td><%= link_to 'Edit', edit_report_path(report) %></td>
+    <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Report', new_report_path %>
+
+        </div>
+    </section>
+<%= render "shared/footer" %>

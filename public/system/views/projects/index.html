@@ -1,0 +1,51 @@
+<%= render "shared/header" %>
+<%= render "shared/sidebar" %>
+
+<!-- MAIN CONTENT -->
+<section class="content content-documents">
+
+	<section class="content-wrap inactive">
+
+		<!-- PAGE HEADER -->
+		<header class="page-header">
+			<div class="container">
+				<section class="page-title">
+					<h2>Projects</h2>
+				</section>
+
+				<section class="button-wrap">
+					<%= link_to new_project_path do %><button class="button button-green"><span class="add-task-icon icon" aria-hidden="true" data-icon="&#57347;"></span></button><% end %>
+					<button class="button button-gray"><span class="tag-task-icon icon" aria-hidden="true" data-icon="&#59148;"></span></button>
+					<button class="button button-gray"><span class="share-task-icon icon" aria-hidden="true" data-icon="&#59136;"></span></button>
+				</section>
+			</div>
+		</header>
+
+		<!-- PROJECTS LIST -->
+		<section class="module-container">
+			<div class="container">
+				<section class="module full">
+					<header class="module-header">
+						<section class="moveable left"></section>
+						<section class="project-name left"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Project</section>
+						<section class="project-client left"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Client</section>
+						<section class="project-due left"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Due Date</section>
+
+						<div class="clear"></div>
+					</header>
+
+					<ul class="module-list">
+						<% @projects.each do |project| %>
+						<li class="module-list-item ui-state-default clear">
+							<section class="moveable left"><span class="project-icon icon" aria-hidden="true" 	data-icon="&#9871;"></span></section>
+							<section class="project-name left"><%= link_to project.name, project %> <span class="right"> <%= link_to 'Edit', edit_project_path(project) %> <%= link_to 'Destroy', project, :method => :delete, :data => { :confirm => 'Are you sure?' } %></span></section>
+							<section class="project-hours left"><%= project.description %></section>
+							<section class="project-due left">11/14/13</section>
+						</li>
+						<% end %>
+					</ul>
+				</section>
+			</div>
+		</section>
+
+<%= render "shared/footer" %>

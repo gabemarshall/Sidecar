@@ -1,0 +1,37 @@
+<%= render "shared/header" %>
+<%= render "shared/sidebar" %>
+
+<!-- MAIN CONTENT -->
+<section class="content content-documents">
+
+	<section class="content-wrap inactive">
+
+		<!-- PAGE HEADER -->
+		<header class="page-header">
+			<div class="container">
+				<section class="page-title">
+					<h2>Documents</h2>
+				</section>
+
+				<section class="button-wrap">
+					<button class="button button-green"><span class="add-task-icon icon" aria-hidden="true" data-icon="&#57347;"></span></button>
+					<button class="button button-gray"><span class="tag-task-icon icon" aria-hidden="true" data-icon="&#59148;"></span></button>
+					<button class="button button-gray"><span class="share-task-icon icon" aria-hidden="true" data-icon="&#59136;"></span></button>
+				</section>
+			</div>
+		</header>
+
+
+<h1>New project</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', projects_path %>
+
+</section>
+
+	</div>
+
+</section>
+
+<%= render "shared/footer" %>

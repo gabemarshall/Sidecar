@@ -1,0 +1,66 @@
+<%= render "shared/header" %>
+<%= render "shared/sidebar" %>
+
+<!-- MAIN CONTENT -->
+<section class="content content-documents">
+
+	<section class="content-wrap inactive">
+		<% if notice %>
+  			<p class="alert alert-notice"><%= notice %> <a class="close" data-dismiss="alert">&times;</a></p>
+		<% end %>
+
+		<% if alert %>
+  			<p class="alert alert-error"><%= alert %> <a class="close" data-dismiss="alert">&times;</a></p>
+		<% end %>
+
+		<!-- PAGE HEADER -->
+		<header class="page-header">
+			<section class="page-title">
+				<h2><%= best_in_place @project, :name, :type => :input %></h2>
+			</section>
+
+			<section class="button-wrap">
+				<%= form_for @project do |f| %><%= link_to_add_association 'add task', f, :tasks %><button class="button button-green"><span class="add-task-icon icon" aria-hidden="true" data-icon="&#57347;"></span></button><%= f.hidden_field :user_id %><%= f.submit %><% end %>
+				<button class="button button-gray"><span class="tag-task-icon icon" aria-hidden="true" data-icon="&#59148;"></span></button>
+				<button class="button button-gray"><span class="share-task-icon icon" aria-hidden="true" data-icon="&#59136;"></span></button>
+
+				<div class="clear"></div>
+			</section>
+
+			<div class="clear"></div>
+		</header>
+
+		<!-- PROJECTS LIST -->
+		<section class="module-container">
+
+			<section class="module full">
+				<header class="module-header">
+					<section class="moveable left"></section>
+					<section class="task-name left"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Task</section>
+					<section class="task-hours left"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Hours</section>
+					<section class="task-due left"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Due Date</section>
+
+					<div class="clear"></div>
+				</header>
+
+				<ul class="module-list">
+					<% @project.tasks.each do |task| %>
+					<li class="module-list-item ui-state-default clear">
+						<section class="moveable left"><span class="project-icon icon" aria-hidden="true" 	data-icon="&#9871;"></span></section>
+						<section class="task-name left"><%= best_in_place task, :description, :path => tasks_path, :type => :input %></section>
+						<section class="task-hours left"><%= best_in_place task, :hours, :path => tasks_path, :type => :input %></section>
+						<section class="task-due left">11/14/13</section>
+					</li>
+					<% end %>
+				</ul>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+
+</section>
+
+</section>
+
+</section>
+
+<%= render "shared/footer" %>

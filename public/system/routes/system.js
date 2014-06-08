@@ -10,31 +10,19 @@ angular.module('mean.system').config(['$stateProvider', '$urlRouterProvider',
             $stateProvider
                 .state('home', {
                     url: '/',
-                    templateUrl: 'public/system/views/home/index.html'
+                    templateUrl: 'public/system/views/index.html'
                 })
                 .state('about', {
                 	url: '/about',
-                	templateUrl: 'public/system/views/home/about.html'
+                	templateUrl: 'public/system/views/about.html'
                 })
                 .state('features', {
                 	url: '/features',
-                	templateUrl: 'public/system/views/home/features.html'
+                	templateUrl: 'public/system/views/features.html'
                 })
                 .state('pricing', {
                 	url: '/pricing',
-                	templateUrl: 'public/system/views/home/pricing.html'
-                })
-                .state('projects', {
-                	url: '/projects',
-                	templateUrl: 'public/system/views/projects/index.html'
-                })
-                .state('login', {
-                	url: '/login',
-                	templateUrl: '/public/auth/views/login.html'
-                })
-                .state('register', {
-                	url: '/register',
-                	templateUrl: '/public/auth/views/register.html'
+                	templateUrl: 'public/system/views/pricing.html'
                 })
                 .state('auth', {
                     templateUrl: 'public/auth/views/index.html'

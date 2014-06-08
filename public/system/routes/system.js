@@ -12,7 +12,7 @@ angular.module('mean.system').config(['$stateProvider', '$urlRouterProvider',
                     url: '/',
                     templateUrl: 'public/system/views/index.html'
                 })
-                .state('about', {
+                .state('Sidecar About', {
                 	url: '/about',
                 	templateUrl: 'public/system/views/home/about.html'
                 })
@@ -28,5 +28,8 @@ angular.module('mean.system').config(['$stateProvider', '$urlRouterProvider',
     .config(['$locationProvider',
         function($locationProvider) {
             $locationProvider.hashPrefix('!');
+            $locationProvider.html5Mode(true);
         }
     ]);
+
+

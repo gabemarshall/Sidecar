@@ -17,14 +17,14 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         assets: grunt.file.readJSON('server/config/assets.json'),
         clean: ['public/build'],
-        watch: {
-            js: {
-                files: paths.js,
-                tasks: ['jshint'],
-                options: {
-                    livereload: true
+        sass: {
+            dist: { 
+                files: {
+                    'public/system/assets/stylesheets/style1.css' : 'public/system/assets/sass/home.scss'
                 }
-            },
+            }
+        },
+        watch: {
             html: {
                 files: paths.html,
                 options: {
@@ -32,36 +32,21 @@ module.exports = function(grunt) {
                 }
             },
             css: {
-                files: paths.css,
-                tasks: ['csslint'],
+                files: ['css/*.scss'],
+                tasks: ['csslint', 'sass'],
                 options: {
                     livereload: true
                 }
             },
         },
-        compass: {                  // Task
-		    dist: {                   // Target
-		    	options: {              // Target options
-		    		sassDir: '/public/system/assets/sass',
-		    		cssDir: '/public/system/assets/stylesheets',
-		        	environment: 'production'
-		      	}
-		    },
-		    dev: {                    // Another target
-		     	options: {
-		        	sassDir: '/public/system/assets/sass',
-		        	cssDir: '/public/system/assets/stylesheets'
-		    	}
-		    }
-		},
-        jshint: {
-            all: {
-                src: paths.js,
-                options: {
-                    jshintrc: true
-                }
-            }
-        },
+        // jshint: {
+        //     all: {
+        //         src: paths.js,
+        //         options: {
+        //             jshintrc: true
+        //         }
+        //     }
+        // },
         uglify: {
             core: {
                 options: {
@@ -123,14 +108,15 @@ module.exports = function(grunt) {
     });
 
     //Load NPM tasks
-    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+
     require('load-grunt-tasks')(grunt);
 
     //Default task(s).
     if (process.env.NODE_ENV === 'production') {
-        grunt.registerTask('default', ['clean','cssmin', 'uglify', 'concurrent', 'compass']);
+        grunt.registerTask('default', ['clean','cssmin', 'uglify', 'concurrent', 'sass']);
     } else {
-        grunt.registerTask('default', ['clean','jshint', 'csslint', 'concurrent', 'compass']);
+        grunt.registerTask('default', ['clean', 'csslint', 'concurrent','sass']);
     }
 
     //Test task.

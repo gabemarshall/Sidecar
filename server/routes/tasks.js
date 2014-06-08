@@ -5,12 +5,12 @@ var tasks = require('../controllers/tasks');
 
 module.exports = function(app, passport) {
 
-    app.route('/tasks').post(tasks.create)
+    app.route('/api/tasks').post(tasks.create)
 
-    app.route('/tasks').get(tasks.all)
+    app.route('/api/tasks').get(tasks.all)
 
     // Temporary debug method used to delete all tasks
-    app.route('/tasks/refresh').get(tasks.refresh)
+    app.route('/api/tasks/refresh').get(tasks.refresh)
 
 
 };

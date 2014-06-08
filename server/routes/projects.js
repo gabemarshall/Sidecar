@@ -5,12 +5,12 @@ var projects = require('../controllers/projects');
 
 module.exports = function(app, passport) {
 
-    app.route('/projects').post(projects.create)
+    app.route('/api/projects').post(projects.create)
 
-    app.route('/projects').get(projects.all)
+    app.route('/api/projects').get(projects.all)
 
     // Temporary debug method used to delete all tasks
-    app.route('/projects/refresh').get(projects.refresh)
+    app.route('/api/projects/refresh').get(projects.refresh)
 
 
 };

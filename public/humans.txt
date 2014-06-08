@@ -3,7 +3,9 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Jon Bellah -- Developer -- @jonbellah
+    Gabe Marshall -- Developer -- @gabemarshall
+    Trevan Hetzel -- Developer -- @trevanhetzel
 
 # THANKS
 

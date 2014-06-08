@@ -28,6 +28,14 @@ angular.module('mean.system').config(['$stateProvider', '$urlRouterProvider',
                 	url: '/projects',
                 	templateUrl: 'public/system/views/projects/index.html'
                 })
+                .state('login', {
+                	url: '/login',
+                	templateUrl: '/public/auth/views/login.html'
+                })
+                .state('register', {
+                	url: '/register',
+                	templateUrl: '/public/auth/views/register.html'
+                })
                 .state('auth', {
                     templateUrl: 'public/auth/views/index.html'
                 });

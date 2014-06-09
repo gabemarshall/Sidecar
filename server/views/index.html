@@ -2,7 +2,9 @@
 {% block content %}
     <section data-ui-view />
     <script type="text/javascript">
-        window.user = {{user|json|safe}};        
-        window.modules = {{modules|json|safe}};      
+        window.user = {{user|json|safe}};
+        window.modules = {{modules|json|safe}};
     </script>
 {% endblock %}
+
+<!-- Having some trouble getting templating to work with me, so I've worked around it for now... there's a Trello card for fixing and re-implementing templating -->

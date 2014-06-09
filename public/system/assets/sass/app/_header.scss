@@ -2,7 +2,6 @@
 ----------------------------------------------- */
 .site-header {
 	background-color: #fff;
-	border-bottom: 1px solid $gray-border;
 	color: $dark-blue;
 	height: 55px;
 	position: fixed;
@@ -25,7 +24,7 @@
 	background-color: $green;
 	border-bottom: 1px solid $dark-blue;
 	height: 55px;
-	padding: 12px 10px 0 0;
+	padding: 0px 8px 0 0;
 	width: 200px;
 
 	img {
@@ -42,6 +41,7 @@
 	display: block;
 	float: right;
 	font-size: 14px;
+	width: 380px;
 
 	a {
 		color: #fff;
@@ -125,6 +125,12 @@
 			border-radius: 50%;
 		}
 	}
+}
+
+.toolbar {
+	margin-left: 200px;
+	border-bottom: 1px solid $gray-border;
+	height: 55px;
 }
 
 /* Notifications
@@ -213,6 +219,7 @@
 	float: left;
 	margin: 0 auto;
 	padding: 9px 10px 0 30px;
+	width: 300px;
 }
 
 .search {

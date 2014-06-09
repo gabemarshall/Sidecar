@@ -49,7 +49,7 @@ angular.module('mean.auth').config(['$stateProvider',
             })
             .state('clients', {
             	url: '/clients',
-            	templateUrl: 'public/auth/views/projects/index.html'
+            	templateUrl: 'public/auth/views/clients/index.html'
             })
             .state('documents', {
             	url: '/documents',
@@ -57,15 +57,11 @@ angular.module('mean.auth').config(['$stateProvider',
             })
             .state('invoices', {
             	url: '/invoices',
-            	templateUrl: 'public/auth/views/documents/index.html'
+            	templateUrl: 'public/auth/views/invoices/index.html'
             })
             .state('reports', {
             	url: '/reports',
             	templateUrl: 'public/auth/views/reports/index.html'
-            })
-            .state('billing', {
-            	url: '/billing',
-            	templateUrl: 'public/auth/views/billing/index.html'
             })
             .state('leads', {
             	url: '/leads',

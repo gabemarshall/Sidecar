@@ -1457,34 +1457,33 @@ h5 {
 /* line 3, ../sass/app/_header.scss */
 .site-header {
   background-color: #fff;
-  border-bottom: 1px solid #d8dce0;
   color: #2a2f36;
   height: 55px;
   position: fixed;
   width: 100%;
   z-index: 1000;
 }
-/* line 12, ../sass/app/_header.scss */
+/* line 11, ../sass/app/_header.scss */
 .site-header img {
   max-width: 100%;
   height: auto;
 }
-/* line 17, ../sass/app/_header.scss */
+/* line 16, ../sass/app/_header.scss */
 .site-header.scrolled {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.09);
 }
 
 /* Header
 ----------------------------------------------- */
-/* line 24, ../sass/app/_header.scss */
+/* line 23, ../sass/app/_header.scss */
 .logo {
   background-color: #62b5ba;
   border-bottom: 1px solid #2a2f36;
   height: 55px;
-  padding: 12px 10px 0 0;
+  padding: 0px 8px 0 0;
   width: 200px;
 }
-/* line 31, ../sass/app/_header.scss */
+/* line 30, ../sass/app/_header.scss */
 .logo img {
   height: auto;
   width: 135px;
@@ -1494,11 +1493,12 @@ h5 {
 
 /* Account Dropdown
 ----------------------------------------------- */
-/* line 41, ../sass/app/_header.scss */
+/* line 40, ../sass/app/_header.scss */
 .account-navigation {
   display: block;
   float: right;
   font-size: 14px;
+  width: 380px;
 }
 /* line 46, ../sass/app/_header.scss */
 .account-navigation a {
@@ -1584,9 +1584,16 @@ h5 {
   border-radius: 50%;
 }
 
+/* line 130, ../sass/app/_header.scss */
+.toolbar {
+  margin-left: 200px;
+  border-bottom: 1px solid #d8dce0;
+  height: 55px;
+}
+
 /* Notifications
 ----------------------------------------------- */
-/* line 132, ../sass/app/_header.scss */
+/* line 138, ../sass/app/_header.scss */
 .notifications {
   color: #7a8ca2;
   float: right;
@@ -1594,21 +1601,21 @@ h5 {
   padding-right: 35px;
   padding-top: 7px;
 }
-/* line 139, ../sass/app/_header.scss */
+/* line 145, ../sass/app/_header.scss */
 .notifications span {
   margin: 0 6px;
 }
-/* line 143, ../sass/app/_header.scss */
+/* line 149, ../sass/app/_header.scss */
 .notifications ul {
   float: left;
   list-style: none;
 }
-/* line 148, ../sass/app/_header.scss */
+/* line 154, ../sass/app/_header.scss */
 .notifications li {
   float: left;
   position: relative;
 }
-/* line 153, ../sass/app/_header.scss */
+/* line 159, ../sass/app/_header.scss */
 .notifications ul li ul {
   background: #fff;
   border-bottom-left-radius: 4px;
@@ -1621,7 +1628,7 @@ h5 {
   left: -50px;
   width: 300px;
 }
-/* line 166, ../sass/app/_header.scss */
+/* line 172, ../sass/app/_header.scss */
 .notifications ul li ul li {
   border-bottom: 1px dashed #d8dce0;
   clear: both;
@@ -1629,11 +1636,11 @@ h5 {
   position: relative;
   width: 100%;
 }
-/* line 174, ../sass/app/_header.scss */
+/* line 180, ../sass/app/_header.scss */
 .notifications ul li ul li:nth-last-child(2) {
   border-bottom: none;
 }
-/* line 179, ../sass/app/_header.scss */
+/* line 185, ../sass/app/_header.scss */
 .notifications ul li ul li.title,
 .notifications ul li ul li.footer {
   background: #f7f9fa;
@@ -1642,19 +1649,19 @@ h5 {
   padding: 12px 10px;
   text-align: center;
 }
-/* line 187, ../sass/app/_header.scss */
+/* line 193, ../sass/app/_header.scss */
 .notifications ul li ul li.title {
   border-bottom: 1px solid #d8dce0;
 }
-/* line 191, ../sass/app/_header.scss */
+/* line 197, ../sass/app/_header.scss */
 .notifications ul li ul li.footer {
   border-top: 1px solid #d8dce0;
 }
-/* line 195, ../sass/app/_header.scss */
+/* line 201, ../sass/app/_header.scss */
 .notifications ul li:hover ul {
   display: block;
 }
-/* line 199, ../sass/app/_header.scss */
+/* line 205, ../sass/app/_header.scss */
 .notifications ul li ul li img {
   float: left;
   position: absolute;
@@ -1667,14 +1674,15 @@ h5 {
 
 /* Search
 ----------------------------------------------- */
-/* line 212, ../sass/app/_header.scss */
+/* line 218, ../sass/app/_header.scss */
 .searchbox {
   float: left;
   margin: 0 auto;
   padding: 9px 10px 0 30px;
+  width: 300px;
 }
 
-/* line 218, ../sass/app/_header.scss */
+/* line 225, ../sass/app/_header.scss */
 .search {
   background: url(search-icon.png) center right 10px no-repeat;
   background-size: 20px auto;
@@ -1689,7 +1697,7 @@ h5 {
   padding: 5px 10px;
   width: 250px;
 }
-/* line 232, ../sass/app/_header.scss */
+/* line 239, ../sass/app/_header.scss */
 .search:focus {
   -webkit-transition: border, 0.25s;
   transition: border, 0.25s;

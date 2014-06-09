@@ -1,11 +1,8 @@
-	</section>
-	<!-- END #main -->
 
-   <footer id="colophon" class="site-footer" role="contentinfo">
-   </footer>
-   <!-- END #colophon -->
 
-   <%= javascript_include_tag "chart.min.js" %>
+
+
+   <script src="/public/system/assets/javascripts/chart.min.js"></script>
 
    <script type="text/javascript">
 	$(function() {
@@ -56,7 +53,4 @@
 	var myLine = new Chart(document.getElementById("billingChart").getContext("2d")).Line(lineChartData);
 	</script>
 
-    <%= javascript_include_tag "directives.js" %>
-
-  </body>
-</html>
+    <script src="/public/system/assets/javascripts/directives.js"></script>

@@ -14,7 +14,7 @@
 				</section>
 
 				<section class="button-wrap">
-					<%= link_to new_document_path do %><button class="button button-green"><span class="add-task-icon icon" aria-hidden="true" data-icon="&#57347;"></span></button><% end %>
+					<button class="button button-green"><span class="add-task-icon icon" aria-hidden="true" data-icon="&#57347;"></span></button>
 					<button class="button button-gray"><span class="tag-task-icon icon" aria-hidden="true" data-icon="&#59148;"></span></button>
 					<button class="button button-gray"><span class="share-task-icon icon" aria-hidden="true" data-icon="&#59136;"></span></button>
 				</section>
@@ -36,19 +36,7 @@
 
 
 				<ul class="module-list">
-					<% @documents.each do |document| %>
-					<li class="module-list-item ui-state-default clear">
-						<section class="moveable left"><span class="project-icon icon" aria-hidden="true" 	data-icon="&#9871;"></span></section>
-						<section class="project-name left">
-							<%= document.name %>
-    						<%= link_to 'Show', document %>
-    						<%= link_to 'Edit', edit_document_path(document) %>
-    						<%= link_to 'Destroy', document, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
-    					</section>
-						<section class="project-hours left"><a href="<%= document.documents %>">Download</a></section>
-						<section class="project-due left">11/14/13</section>
-					</li>
-					<% end %>
+					
 				</ul>
 </section>
 </div>

@@ -14,7 +14,7 @@
 				</section>
 
 				<section class="button-wrap">
-					<%= link_to new_client_path do %><button class="button button-green"><span class="add-task-icon icon" aria-hidden="true" data-icon="&#57347;"></span></button><% end %>
+					<button class="button button-green"><span class="add-task-icon icon" aria-hidden="true" data-icon="&#57347;"></span></button>
 					<button class="button button-gray"><span class="tag-task-icon icon" aria-hidden="true" data-icon="&#59148;"></span></button>
 					<button class="button button-gray"><span class="share-task-icon icon" aria-hidden="true" data-icon="&#59136;"></span></button>
 				</section>
@@ -36,17 +36,13 @@
 				</header>
 
 				<ul class="module-list">
-					<% @clients.each do |client| %>
 					<li class="module-list-item ui-state-default clear">
 						<section class="moveable left"><span class="project-icon icon" aria-hidden="true" 	data-icon="&#9871;"></span></section>
-						<section class="client-company left"><%= link_to client.client, client %> <span class="right"><%= link_to 'Show', client %>
-	    					<%= link_to 'Edit', edit_client_path(client) %>
-	    					<%= link_to 'Destroy', client, :method => :delete, :data => { :confirm => 'Are you sure?' } %></span></section>
-						<section class="client-contact left"><%= client.contact %></section>
-						<section class="client-phone left"><%= client.phone %></section>
-						<section class="client-email left"><%= client.email %></section>
+						<section class="client-company left">Company</span></section>
+						<section class="client-contact left">Contact</section>
+						<section class="client-phone left">Phone</section>
+						<section class="client-email left">Email</section>
 					</li>
-					<% end %>
 				</ul>
 			</section>
 		</div>

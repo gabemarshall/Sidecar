@@ -1,49 +1,45 @@
+<link rel="stylesheet" href="/public/system/assets/stylesheets/style.css">
 
-        <link rel="stylesheet" href="/public/system/assets/stylesheets/style.css">
+<section class="header-left logo left">
+	<img src="/public/system/assets/img/logo.svg">
+</section>
 
+<section class="toolbar">
+	<div class="container">
+       	<section class="searchbox">
+			<form>
+				<input type="text" class="search" placeholder="Search...">
+			</form>
+		</section>
 
-			<section class="header-left logo left">
-        		<img src="/public/system/assets/img/logo.svg">
-        	</section>
+       	<nav class="account-navigation">
+			<ul class="account-primary clear">
+				<li class="menu-item">
+				<div class="user-photo"><img src="/public/system/assets/img/avatar.png"></div> Welcome, User!
+					<span aria-hidden="true" class="dropdown-icon icon" data-icon="&#9662;"></span>
+					<ul class="dropdown">
+						<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128319;"></span> <span class="dropdown-text">Support</span></a></li>
+						<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#9881;"></span> <span class="dropdown-text">Settings</span></a></li>
+						<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128275;"></span> <span class="dropdown-text">Logout</span></a></li>
+       				</ul>
+				</li>
+			</ul>
+		</nav><!-- .account-navigation -->
 
-        	<section class="toolbar">
-        		<div class="container">
-
-		        	<section class="searchbox">
-						<form>
-							<input type="text" class="search" placeholder="Search...">
-						</form>
-					</section>
-
-		        	<nav class="account-navigation">
-						<ul class="account-primary clear">
-							<li class="menu-item">
-								<div class="user-photo"><%= image_tag 'avatar.png' %></div> Welcome,  <% if user_signed_in? %> <%= current_user.name %> <%= current_user.surname %>!<% end %>
-		  						<span aria-hidden="true" class="dropdown-icon icon" data-icon="&#9662;"></span>
-								<ul class="dropdown">
-									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128319;"></span> <span class="dropdown-text">Support</span></a></li>
-									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#9881;"></span> <span class="dropdown-text"><%= link_to('Settings', edit_user_registration_path) %></span></a></li>
-									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128275;"></span> <span class="dropdown-text"><%= link_to 'Logout', destroy_user_session_path %></span></a></li>
-		        				</ul>
-							</li>
-						</ul>
-					</nav><!-- .account-navigation -->
-
-					<section class="notifications">
-						<ul>
-							<li class="notification-icon"><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128276;"></span>
-								<ul>
-									<li class="title">Notifications</li>
-									<li><%= image_tag "avatar3.png" %> Gabe sent you a message</li>
-									<li><%= image_tag "avatar2.png" %> Brenna shared a document with you</li>
-									<li>Justin assigned you a task.</li>
-									<li class="footer">See all notifications</li>
-								</ul>
-							</li>
-							<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#59168;"></span></li>
-							<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128101;"></span></li>
-						</ul>
-					</section>
-
-				</div>
-			</section>
+		<section class="notifications">
+			<ul>
+				<li class="notification-icon"><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128276;"></span>
+					<ul>
+						<li class="title">Notifications</li>
+						<li><img src="/public/system/assets/img/avatar3.png"> Gabe sent you a message</li>
+						<li><img src="/public/system/assets/img/avatar2.png"> Brenna shared a document with you</li>
+						<li>Justin assigned you a task.</li>
+						<li class="footer">See all notifications</li>
+					</ul>
+				</li>
+				<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#59168;"></span></li>
+				<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128101;"></span></li>
+			</ul>
+		</section>
+	</div>
+</section>

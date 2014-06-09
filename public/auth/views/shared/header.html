@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>Mockingbird - Organize and Manage. Better.</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+
+       	<%= stylesheet_link_tag "style" %>
+
+       	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+       	<script>window.jQuery || document.write('<script src="lib/js/jquery-1.9.1.min.js"><\/script>')</script>
+
+   		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+
+       	<%= javascript_include_tag "application" %>
+
+  		<!--[if IE]>
+    	  <link href="/lib/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  		<![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+        <header id="masthead" class="site-header clear" role="banner">
+
+			<section class="header-left logo left">
+        		<%= image_tag "logo-white.png" %>
+        	</section>
+
+        	<section class="toolbar">
+        	<div class="container">
+        	<section class="searchbox">
+				<form>
+					<input type="text" class="search" placeholder="Search...">
+				</form>
+			</section>
+
+        	<nav class="account-navigation">
+				<ul class="account-primary clear">
+					<li class="menu-item">
+						<div class="user-photo"><%= image_tag 'avatar.png' %></div> Welcome,  <% if user_signed_in? %> <%= current_user.name %> <%= current_user.surname %>!<% end %>
+  						<span aria-hidden="true" class="dropdown-icon icon" data-icon="&#9662;"></span>
+						<ul class="dropdown">
+							<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128319;"></span> <span class="dropdown-text">Support</span></a></li>
+							<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#9881;"></span> <span class="dropdown-text"><%= link_to('Settings', edit_user_registration_path) %></span></a></li>
+							<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128275;"></span> <span class="dropdown-text"><%= link_to 'Logout', destroy_user_session_path %></span></a></li>
+        				</ul>
+					</li>
+				</ul>
+			</nav><!-- .account-navigation -->
+
+			<section class="notifications">
+				<ul>
+					<li class="notification-icon"><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128276;"></span>
+						<ul>
+							<li class="title">Notifications</li>
+							<li><%= image_tag "avatar3.png" %> Gabe sent you a message</li>
+							<li><%= image_tag "avatar2.png" %> Brenna shared a document with you</li>
+							<li>Justin assigned you a task.</li>
+							<li class="footer">See all notifications</li>
+						</ul>
+					</li>
+					<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#59168;"></span></li>
+					<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128101;"></span></li>
+				</ul>
+			</section>
+		</div>
+	</section>
+
+        </header>
+        <!-- END #masthead -->
+
+        <section id="main" class="site-main" role="main">

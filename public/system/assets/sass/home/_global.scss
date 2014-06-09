@@ -2,18 +2,18 @@
 ----------------------------------------------- */
 @font-face {
     font-family: 'icons';
-    src: url(font-path('entypo.eot') + "?#iefix") format('embedded-opentype'),
-         url(font-path('entypo.woff')) format('woff'),
-         url(font-path('entypo.ttf'))  format('truetype'),
-         url(font-path('entypo.svg') + "#MyFont") format('svg');
+    src: url('/public/system/assets/fonts/entypo.eot' + "?#iefix") format('embedded-opentype'),
+         url('/public/system/assets/fonts/entypo.woff') format('woff'),
+         url('/public/system/assets/fonts/entypo.ttf')  format('truetype'),
+         url('/public/system/assets/fonts/entypo.svg' + "#MyFont") format('svg');
 }
 
 @font-face {
     font-family: 'social-icons';
-    src: url(font-path('entypo-social.eot') + "?#iefix") format('embedded-opentype'),
-         url(font-path('entypo-social.woff')) format('woff'),
-         url(font-path('entypo-social.ttf'))  format('truetype'),
-         url(font-path('entypo-social.svg') + "#MyFont") format('svg');
+    src: url('/public/system/assets/fonts/entypo-social.eot' + "?#iefix") format('embedded-opentype'),
+         url('/public/system/assets/fonts/entypo-social.woff') format('woff'),
+         url('/public/system/assets/fonts/entypo-social.ttf')  format('truetype'),
+         url('/public/system/assets/fonts/entypo-social.svg' + "#MyFont") format('svg');
 }
 
 /* Global

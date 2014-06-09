@@ -21,7 +21,7 @@
 }
 
 .ui-tabs-vertical .ui-tabs-nav li a {
-	background: url(image_path('arrow.png')) 195px center no-repeat;
+	background: url('/public/system/assets/img/arrow.png') 195px center no-repeat;
 	background-color: #f3f3f3;
 	background-size: 12px auto;
 	color: #777;
@@ -40,7 +40,7 @@
 
 .ui-tabs-vertical .ui-tabs-nav li a:hover,
 .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active a {
-	background: url(image_path('arrow-hover.png')) 195px center no-repeat;
+	background: url('/public/system/assets/img/arrow-hover.png') 195px center no-repeat;
 	background-size: 12px auto;
 	color: #fff;
 }

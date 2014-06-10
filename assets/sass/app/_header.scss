@@ -24,7 +24,7 @@
 	background-color: $green;
 	border-bottom: 1px solid $dark-blue;
 	height: 55px;
-	padding: 0px 8px 0 0;
+	padding: 0;
 	width: 200px;
 
 	img {
@@ -222,7 +222,7 @@
 }
 
 .search {
-	background: url(search-icon.png) center right 10px no-repeat;
+	background: url(../img/search-icon.png) center right 10px no-repeat;
 	background-size: 20px auto;
 	background-color: #fff;
 	border-radius: 4px;

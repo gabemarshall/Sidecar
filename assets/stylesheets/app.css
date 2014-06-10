@@ -1480,7 +1480,7 @@ h5 {
   background-color: #62b5ba;
   border-bottom: 1px solid #2a2f36;
   height: 55px;
-  padding: 0px 8px 0 0;
+  padding: 0;
   width: 200px;
 }
 /* line 30, ../sass/app/_header.scss */
@@ -1683,7 +1683,7 @@ h5 {
 
 /* line 224, ../sass/app/_header.scss */
 .search {
-  background: url(search-icon.png) center right 10px no-repeat;
+  background: url(../img/search-icon.png) center right 10px no-repeat;
   background-size: 20px auto;
   background-color: #fff;
   border-radius: 4px;

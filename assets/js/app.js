@@ -9,6 +9,7 @@ angular.module('sidecar', [
 	'sidecar.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
+	$routeProvider.when('/settings', {templateUrl: 'partials/settings.html', controller: 'Settings'});
 	$routeProvider.when('/reports', {templateUrl: 'partials/reports.html', controller: 'Reports'});
 	$routeProvider.when('/invoices', {templateUrl: 'partials/invoices.html', controller: 'Invoices'});
 	$routeProvider.when('/documents', {templateUrl: 'partials/documents.html', controller: 'Documents'});

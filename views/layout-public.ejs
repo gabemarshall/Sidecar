@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
 		<title>Sidecar</title>
 		<link rel="stylesheet" href="stylesheets/public.css"/>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	</head>
 
 	<body>
@@ -100,5 +102,39 @@
 				</div><!-- .container -->
 			</div><!-- END .copyright -->
 		</footer><!-- #colophon .site-footer -->
-	</body>
+
+	<script src="js/jquery.liquidslider.min.js"></script>
+	<script src="js/jquery.touchswipe.min.js"></script>
+	<script src="js/jquery.easing.js"></script>
+
+	<script>
+	$(function() {
+		if(window.location.href == "/") {
+	  		$('body').addClass('home');
+	  	}
+	});
+	$(function() {
+		$('.liquid-slider').liquidSlider({
+			autoHeight: false,
+			autoSlide: true,
+	        autoSlideInterval: 5000,
+	        slideEaseDuration: 1000,
+	        slideEaseFunction: 'easeInOutExpo',
+	        autoSlideStopWhenClicked: false,
+	        autoSlidePauseOnHover: true,
+	        dynamicTabs: true,
+	        hashLinking:true,
+	  		crossLinks:true,
+	        responsive: true,
+		});
+	});
+	</script>
+
+	<script>
+	$(function() {
+		$( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+		$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+	});
+	</script>
+</body>
 </html>

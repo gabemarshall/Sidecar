@@ -7469,12 +7469,12 @@ button.close {
 ----------------------------------------------- */
 @font-face {
   font-family: 'icons';
-  src: url("/public/system/assets/fonts/entypo.eot?#iefix") format("embedded-opentype"), url("/public/system/assets/fonts/entypo.woff") format("woff"), url("/public/system/assets/fonts/entypo.ttf") format("truetype"), url("/public/system/assets/fonts/entypo.svg#MyFont") format("svg");
+  src: url("../fonts/entypo.eot?#iefix") format("embedded-opentype"), url("../fonts/entypo.woff") format("woff"), url("../fonts/entypo.ttf") format("truetype"), url("../fonts/entypo.svg#MyFont") format("svg");
 }
 
 @font-face {
   font-family: 'social-icons';
-  src: url("/public/system/assets/fonts/entypo-social.eot?#iefix") format("embedded-opentype"), url("/public/system/assets/fonts/entypo-social.woff") format("woff"), url("/public/system/assets/fonts/entypo-social.ttf") format("truetype"), url("/public/system/assets/fonts/entypo-social.svg#MyFont") format("svg");
+  src: url("../fonts/entypo-social.eot?#iefix") format("embedded-opentype"), url("../fonts/entypo-social.woff") format("woff"), url("../fonts/entypo-social.ttf") format("truetype"), url("../fonts/entypo-social.svg#MyFont") format("svg");
 }
 
 /* Global
@@ -7646,7 +7646,7 @@ strong {
 }
 /* line 8, ../sass/public/_header.scss */
 .site-header .site-logo {
-  background-image: url("img/logo.svg");
+  background-image: url(../img/logo.svg);
   background-position: 0 2px;
   background-repeat: no-repeat;
   background-size: 190px auto;
@@ -7708,7 +7708,7 @@ strong {
 ----------------------------------------------- */
 /* line 69, ../sass/public/_header.scss */
 .hero {
-  background-image: url("/public/system/assets/img/background.png");
+  background-image: url("../img/background.png");
   background-size: cover;
   background-position: center center;
   border: none;
@@ -7827,7 +7827,7 @@ strong {
 
 /* line 179, ../sass/public/_header.scss */
 .pricing-header {
-  background-image: url("/public/system/assets/img/pricing.png");
+  background-image: url("../img/pricing.png");
   background-size: cover;
   background-position: center center;
   border: none;

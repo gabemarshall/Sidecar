@@ -6,7 +6,7 @@
 	overflow: hidden;
 
 	.site-logo {
-		background-image: url('img/logo.svg');
+		background-image: url(../img/logo.svg);
 		background-position: 0 2px;
 		background-repeat: no-repeat;
 		background-size: 190px auto;
@@ -67,7 +67,7 @@
 /* Hero
 ----------------------------------------------- */
 .hero {
-	background-image: url('/public/system/assets/img/background.png');
+	background-image: url('../img/background.png');
 	background-size: cover;
 	background-position: center center;
 	border: none;
@@ -177,7 +177,7 @@
 }
 
 .pricing-header {
-	background-image: url('/public/system/assets/img/pricing.png');
+	background-image: url('../img/pricing.png');
 	background-size: cover;
 	background-position: center center;
 	border: none;

@@ -1,138 +1,130 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
-<head>
-  <meta charset="utf-8">
-  <title>Sidecar</title>
-  <link rel="stylesheet" href="stylesheets/app.css"/>
-</head>
-<body>
-	<header id="masthead" class="site-header clear" role="banner">
-		<section class="header-left logo left">
-        	<img src="/img/logo.svg" />
-        </section>
+	<head>
+  		<meta charset="utf-8">
+  		<title>Sidecar</title>
+  		<link rel="stylesheet" href="stylesheets/app.css"/>
+	</head>
+	
+	<body>
+		<header id="masthead" class="site-header clear" role="banner">
+			<section class="header-left logo left">
+        		<img src="/img/logo.svg" />
+        	</section>
 
-        <section class="toolbar">
-        	<div class="container">
-	        	<section class="searchbox">
-					<form>
-						<input type="text" class="search" placeholder="Search...">
-					</form>
-				</section>
+        	<section class="toolbar">
+        		<div class="container">
+	        		<section class="searchbox">
+						<form>
+							<input type="text" class="search" placeholder="Search...">
+						</form>
+					</section>
 
-	        	<nav class="account-navigation">
-					<ul class="account-primary clear">
-						<li class="menu-item">
-							<div class="user-photo"><img src="avatar.png" /></div> Welcome, User!
-	  						<span aria-hidden="true" class="dropdown-icon icon" data-icon="&#9662;"></span>
-							<ul class="dropdown">
-								<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128319;"></span> <span class="dropdown-text">Support</span></a></li>
-								<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#9881;"></span> <span class="dropdown-text">Settings</span></a></li>
-								<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128275;"></span> <span class="dropdown-text">Logout</span></a></li>
-	        				</ul>
-						</li>
-					</ul>
-				</nav><!-- .account-navigation -->
+		        	<nav class="account-navigation">
+						<ul class="account-primary clear">
+							<li class="menu-item">
+								<div class="user-photo"><img src="avatar.png" /></div> Welcome, User!
+		  						<span aria-hidden="true" class="dropdown-icon icon" data-icon="&#9662;"></span>
+								<ul class="dropdown">
+									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128319;"></span> <span class="dropdown-text">Support</span></a></li>
+									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#9881;"></span> <span class="dropdown-text">Settings</span></a></li>
+									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128275;"></span> <span class="dropdown-text">Logout</span></a></li>
+		        				</ul>
+							</li>
+						</ul>
+					</nav><!-- .account-navigation -->
 
-				<section class="notifications">
-					<ul>
-						<li class="notification-icon"><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128276;"></span>
-							<ul>
-								<li class="title">Notifications</li>
-								<li><img src="avatar3.png" /> Gabe sent you a message</li>
-								<li><img src="avatar2.png" /> Brenna shared a document with you</li>
-								<li>Justin assigned you a task.</li>
-								<li class="footer">See all notifications</li>
-							</ul>
-						</li>
-						<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#59168;"></span></li>
-						<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128101;"></span></li>
-					</ul>
-				</section>
-			</div>
-		</section>
-    </header><!-- END #masthead -->
+					<section class="notifications">
+						<ul>
+							<li class="notification-icon"><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128276;"></span>
+								<ul>
+									<li class="title">Notifications</li>
+									<li><img src="avatar3.png" /> Gabe sent you a message</li>
+									<li><img src="avatar2.png" /> Brenna shared a document with you</li>
+									<li>Justin assigned you a task.</li>
+									<li class="footer">See all notifications</li>
+								</ul>
+							</li>
+							<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#59168;"></span></li>
+							<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128101;"></span></li>
+						</ul>
+					</section>
+				</div>
+			</section>
+    	</header><!-- END #masthead -->
 
-   	<aside id="secondary" class="sidebar">
-		<nav id="nav" class="site-navigation">
-	        <a href="/app" id="dashboard">Dashboard</a>
-	        <a href="#/clients" id="clients">Clients</a>
-	        <a href="#/leads" id="leads">Leads</a>
-	        <a href="#/projects" id="projects">Projects</a>
-	        <a href="#/documents" id="documents">Documents</a>
-	        <a href="#/invoices" id="invoices">Invoices</a>
-	        <a href="#/reports" id="reports">Reports</a>
-	    </nav>
-	</aside>
+	   	<aside id="secondary" class="sidebar">
+			<nav id="nav" class="site-navigation">
+		        <a href="/app" id="dashboard">Dashboard</a>
+		        <a href="#/clients" id="clients">Clients</a>
+		        <a href="#/leads" id="leads">Leads</a>
+		        <a href="#/projects" id="projects">Projects</a>
+		        <a href="#/documents" id="documents">Documents</a>
+		        <a href="#/invoices" id="invoices">Invoices</a>
+		        <a href="#/reports" id="reports">Reports</a>
+		    </nav>
+		</aside>
 
+		<%-body%>
 
-  	<%-body%>
+		<footer id="colophon" class="site-footer" role="contentinfo"></footer>
+		<!-- END #colophon -->
 
-   <footer id="colophon" class="site-footer" role="contentinfo">
-   </footer>
-   <!-- END #colophon -->
+		<script type="text/javascript">
+		$(function() {
+			$('.account-navigation ul, .notifications ul').find('ul').show().hide();
+				$('.account-navigation > ul > li, .notifications ul > li').hover(function() {
+		    		$(this).children('ul').slideToggle(200);
+				}, function() {
+				    $(this).children('ul').delay(100).slideToggle(300);
+				});
+			});
+		</script>
 
-   <script src="chart.min.js"></script>
+		<script type="text/javascript">
+		$(window).scroll(function() {
+		    var scroll = $(window).scrollTop();
 
-   <script type="text/javascript">
-	$(function() {
-		$('.account-navigation ul, .notifications ul').find('ul').show().hide();
-    		$('.account-navigation > ul > li, .notifications ul > li').hover(function() {
-        		$(this).children('ul').slideToggle(200);
-    		}, function() {
-    		    $(this).children('ul').delay(100).slideToggle(300);
-    		});
-		});
-	</script>
+		     //>=, not <=
+		    if (scroll >= 1) {
+		        //clearHeader, not clearheader - caps H
+		        $(".site-header").addClass("scrolled");
+		    } else {
+		        $(".site-header").removeClass('scrolled');
+		    }
+		}); //missing );
+		</script>
 
-	<script type="text/javascript">
-	$(window).scroll(function() {
-	    var scroll = $(window).scrollTop();
+		<script>
+			var lineChartData = {
+				labels : ["January","February","March","April","May","June","July"],
+				datasets : [
+					{
+						fillColor : "rgba(220,220,220,0.5)",
+						strokeColor : "rgba(220,220,220,1)",
+						pointColor : "rgba(220,220,220,1)",
+						pointStrokeColor : "#fff",
+						data : [65,59,90,81,56,55,40]
+					},
+					{
+						fillColor : "rgba(98,181,186,0.5)",
+						strokeColor : "rgba(98,181,186,1)",
+						pointColor : "rgba(98,181,186,1)",
+						pointStrokeColor : "#fff",
+						data : [28,48,40,19,96,27,100]
+					}
+				]
+			}
 
-	     //>=, not <=
-	    if (scroll >= 1) {
-	        //clearHeader, not clearheader - caps H
-	        $(".site-header").addClass("scrolled");
-	    } else {
-            $(".site-header").removeClass('scrolled');
-        }
-	}); //missing );
-	</script>
+		var myLine = new Chart(document.getElementById("billingChart").getContext("2d")).Line(lineChartData);
+		</script>
 
-	<script>
-		var lineChartData = {
-			labels : ["January","February","March","April","May","June","July"],
-			datasets : [
-				{
-					fillColor : "rgba(220,220,220,0.5)",
-					strokeColor : "rgba(220,220,220,1)",
-					pointColor : "rgba(220,220,220,1)",
-					pointStrokeColor : "#fff",
-					data : [65,59,90,81,56,55,40]
-				},
-				{
-					fillColor : "rgba(98,181,186,0.5)",
-					strokeColor : "rgba(98,181,186,1)",
-					pointColor : "rgba(98,181,186,1)",
-					pointStrokeColor : "#fff",
-					data : [28,48,40,19,96,27,100]
-				}
-			]
-		}
-
-	var myLine = new Chart(document.getElementById("billingChart").getContext("2d")).Line(lineChartData);
-	</script>
-
-    <script src="directives.js"></script>
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="lib/angular/angular.min.js"></script>
-  <script src="lib/angular-route/angular-route.min.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
-</body>
+		<script src="lib/angular/angular.min.js"></script>
+		<script src="lib/angular-route/angular-route.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/services.js"></script>
+		<script src="js/controllers.js"></script>
+		<script src="js/filters.js"></script>
+		<script src="js/directives.js"></script>
+	</body>
 </html>

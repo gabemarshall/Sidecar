@@ -2,12 +2,12 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers'
+angular.module('sidecar', [
+	'ngRoute',
+	'sidecar.filters',
+	'sidecar.services',
+	'sidecar.directives',
+	'sidecar.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/reports', {templateUrl: 'partials/reports.html', controller: 'Reports'});

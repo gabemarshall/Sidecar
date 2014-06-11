@@ -38,7 +38,7 @@
 					<section class="notifications">
 						<ul>
 							<li class="notification-icon"><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128276;"></span>
-								<ul>
+								<ul class="dropdown">
 									<li class="title">Notifications</li>
 									<li><img src="img/avatar3.png" /> Gabe sent you a message</li>
 									<li><img src="img/avatar2.png" /> Brenna shared a document with you</li>
@@ -72,14 +72,9 @@
 		<!-- END #colophon -->
 
 		<script type="text/javascript">
-		$(function() {
-			$('.account-navigation ul, .notifications ul').find('ul').show().hide();
-				$('.account-navigation > ul > li, .notifications ul > li').hover(function() {
-		    		$(this).children('ul').slideToggle(200);
-				}, function() {
-				    $(this).children('ul').delay(100).slideToggle(300);
-				});
-			});
+		$('.account-navigation li, .notifications li').click(function() {
+			$(this).children('.dropdown').toggleClass('visible');
+		});
 		</script>
 
 		<script type="text/javascript">

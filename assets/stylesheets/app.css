@@ -1538,7 +1538,7 @@ h5 {
   color: #7a8ca2;
 }
 /* line 83, ../sass/app/_header.scss */
-.account-navigation ul li:hover > ul {
+.account-navigation ul li ul.visible {
   display: block;
 }
 /* line 87, ../sass/app/_header.scss */
@@ -1612,9 +1612,10 @@ h5 {
 /* line 153, ../sass/app/_header.scss */
 .notifications li {
   float: left;
+  cursor: pointer;
   position: relative;
 }
-/* line 158, ../sass/app/_header.scss */
+/* line 159, ../sass/app/_header.scss */
 .notifications ul li ul {
   background: #fff;
   border-bottom-left-radius: 4px;
@@ -1627,19 +1628,20 @@ h5 {
   left: -50px;
   width: 300px;
 }
-/* line 171, ../sass/app/_header.scss */
+/* line 172, ../sass/app/_header.scss */
 .notifications ul li ul li {
   border-bottom: 1px dashed #d8dce0;
   clear: both;
+  cursor: default;
   padding: 20px 10px 20px 55px;
   position: relative;
   width: 100%;
 }
-/* line 179, ../sass/app/_header.scss */
+/* line 181, ../sass/app/_header.scss */
 .notifications ul li ul li:nth-last-child(2) {
   border-bottom: none;
 }
-/* line 184, ../sass/app/_header.scss */
+/* line 186, ../sass/app/_header.scss */
 .notifications ul li ul li.title,
 .notifications ul li ul li.footer {
   background: #f7f9fa;
@@ -1648,19 +1650,19 @@ h5 {
   padding: 12px 10px;
   text-align: center;
 }
-/* line 192, ../sass/app/_header.scss */
+/* line 194, ../sass/app/_header.scss */
 .notifications ul li ul li.title {
   border-bottom: 1px solid #d8dce0;
 }
-/* line 196, ../sass/app/_header.scss */
+/* line 198, ../sass/app/_header.scss */
 .notifications ul li ul li.footer {
   border-top: 1px solid #d8dce0;
 }
-/* line 200, ../sass/app/_header.scss */
-.notifications ul li:hover ul {
+/* line 202, ../sass/app/_header.scss */
+.notifications ul li ul.visible {
   display: block;
 }
-/* line 204, ../sass/app/_header.scss */
+/* line 206, ../sass/app/_header.scss */
 .notifications ul li ul li img {
   float: left;
   position: absolute;
@@ -1673,7 +1675,7 @@ h5 {
 
 /* Search
 ----------------------------------------------- */
-/* line 217, ../sass/app/_header.scss */
+/* line 219, ../sass/app/_header.scss */
 .searchbox {
   float: left;
   margin: 0 auto;
@@ -1681,7 +1683,7 @@ h5 {
   width: 300px;
 }
 
-/* line 224, ../sass/app/_header.scss */
+/* line 226, ../sass/app/_header.scss */
 .search {
   background: url(../img/search-icon.png) center right 10px no-repeat;
   background-size: 20px auto;
@@ -1696,7 +1698,7 @@ h5 {
   padding: 5px 10px;
   width: 250px;
 }
-/* line 238, ../sass/app/_header.scss */
+/* line 240, ../sass/app/_header.scss */
 .search:focus {
   -webkit-transition: border, 0.25s;
   transition: border, 0.25s;

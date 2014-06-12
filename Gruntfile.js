@@ -133,6 +133,7 @@ module.exports = function (grunt) {
   grunt.loadTasks(depsPath + '/grunt-contrib-cssmin/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-less/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-coffee/tasks');
+  grunt.loadTasks('node_modules/grunt-contrib-sass/tasks');
 
   // Project configuration.
   grunt.initConfig({
@@ -196,6 +197,29 @@ module.exports = function (grunt) {
           cwd: 'assets/linker/styles/',
           src: ['*.less'],
           dest: '.tmp/public/linker/styles/',
+          ext: '.css'
+        }
+        ]
+      }
+    },
+
+    sass: {
+      dev: {
+        options: {
+          style: 'compressed'
+        },
+        files: [
+          {
+          expand: true,
+          cwd: 'assets/sass/',
+          src: ['*.scss'],
+          dest: '.tmp/public/stylesheets/',
+          ext: '.css'
+        }, {
+          expand: true,
+          cwd: 'assets/linker/sass/',
+          src: ['*.scss'],
+          dest: '.tmp/public/linker/stylesheets/',
           ext: '.css'
         }
         ]
@@ -423,6 +447,7 @@ module.exports = function (grunt) {
     'clean:dev',
     'jst:dev',
     'less:dev',
+    'sass:dev',
     'copy:dev',    
     'coffee:dev'
   ]);
@@ -453,6 +478,7 @@ module.exports = function (grunt) {
     'clean:dev',
     'jst:dev',
     'less:dev',
+    'sass:dev',
     'copy:dev',
     'coffee:dev',
     'concat',

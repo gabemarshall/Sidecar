@@ -1507,15 +1507,14 @@ h5 {
 /* line 50, ../sass/app/_header.scss */
 .account-navigation ul li {
   height: 55px;
-  margin-right: 30px;
-  padding: 21px 20px 0 50px;
+  padding: 21px 22px 0 50px;
   color: #7a8ca2;
 }
-/* line 57, ../sass/app/_header.scss */
+/* line 56, ../sass/app/_header.scss */
 .account-navigation ul li:hover {
   cursor: pointer;
 }
-/* line 61, ../sass/app/_header.scss */
+/* line 60, ../sass/app/_header.scss */
 .account-navigation ul li ul {
   background: #f7f9fa;
   border: 1px solid #d8dce0;
@@ -1532,67 +1531,73 @@ h5 {
   width: 100%;
   z-index: 99999;
 }
-/* line 79, ../sass/app/_header.scss */
+/* line 78, ../sass/app/_header.scss */
 .account-navigation ul li ul a,
 .account-navigation ul li ul a:visited {
   color: #7a8ca2;
 }
-/* line 83, ../sass/app/_header.scss */
+/* line 82, ../sass/app/_header.scss */
 .account-navigation ul li ul.visible {
   display: block;
 }
-/* line 87, ../sass/app/_header.scss */
+/* line 86, ../sass/app/_header.scss */
 .account-navigation ul li ul li {
   clear: both;
   padding: 5px 0 5px 18px;
   height: 40px;
   width: 100%;
 }
-/* line 94, ../sass/app/_header.scss */
+/* line 93, ../sass/app/_header.scss */
 .account-navigation ul li ul li:hover {
   background: rgba(255, 255, 255, 0.15);
   box-shadow: none;
 }
-/* line 99, ../sass/app/_header.scss */
+/* line 98, ../sass/app/_header.scss */
 .account-navigation .menu-item {
   position: relative;
 }
-/* line 103, ../sass/app/_header.scss */
+/* line 102, ../sass/app/_header.scss */
 .account-navigation .dropdown-icon {
   font-size: 30px;
   line-height: 0;
   position: absolute;
   float: right;
-  right: 0;
+  right: 2px;
   margin-top: -9px;
 }
-/* line 112, ../sass/app/_header.scss */
+/* line 111, ../sass/app/_header.scss */
 .account-navigation .account-icon {
   font-size: 24px;
 }
-/* line 116, ../sass/app/_header.scss */
+/* line 115, ../sass/app/_header.scss */
 .account-navigation .user-photo {
   position: absolute;
   left: 0;
   top: 10px;
 }
-/* line 121, ../sass/app/_header.scss */
+/* line 120, ../sass/app/_header.scss */
 .account-navigation .user-photo img {
   margin: 0;
   height: 35px;
   border-radius: 50%;
 }
 
-/* line 129, ../sass/app/_header.scss */
+/* line 128, ../sass/app/_header.scss */
 .toolbar {
   margin-left: 200px;
   border-bottom: 1px solid #d8dce0;
   height: 55px;
 }
 
+/* line 134, ../sass/app/_header.scss */
+.toolbar .container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 /* Notifications
 ----------------------------------------------- */
-/* line 137, ../sass/app/_header.scss */
+/* line 141, ../sass/app/_header.scss */
 .notifications {
   color: #7a8ca2;
   float: right;
@@ -1600,22 +1605,22 @@ h5 {
   padding-right: 35px;
   padding-top: 7px;
 }
-/* line 144, ../sass/app/_header.scss */
+/* line 148, ../sass/app/_header.scss */
 .notifications span {
   margin: 0 6px;
 }
-/* line 148, ../sass/app/_header.scss */
+/* line 152, ../sass/app/_header.scss */
 .notifications ul {
   float: left;
   list-style: none;
 }
-/* line 153, ../sass/app/_header.scss */
+/* line 157, ../sass/app/_header.scss */
 .notifications li {
   float: left;
   cursor: pointer;
   position: relative;
 }
-/* line 159, ../sass/app/_header.scss */
+/* line 163, ../sass/app/_header.scss */
 .notifications ul li ul {
   background: #fff;
   border-bottom-left-radius: 4px;
@@ -1628,7 +1633,7 @@ h5 {
   left: -50px;
   width: 300px;
 }
-/* line 172, ../sass/app/_header.scss */
+/* line 176, ../sass/app/_header.scss */
 .notifications ul li ul li {
   border-bottom: 1px dashed #d8dce0;
   clear: both;
@@ -1637,11 +1642,11 @@ h5 {
   position: relative;
   width: 100%;
 }
-/* line 181, ../sass/app/_header.scss */
+/* line 185, ../sass/app/_header.scss */
 .notifications ul li ul li:nth-last-child(2) {
   border-bottom: none;
 }
-/* line 186, ../sass/app/_header.scss */
+/* line 190, ../sass/app/_header.scss */
 .notifications ul li ul li.title,
 .notifications ul li ul li.footer {
   background: #f7f9fa;
@@ -1650,19 +1655,19 @@ h5 {
   padding: 12px 10px;
   text-align: center;
 }
-/* line 194, ../sass/app/_header.scss */
+/* line 198, ../sass/app/_header.scss */
 .notifications ul li ul li.title {
   border-bottom: 1px solid #d8dce0;
 }
-/* line 198, ../sass/app/_header.scss */
+/* line 202, ../sass/app/_header.scss */
 .notifications ul li ul li.footer {
   border-top: 1px solid #d8dce0;
 }
-/* line 202, ../sass/app/_header.scss */
+/* line 206, ../sass/app/_header.scss */
 .notifications ul li ul.visible {
   display: block;
 }
-/* line 206, ../sass/app/_header.scss */
+/* line 210, ../sass/app/_header.scss */
 .notifications ul li ul li img {
   float: left;
   position: absolute;
@@ -1675,15 +1680,15 @@ h5 {
 
 /* Search
 ----------------------------------------------- */
-/* line 219, ../sass/app/_header.scss */
+/* line 223, ../sass/app/_header.scss */
 .searchbox {
   float: left;
   margin: 0 auto;
-  padding: 9px 10px 0 30px;
+  padding: 9px 10px 0 0;
   width: 300px;
 }
 
-/* line 226, ../sass/app/_header.scss */
+/* line 230, ../sass/app/_header.scss */
 .search {
   background: url(../img/search-icon.png) center right 10px no-repeat;
   background-size: 20px auto;
@@ -1698,7 +1703,7 @@ h5 {
   padding: 5px 10px;
   width: 250px;
 }
-/* line 240, ../sass/app/_header.scss */
+/* line 244, ../sass/app/_header.scss */
 .search:focus {
   -webkit-transition: border, 0.25s;
   transition: border, 0.25s;
@@ -1738,6 +1743,11 @@ h5 {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 /* line 31, ../sass/app/_sidebar.scss */
+.site-navigation .active {
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+/* line 36, ../sass/app/_sidebar.scss */
 .site-navigation a:before {
   font-family: 'icons';
   font-size: 43px;
@@ -1746,7 +1756,7 @@ h5 {
   position: absolute;
   top: 4px;
 }
-/* line 40, ../sass/app/_sidebar.scss */
+/* line 45, ../sass/app/_sidebar.scss */
 .site-navigation a:hover {
   -webkit-transition: color, 0.2s;
   transition: color, 0.2s;
@@ -1754,56 +1764,56 @@ h5 {
   color: #fff;
   text-decoration: none;
 }
-/* line 47, ../sass/app/_sidebar.scss */
+/* line 52, ../sass/app/_sidebar.scss */
 .site-navigation .current {
   background: rgba(0, 0, 0, 0.2);
   color: #fff;
 }
-/* line 51, ../sass/app/_sidebar.scss */
+/* line 56, ../sass/app/_sidebar.scss */
 .site-navigation .current span {
   color: #fff;
 }
 
 /* Navigation Icons
 ----------------------------------------------- */
-/* line 59, ../sass/app/_sidebar.scss */
+/* line 64, ../sass/app/_sidebar.scss */
 #dashboard:before {
   content: "\1F6C7";
 }
 
-/* line 60, ../sass/app/_sidebar.scss */
+/* line 65, ../sass/app/_sidebar.scss */
 #clients:before {
   content: "\1F464";
 }
 
-/* line 61, ../sass/app/_sidebar.scss */
+/* line 66, ../sass/app/_sidebar.scss */
 #leads:before {
   content: "\E700";
 }
 
-/* line 62, ../sass/app/_sidebar.scss */
+/* line 67, ../sass/app/_sidebar.scss */
 #projects:before {
   content: "\E800";
 }
 
-/* line 63, ../sass/app/_sidebar.scss */
+/* line 68, ../sass/app/_sidebar.scss */
 #documents:before {
   content: "\1F4C4";
 }
 
-/* line 64, ../sass/app/_sidebar.scss */
+/* line 69, ../sass/app/_sidebar.scss */
 #invoices:before {
   content: "\1F4E5";
 }
 
-/* line 65, ../sass/app/_sidebar.scss */
+/* line 70, ../sass/app/_sidebar.scss */
 #reports:before {
   content: "\1F4C8";
 }
 
 /* Dashboard Right Sidebar
 ----------------------------------------------- */
-/* line 69, ../sass/app/_sidebar.scss */
+/* line 74, ../sass/app/_sidebar.scss */
 .dashboard-sidebar {
   background: #fff;
   border-left: 1px solid #d8dce0;
@@ -1816,18 +1826,18 @@ h5 {
   top: 55px;
   width: 280px;
 }
-/* line 81, ../sass/app/_sidebar.scss */
+/* line 86, ../sass/app/_sidebar.scss */
 .dashboard-sidebar ul {
   list-style: none;
   margin-bottom: 24px;
 }
-/* line 86, ../sass/app/_sidebar.scss */
+/* line 91, ../sass/app/_sidebar.scss */
 .dashboard-sidebar li {
   font-size: 13px;
   color: #777;
   margin: 14px 0;
 }
-/* line 92, ../sass/app/_sidebar.scss */
+/* line 97, ../sass/app/_sidebar.scss */
 .dashboard-sidebar h3 {
   border-bottom: 1px solid #d8dce0;
   color: #7a8ca2;
@@ -1836,18 +1846,18 @@ h5 {
   margin-bottom: 4px;
   padding-bottom: 8px;
 }
-/* line 101, ../sass/app/_sidebar.scss */
+/* line 106, ../sass/app/_sidebar.scss */
 .dashboard-sidebar input[type="checkbox"] {
   margin: 2px 10px 0 0;
   float: left;
 }
-/* line 106, ../sass/app/_sidebar.scss */
+/* line 111, ../sass/app/_sidebar.scss */
 .dashboard-sidebar .icon {
   line-height: 0.8;
   font-size: 30px;
   float: left;
 }
-/* line 112, ../sass/app/_sidebar.scss */
+/* line 117, ../sass/app/_sidebar.scss */
 .dashboard-sidebar .upcoming-appointments label {
   margin-top: 9px;
   display: block;
@@ -2181,15 +2191,20 @@ h5 {
   margin-left: 200px;
   padding: 50px 0 0;
 }
+/* line 12, ../sass/app/_content.scss */
+.content .container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
 
-/* line 13, ../sass/app/_content.scss */
+/* line 18, ../sass/app/_content.scss */
 .content-dashboard {
   padding-right: 280px;
 }
 
 /* Page Header
 ----------------------------------------------- */
-/* line 19, ../sass/app/_content.scss */
+/* line 24, ../sass/app/_content.scss */
 .page-header {
   clear: both;
   color: #3a4257;
@@ -2199,21 +2214,21 @@ h5 {
   margin-bottom: 30px;
   height: 70px;
 }
-/* line 28, ../sass/app/_content.scss */
+/* line 33, ../sass/app/_content.scss */
 .page-header .page-title {
   float: left;
   margin: 25px 30px 0 0;
 }
-/* line 32, ../sass/app/_content.scss */
+/* line 37, ../sass/app/_content.scss */
 .page-header .page-title h2 {
   width: 100%;
 }
-/* line 37, ../sass/app/_content.scss */
+/* line 42, ../sass/app/_content.scss */
 .page-header .form_in_place input {
   width: 100%;
   font-size: 26px;
 }
-/* line 42, ../sass/app/_content.scss */
+/* line 47, ../sass/app/_content.scss */
 .page-header .button-wrap {
   margin-top: 20px;
 }

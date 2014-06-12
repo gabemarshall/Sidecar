@@ -73,6 +73,7 @@
 
 		<script type="text/javascript">
 		$('.account-navigation li, .notifications li').click(function() {
+			$('.dropdown').not( $(this).children('.dropdown') ).removeClass('visible');
 			$(this).children('.dropdown').toggleClass('visible');
 		});
 		</script>

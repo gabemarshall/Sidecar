@@ -69,73 +69,6 @@
 	}
 }
 
-/* List Constants
------------------------------------------------ */
-.moveable {
-	width: 1.5%;
-}
-
-/* Clients List
------------------------------------------------ */
-.client-company {
-	width: 35%;
-}
-
-.client-contact {
-	width: 25%;
-}
-
-.client-phone {
-	width: 14%;
-}
-
-.client-email {
-	width: 23%;
-}
-
-/* Task List
------------------------------------------------ */
-.task-name {
-	padding: 0 20px;
-	width: 60%;
-}
-
-.task-hours {
-	border-left: 1px solid #eaeaea;
-	width: 20%;
-}
-
-.task-due {
-	border-left: 1px solid #eaeaea;
-	width: 18%;
-}
-
-/* Project List
------------------------------------------------ */
-.completed {
-	width: 3%;
-}
-
-.due-date {
-	width: 10%;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.project-client {
-	width: 18%;
-}
-
-.project-hours {
-	width: 10%;
-}
-
-.project-name {
-	border-left: none !important;
-	width: 57%;
-}
-
 /* Leftover Selectors -- These need to be sorted through
 ----------------------------------------------- */
 .moveable {
@@ -144,30 +77,6 @@
 	padding: 14px 0 0 !important;
 	text-align: center;
 	width: 2%;
-}
-
-.completed {
-	width: 3%;
-}
-
-.due-date {
-	width: 10%;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.project-client {
-	width: 18%;
-}
-
-.project-hours {
-	width: 10%;
-}
-
-.project-name {
-	border-left: none !important;
-	width: 57%;
 }
 
 /* Dashboard

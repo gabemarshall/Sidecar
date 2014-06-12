@@ -12,11 +12,9 @@
 		border: 1px solid $purple;
 		color: #fff;
 		font-size: 15px;
-		padding: 12px 20px;
-
-		section {
-			border-left: none;
-		}
+		padding: 12px 0;
+		width: 100%;
+		list-style: none;
 	}
 
 	.module-body {
@@ -33,6 +31,12 @@
 		list-style: none;
 		border-left: 1px solid $light-gray-border;
 		border-right: 1px solid $light-gray-border;
+
+		.row {
+			margin-left: 0;
+			margin-right: 0;
+			padding: 6px 0;
+		}
 	}
 
 	.module-list-item {
@@ -67,20 +71,4 @@
 		border-top: none;
 		border-bottom: none;
 	}
-}
-
-/* Leftover Selectors -- These need to be sorted through
------------------------------------------------ */
-.moveable {
-	color: #aaa;
-	cursor: move;
-	padding: 14px 0 0 !important;
-	text-align: center;
-	width: 2%;
-}
-
-/* Dashboard
------------------------------------------------ */
-.billing-chart {
-	margin-left: -5px;
 }

@@ -2,7 +2,10 @@
 <html lang="en" ng-app="sidecar">
 	<head>
   		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+
   		<title>Sidecar</title>
+
   		<link rel="stylesheet" href="stylesheets/app.css"/>
 
   		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -10,8 +13,8 @@
 	<body>
 		<header id="masthead" class="site-header clear" role="banner">
 			<section class="header-left logo left">
-        		<img src="/img/logo.svg" />
-        	</section>
+        		<a href="/app"><img src="/img/logo.svg" /></a>
+        	</section><!-- .logo -->
 
         	<section class="toolbar">
         		<div class="container">
@@ -19,7 +22,7 @@
 						<form>
 							<input type="text" class="search" placeholder="Search...">
 						</form>
-					</section>
+					</section><!-- .searchbox -->
 
 		        	<nav class="account-navigation">
 						<ul class="account-primary clear">
@@ -32,7 +35,7 @@
 									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128275;"></span> <span class="dropdown-text">Logout</span></a></li>
 		        				</ul>
 							</li>
-						</ul>
+						</ul><!-- .account-primary -->
 					</nav><!-- .account-navigation -->
 
 					<section class="notifications">
@@ -49,9 +52,9 @@
 							<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#59168;"></span></li>
 							<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128101;"></span></li>
 						</ul>
-					</section>
-				</div>
-			</section>
+					</section><!-- .notifications -->
+				</div><!-- .container -->
+			</section><!-- .toolbar -->
     	</header><!-- END #masthead -->
 
 	   	<aside id="secondary" class="sidebar">
@@ -63,58 +66,13 @@
 		        <a ng-class="{active: $location.path() == '/documents'}" href="#/documents" id="documents">Documents</a>
 		        <a ng-class="{active: $location.path() == '/invoices'}" href="#/invoices" id="invoices">Invoices</a>
 		        <a ng-class="{active: $location.path() == '/reports'}" href="#/reports" id="reports">Reports</a>
-		    </nav>
-		</aside>
+		    </nav><!-- .site-navigation -->
+		</aside><!-- .sidebar -->
 
 		<%-body%>
 
 		<footer id="colophon" class="site-footer" role="contentinfo"></footer>
 		<!-- END #colophon -->
-
-		<script type="text/javascript">
-		$('.account-navigation li, .notifications li').click(function() {
-			$('.dropdown').not( $(this).children('.dropdown') ).removeClass('visible');
-			$(this).children('.dropdown').toggleClass('visible');
-		});
-		</script>
-
-		<script type="text/javascript">
-		$(window).scroll(function() {
-		    var scroll = $(window).scrollTop();
-
-		     //>=, not <=
-		    if (scroll >= 1) {
-		        //clearHeader, not clearheader - caps H
-		        $(".site-header").addClass("scrolled");
-		    } else {
-		        $(".site-header").removeClass('scrolled');
-		    }
-		}); //missing );
-		</script>
-
-		<script>
-			var lineChartData = {
-				labels : ["January","February","March","April","May","June","July"],
-				datasets : [
-					{
-						fillColor : "rgba(220,220,220,0.5)",
-						strokeColor : "rgba(220,220,220,1)",
-						pointColor : "rgba(220,220,220,1)",
-						pointStrokeColor : "#fff",
-						data : [65,59,90,81,56,55,40]
-					},
-					{
-						fillColor : "rgba(98,181,186,0.5)",
-						strokeColor : "rgba(98,181,186,1)",
-						pointColor : "rgba(98,181,186,1)",
-						pointStrokeColor : "#fff",
-						data : [28,48,40,19,96,27,100]
-					}
-				]
-			}
-
-		var myLine = new Chart(document.getElementById("billingChart").getContext("2d")).Line(lineChartData);
-		</script>
 
 		<script src="lib/angular/angular.min.js"></script>
 		<script src="lib/angular-route/angular-route.min.js"></script>
@@ -123,5 +81,6 @@
 		<script src="js/controllers.js"></script>
 		<script src="js/filters.js"></script>
 		<script src="js/directives.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

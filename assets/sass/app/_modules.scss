@@ -1,10 +1,7 @@
 /* Modules
 ----------------------------------------------- */
-.module-container {
-	clear: both;
-	width: 100%;
-}
 .module {
+
 	.module-header {
 		background: $purple;
 		border-top-left-radius: 3px;
@@ -29,34 +26,15 @@
 
 	.module-list {
 		list-style: none;
+		font-size: 15px;
 		border-left: 1px solid $light-gray-border;
 		border-right: 1px solid $light-gray-border;
 
 		.row {
+			border-bottom: 1px solid $light-gray-border;
 			margin-left: 0;
 			margin-right: 0;
-			padding: 6px 0;
-		}
-	}
-
-	.module-list-item {
-		background: #fff;
-		clear: both;
-		position: relative;
-		border-bottom: 1px solid $light-gray-border;
-		font-size: 14px;
-		color: #777;
-		height: 35px;
-
-		.icon {
-			font-size: 35px;
-			position: absolute;
-			top: -5px;
-		}
-
-		section {
-			padding: 9px 15px;
-			height: 100%;
+			padding: 10px 0;
 		}
 	}
 
@@ -71,4 +49,5 @@
 		border-top: none;
 		border-bottom: none;
 	}
-}
+
+} // end .module

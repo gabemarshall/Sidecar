@@ -129,12 +129,13 @@
 	margin-left: 200px;
 	border-bottom: 1px solid $gray-border;
 	height: 55px;
+
+	.container {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
 }
 
-.toolbar .container {
-	padding-left: 40px;
-	padding-right: 40px;
-}
 
 /* Notifications
 ----------------------------------------------- */

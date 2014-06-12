@@ -1,8 +1,16 @@
+/**
+ * Navigation dropdowns
+ *
+ * To do: close the dropdown when a menu item is clicked. Close the dropdown when the body/document is clicked.
+ */
 $('.account-navigation li, .notifications li').click(function() {
 	$('.dropdown').not( $(this).children('.dropdown') ).removeClass('visible');
 	$(this).children('.dropdown').toggleClass('visible');
 });
 
+/**
+ * Add shadow to header when the page scrolls
+ */
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
 
@@ -15,7 +23,9 @@ $(window).scroll(function() {
     }
 }); //missing );
 
-
+/**
+ * Demo chart for Dashboard page
+ */
 var lineChartData = {
 	labels : ["January","February","March","April","May","June","July"],
 	datasets : [

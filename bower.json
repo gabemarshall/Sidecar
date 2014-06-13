@@ -1,7 +1,0 @@
-{
-    "name": "Sidecar",
-    "dependencies": {
-        "angular": "latest",
-        "angular-route": "latest"
-    }
-}

@@ -13,6 +13,17 @@ module.exports = {
   	/* e.g.
   	nickname: 'string'
   	*/
+  	title: 'string',
+  	client: 'string',
+  	client_id: 'integer',
+  	due: 'datetime',
+  	progress: 'integer',
+  	tasks : {
+      collection: 'task',
+      via : 'project',
+      dominant : true
+    }
+
     
   }
 

@@ -9,7 +9,7 @@
 			</section>
 
 			<section class="button-wrap">
-				<button class="button button-green"><span class="add">+</span> Add Task</button>
+				<button class="button button-green" ng-click='toggleModal()'><span class="add">+</span> Add Task</button>
 				<button class="button button-gray"><span class="tag-task-icon icon" aria-hidden="true" data-icon="&#59148;"></span></button>
 				<button class="button button-gray"><span class="share-task-icon icon" aria-hidden="true" data-icon="&#59136;"></span></button>
 			</section>
@@ -24,13 +24,13 @@
 					Project Health
 				</header>
 				<section class="project-health">
-					<input type="text" value="75" data-width="180" data-thickness="0.125" data-fgColor="#428bca" class="dial">
-					<input type="text" value="45" data-width="180" data-thickness="0.125" data-fgColor="#428bca" class="dial">
+					<input type="text" value="75" data-width="180" data-thickness="0.125" data-fgColor="#428bca" data-readOnly=true class="dial">
+					<input type="text" value="45" data-width="180" data-thickness="0.125" data-fgColor="#428bca" data-readOnly=true class="dial">
 				</section>
 			</section>
 			<section class="module col-lg-6">
 				<header class="module-header clearfix">
-					Testing
+					Recent Activity
 				</header>
 				Test
 			</section>
@@ -87,3 +87,8 @@
 	</section>
 
 </main>
+
+<!-- modal test -->
+	<modal-dialog show='modalShown' width='750px' height='90%'>
+		<p>Modal Content Goes here<p>
+	</modal-dialog>

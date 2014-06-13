@@ -62,7 +62,7 @@
 		        <a ng-class="{active: $location.path() == '/'}" href="/app" id="dashboard">Dashboard</a>
 		        <a ng-class="{active: $location.path() == '/clients'}" href="#/clients" id="clients">Clients</a>
 		        <a ng-class="{active: $location.path() == '/leads'}" href="#/leads" id="leads">Leads</a>
-		        <a ng-class="{active: $location.path() == '/projects'}" href="#/projects" id="projects">Projects</a>
+		        <a ng-class="{active: $location.path() == '/projects' || '/tasks'}" href="#/projects" id="projects">Projects</a>
 		        <a ng-class="{active: $location.path() == '/documents'}" href="#/documents" id="documents">Documents</a>
 		        <a ng-class="{active: $location.path() == '/invoices'}" href="#/invoices" id="invoices">Invoices</a>
 		        <a ng-class="{active: $location.path() == '/reports'}" href="#/reports" id="reports">Reports</a>
@@ -74,7 +74,7 @@
 		<footer id="colophon" class="site-footer" role="contentinfo"></footer>
 		<!-- END #colophon -->
 
-		<script src="js/jquery.knob.js"></script>
+		<script src="lib/jquery.knob.js"></script>
 		<script src="lib/angular/angular.min.js"></script>
 		<script src="lib/angular-route/angular-route.min.js"></script>
 		<script src="js/app.js"></script>

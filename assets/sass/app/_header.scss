@@ -1,0 +1,249 @@
+/* Header
+----------------------------------------------- */
+.site-header {
+	background-color: #fff;
+	color: $dark-blue;
+	height: 55px;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	&.scrolled {
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.09);
+	}
+}
+
+/* Header
+----------------------------------------------- */
+.logo {
+	background-color: $green;
+	border-bottom: 1px solid $dark-blue;
+	height: 55px;
+	padding: 0;
+	width: 200px;
+
+	img {
+		height: auto;
+		width: 135px;
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+/* Account Dropdown
+----------------------------------------------- */
+.account-navigation {
+	display: block;
+	float: right;
+	font-size: 14px;
+
+	a {
+		color: #fff;
+		text-decoration: none;
+	}
+
+	ul li {
+		height: 55px;
+		padding: 21px 22px 0 50px;
+		color: #7a8ca2;
+	}
+
+	ul li:hover {
+		cursor: pointer;
+	}
+
+	ul li ul {
+		background: $light-gray;
+		border: 1px solid $gray-border;
+		border-top: none;
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+		color: #7a8ca2;
+		display: none;
+		margin-left: -50px;
+		min-width: 150px;
+		padding: 4px 0;
+		position: absolute;
+		top: 55px;
+		width: 100%;
+		z-index: 99999;
+	}
+
+	ul li ul a,
+	ul li ul a:visited {
+		color: #7a8ca2;
+	}
+
+	ul li ul.visible {
+		display: block;
+	}
+
+	ul li ul li {
+		clear: both;
+		padding: 5px 0 5px 18px;
+		height: 40px;
+		width: 100%;
+	}
+
+	ul li ul li:hover {
+		background: rgba(255,255,255,0.15);
+		box-shadow: none;
+	}
+
+	.menu-item {
+		position: relative;
+	}
+
+	.dropdown-icon {
+		font-size: 30px;
+		line-height: 0;
+		position: absolute;
+		float: right;
+		right: 2px;
+		margin-top: -9px;
+	}
+
+	.account-icon {
+		font-size: 24px;
+	}
+
+	.user-photo {
+		position: absolute;
+		left: 0;
+		top: 10px;
+
+		img {
+			margin: 0;
+			height: 35px;
+			border-radius: 50%;
+		}
+	}
+}
+
+.toolbar {
+	margin-left: 200px;
+	border-bottom: 1px solid $gray-border;
+	height: 55px;
+
+	.container {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+
+/* Notifications
+----------------------------------------------- */
+.notifications {
+	color: $blue-gray;
+	float: right;
+	font-size: 38px;
+	padding-right: 35px;
+	padding-top: 7px;
+
+	span {
+		margin: 0 6px;
+	}
+
+	ul {
+		float: left;
+		list-style: none;
+	}
+
+	li {
+		float: left;
+		cursor: pointer;
+		position: relative;
+	}
+
+	ul li ul {
+		background: #fff;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+		border: 1px solid $gray-border;
+		display: none;
+		font-size: 13px;
+		position: absolute;
+		top: 47px;
+		left: -50px;
+		width: 300px;
+	}
+
+	ul li ul li {
+		border-bottom: 1px dashed $gray-border;
+		clear: both;
+		cursor: default;
+		padding: 20px 10px 20px 55px;
+		position: relative;
+		width: 100%;
+	}
+
+	ul li ul li:nth-last-child(2) {
+		border-bottom: none;
+	}
+
+	ul li ul li.title,
+	ul li ul li.footer {
+		background: #f7f9fa;
+		border-bottom: none;
+		font-weight: bold;
+		padding: 12px 10px;
+		text-align: center;
+	}
+
+	ul li ul li.title {
+		border-bottom: 1px solid $gray-border;
+	}
+
+	ul li ul li.footer {
+		border-top: 1px solid $gray-border;
+	}
+
+	ul li ul.visible {
+		display: block;
+	}
+
+	ul li ul li img {
+		float: left;
+		position: absolute;
+		left: 10px;
+		top: 12px;
+		height: auto;
+		width: 30px;
+		border-radius: 50%;
+	}
+}
+
+/* Search
+----------------------------------------------- */
+.searchbox {
+	float: left;
+	margin: 0 auto;
+	padding: 9px 10px 0 0;
+	width: 300px;
+}
+
+.search {
+	background: url(../img/search-icon.png) center right 10px no-repeat;
+	background-size: 20px auto;
+	background-color: #fff;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	color: #7d888f;
+	float: left;
+	font-size: 13px;
+	height: 34px;
+	margin: 0 auto;
+	padding: 5px 10px;
+	width: 250px;
+
+	&:focus {
+		@include transition(border, 0.25s);
+		border: 1px solid $green;
+	}
+}

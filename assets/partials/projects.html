@@ -9,7 +9,7 @@
 			</section>
 
 			<section class="button-wrap">
-				<button class="button button-green"><span class="add">+</span> Create New</button>
+				<button class="button button-green" ng-click='toggleModal()'><span class="add">+</span> Create New</button>
 			</section><!-- .button-wrap -->
 		</div><!-- .container -->
 	</header><!-- .page-header -->
@@ -78,3 +78,8 @@
 	</section><!-- .container -->
 
 </main><!-- .content -->
+
+<!-- modal test -->
+<modal-dialog show='modalShown' width='750px' height='400px'>
+	<p>Yay! This is the create new projects modal!<p>
+</modal-dialog>

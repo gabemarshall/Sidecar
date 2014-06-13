@@ -23,8 +23,7 @@
 			border: 1px solid $light-gray-border;
 			margin: 0 0 25px;
 			min-height: 120px;
-			overflow: hidden;
-			padding: 20px 0;
+			padding: 20px;
 		}
 
 		.module-list {
@@ -62,11 +61,8 @@
 /* Project Health
 ----------------------------------------------- */
 .project-health {
-	background: #fff;
-	padding: 20px;
-
 	div {
-		margin: 0 20px;
+		margin: 0 15px;
 	}
 }
 

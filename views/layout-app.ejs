@@ -31,7 +31,7 @@
 		  						<span aria-hidden="true" class="dropdown-icon icon" data-icon="&#9662;"></span>
 								<ul class="dropdown">
 									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128319;"></span> <span class="dropdown-text">Support</span></a></li>
-									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#9881;"></span> <span class="dropdown-text">Settings</span></a></li>
+									<li class="sub-menu-item"><a href="#/settings"><span class="account-icon icon" aria-hidden="true" data-icon="&#9881;"></span> <span class="dropdown-text">Settings</span></a></li>
 									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128275;"></span> <span class="dropdown-text">Logout</span></a></li>
 		        				</ul>
 							</li>
@@ -62,7 +62,7 @@
 		        <a ng-class="{active: $location.path() == '/'}" href="/app" id="dashboard">Dashboard</a>
 		        <a ng-class="{active: $location.path() == '/clients'}" href="#/clients" id="clients">Clients</a>
 		        <a ng-class="{active: $location.path() == '/leads'}" href="#/leads" id="leads">Leads</a>
-		        <a ng-class="{active: $location.path() == '/projects' || '/tasks'}" href="#/projects" id="projects">Projects</a>
+		        <a ng-class="{active: $location.path() == '/projects'}" href="#/projects" id="projects">Projects</a>
 		        <a ng-class="{active: $location.path() == '/documents'}" href="#/documents" id="documents">Documents</a>
 		        <a ng-class="{active: $location.path() == '/invoices'}" href="#/invoices" id="invoices">Invoices</a>
 		        <a ng-class="{active: $location.path() == '/reports'}" href="#/reports" id="reports">Reports</a>

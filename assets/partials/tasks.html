@@ -9,9 +9,9 @@
 			</section>
 
 			<section class="button-wrap">
-				<button class="button button-green" ng-click='toggleModal()'><span class="add">+</span> Add Task</button>
 				<button class="button button-gray"><span class="tag-task-icon icon" aria-hidden="true" data-icon="&#59148;"></span></button>
 				<button class="button button-gray"><span class="share-task-icon icon" aria-hidden="true" data-icon="&#59136;"></span></button>
+				<button class="button button-green" ng-click='toggleModal()'><span class="add">+</span> Add Task</button>
 			</section>
 		</div>
 	</header>
@@ -23,16 +23,26 @@
 				<header class="module-header clearfix">
 					Project Health
 				</header>
-				<section class="project-health">
+				<section class="module-body project-health">
 					<input type="text" value="75" data-width="180" data-thickness="0.125" data-fgColor="#428bca" data-readOnly=true class="dial">
 					<input type="text" value="45" data-width="180" data-thickness="0.125" data-fgColor="#428bca" data-readOnly=true class="dial">
+					<div class="project-breakdown">
+						Hours & Costs
+						Budget
+						Amount left
+					</div>
+					<div class="project-diagnosis">
+						Your project is healthy, you're ahead!
+					</div>
 				</section>
 			</section>
 			<section class="module col-lg-6">
 				<header class="module-header clearfix">
 					Recent Activity
 				</header>
-				Test
+				<section class="module-body">
+					Testing
+				</section>
 			</section>
 		</div>
 	</section>
@@ -89,6 +99,6 @@
 </main>
 
 <!-- modal test -->
-	<modal-dialog show='modalShown' width='750px' height='90%'>
-		<p>Modal Content Goes here<p>
-	</modal-dialog>
+<modal-dialog show='modalShown' width='750px' height='400px'>
+	<p>Yay! This is the create new tasks modal!<p>
+</modal-dialog>

@@ -25,7 +25,7 @@ $(window).scroll(function() {
 
 /**
  * Demo chart for Dashboard page
- */
+
 var lineChartData = {
 	labels : ["January","February","March","April","May","June","July"],
 	datasets : [
@@ -47,3 +47,4 @@ var lineChartData = {
 }
 
 var myLine = new Chart(document.getElementById("billingChart").getContext("2d")).Line(lineChartData);
+*/

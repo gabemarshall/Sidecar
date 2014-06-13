@@ -1,54 +1,73 @@
 /* Modules
 ----------------------------------------------- */
-.module {
+.module-container {
+	margin-bottom: 40px;
 
-	.module-header {
-		background: $purple;
-		border-top-left-radius: 3px;
-		border-top-right-radius: 3px;
-		border: 1px solid $purple;
-		color: #fff;
-		font-size: 15px;
-		list-style: none;
-		padding: 12px 0;
-		width: 100%;
-	}
+	.module {
 
-	.module-body {
-		background: #fff;
-		border-top: none;
-		border: 1px solid $light-gray-border;
-		margin: 0 0 25px;
-		min-height: 120px;
-		overflow: hidden;
-		padding: 20px 0;
-	}
-
-	.module-list {
-		background: #fff;
-		border-left: 1px solid $light-gray-border;
-		border-right: 1px solid $light-gray-border;
-		font-size: 15px;
-		list-style: none;
-
-		.row {
-			border-bottom: 1px solid $light-gray-border;
-			margin-left: 0;
-			margin-right: 0;
-			padding: 10px 0;
+		.module-header {
+			background: $purple;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+			border: 1px solid $purple;
+			color: #fff;
+			font-size: 15px;
+			list-style: none;
+			padding: 12px 0;
+			width: 100%;
 		}
-	}
 
-	.no-padding {
-		padding: 0;
-	}
+		.module-body {
+			background: #fff;
+			border-top: none;
+			border: 1px solid $light-gray-border;
+			margin: 0 0 25px;
+			min-height: 120px;
+			overflow: hidden;
+			padding: 20px 0;
+		}
 
-	.no-border {
-		border: none;
-		border-left: none;
-		border-right: none;
-		border-top: none;
-		border-bottom: none;
-	}
+		.module-list {
+			background: #fff;
+			border-left: 1px solid $light-gray-border;
+			border-right: 1px solid $light-gray-border;
+			font-size: 15px;
+			list-style: none;
 
-} // end .module
+			.row {
+				border-bottom: 1px solid $light-gray-border;
+				margin-left: 0;
+				margin-right: 0;
+				padding: 10px 0;
+			}
+		}
+
+		.no-padding {
+			padding: 0;
+		}
+
+		.no-border {
+			border: none;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+			border-bottom: none;
+		}
+
+	} // end .module
+
+} // end .module-container
+
+
+/* Project Health
+----------------------------------------------- */
+.project-health {
+	background: #fff;
+	padding: 20px;
+
+	div {
+		margin: 0 20px;
+	}
+}
+
+

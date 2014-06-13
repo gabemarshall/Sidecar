@@ -7,4 +7,9 @@ angular.module('sidecar.directives', []).
 		return function(scope, elm, attrs) {
 			elm.text(version);
 		};
-	}]);
+	}])
+	.directive('radialProgress', function() {
+  		return function(scope, element) {
+    		$('.dial').knob();
+   		};
+  	});

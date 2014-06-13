@@ -9,6 +9,9 @@ angular.module('sidecar.controllers', [])
 	.controller('Project', ['$scope', function ($scope) {
 
 	}])
+	.controller('Tasks', ['$scope', function ($scope) {
+		$('.dial').knob();
+	}])
 	.controller('Dashboard', ['$scope', function ($scope) {
 
 	}]);

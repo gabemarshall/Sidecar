@@ -8,9 +8,10 @@
 	@include prefixer(border-radius, 2px, webkit moz o ms spec);
 	border: none;
 	cursor: pointer;
-	font-family: 'Raleway', Helvetica, Arial, sans-serif;
-	font-size: 15px;
-	padding: 9px 20px 8px 15px;
+	font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	padding: 10px 18px 11px 14px;
 	position: relative;
 
 	.icon {
@@ -23,9 +24,9 @@
 		color: rgba(0,0,0,0.25);
 		display: inline-block;
 		float: left;
-		font-size: 30px;
+		font-size: 20px;
 		font-weight: 600;
-		line-height: 20px;
+		line-height: 15px;
 		margin-right: 8px;
 		margin-top: 0px;
 	}
@@ -39,7 +40,7 @@
 }
 
 .button-green:hover {
-	background: $dark-green;
+	background: #82cace;
 }
 
 /* Purple */

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Sidecar</title>
+		<link rel="stylesheet" href="stylesheets/public.css"/>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container">
+				<section class="navbar-header">
+			      	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+			        	<span class="sr-only">Toggle navigation</span>
+			        	<span class="icon-bar"></span>
+			        	<span class="icon-bar"></span>
+			        	<span class="icon-bar"></span>
+			      	</button><!-- .navbar-toggle -->
+
+			      	<a href="/" class="navbar-brand site-logo">Mockingbird</a>
+			    </section><!-- .navbar-header -->
+
+			    <nav class="site-navigation collapse navbar-collapse bs-navbar-collapse" role="navigation">
+					<ul class="nav navbar-nav">
+			      		<li><a href="/about">About</a></li>
+						<li><a href="/features">Features</a></li>
+						<li><a href="/pricing">Pricing</a></li>
+			    	</ul><!-- .navbar-nav -->
+
+			    	<ul class="nav navbar-nav navbar-right">
+			       		<li><a href="/login">Login</a></li>
+						<li><a href="/register" class="sign-up">Sign Up</a></li>
+			      	</ul><!-- .navbar-right -->
+			    </nav><!-- .site-navigation -->
+			</div><!-- .container -->
+		</header><!-- #masthead -->
+
+		<%-body%>
+
+  		<footer id="footer" class="site-footer" role="contentinfo">
+			<section class="call-to-action">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1">
+							<h2>Start your 14-day free trial. No credit card required.</h2>
+							<button onclick="window.location.href='/wordpress-themes/'">Try It Free</button>
+						</div><!-- .col-md-10 -->
+					</div><!-- .row -->
+				</div><!-- .container -->
+			</section><!-- .call-to-action -->
+
+			<section class="footer-widgets container">
+				<div class="row">
+					<div class="footer-menu col-sm-6 col-md-2">
+						<h4>Mockingbird</h4>
+						<a href="/blog/">Blog</a>
+						<a href="/terms-and-conditions/">Terms</a>
+						<a href="/privacy-policy/">Privacy</a>
+						<a href="/contact/">Contact</a>
+					</div><!-- END .footer-page-links -->
+
+					<div class="footer-menu col-sm-6 col-md-2">
+						<h4>Resources</h4>
+						<a href="/faq/">FAQ</a>
+						<a href="/members/support/">Support</a>
+						<a href="/documentation/">Documentation</a>
+						<a href="/customization/">Customization</a>
+					</div><!-- .footer-menu -->
+
+					<div class="footer-menu col-sm-6 col-md-2">
+						<h4>Connect</h4>
+						<a href="http://www.facebook.com/lucidtheme">Facebook</a>
+						<a href="http://www.twitter.com/lucidtheme">Twitter</a>
+						<a href="http://www.dribbble.com/jonbellah">Dribbble</a>
+						<a href="https://plus.google.com/u/0/b/109519524403638447192/109519524403638447192/posts">Google+</a>
+					</div>
+
+					<div class="footer-menu footer-subscribe col-sm-6 col-md-5 col-md-offset-1">
+						<h4>Subscribe</h4>
+						<p>Stay up-to-date on all the new theme releases and get special discounts delivered right to your inbox. No spam. Ever.</p>
+
+						<form action="http://jonbellah.us4.list-manage1.com/subscribe/post?u=cd903cc3fde462d23ad126e77&id=71b25b294a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+							<div id="mce-responses">
+								<div class="response" id="mce-error-response" style="display:none"></div>
+								<div class="response" id="mce-success-response" style="display:none"></div>
+							</div>
+
+							<div class="mc-field-group">
+								<input type="email" value="" name="EMAIL" placeholder="Email Address..." class="required email" id="mce-EMAIL">
+								<button type="submit" id="mc-embedded-subscribe" class="button">Subscribe</button>
+							</div>
+						</form>
+					</div><!-- .footer-menu -->
+				</div><!-- .row -->
+			</section><!-- .container -->
+
+			<div class="copyright">
+				<div class="container">
+					&copy; 2014 Sidecar. All rights reserved.
+				</div><!-- .container -->
+			</div><!-- END .copyright -->
+		</footer><!-- #colophon .site-footer -->
+
+	<script src="js/lib/jquery.liquidslider.min.js"></script>
+	<script src="js/lib/jquery.touchswipe.min.js"></script>
+	<script src="js/lib/jquery.easing.js"></script>
+
+	<script>
+	$(function() {
+		if(window.location.href == "/") {
+	  		$('body').addClass('home');
+	  	}
+	});
+	$(function() {
+		$('.liquid-slider').liquidSlider({
+			autoHeight: false,
+			autoSlide: true,
+	        autoSlideInterval: 5000,
+	        slideEaseDuration: 1000,
+	        slideEaseFunction: 'easeInOutExpo',
+	        autoSlideStopWhenClicked: false,
+	        autoSlidePauseOnHover: true,
+	        dynamicTabs: true,
+	        hashLinking:true,
+	  		crossLinks:true,
+	        responsive: true,
+		});
+	});
+	</script>
+
+	<script>
+	$(function() {
+		$( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+		$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+	});
+	</script>
+</body>
+</html>

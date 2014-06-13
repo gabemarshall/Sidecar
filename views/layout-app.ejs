@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" ng-app="sidecar">
+	<head>
+  		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  		<title>Sidecar</title>
+
+  		<link rel="stylesheet" href="stylesheets/app.css"/>
+
+  		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<header id="masthead" class="site-header clear" role="banner">
+			<section class="header-left logo left">
+        		<a href="/app"><img src="/img/logo.svg" /></a>
+        	</section><!-- .logo -->
+
+        	<section class="toolbar">
+        		<div class="container">
+	        		<section class="searchbox">
+						<form>
+							<input type="text" class="search" placeholder="Search...">
+						</form>
+					</section><!-- .searchbox -->
+
+		        	<nav class="account-navigation">
+						<ul class="account-primary clear">
+							<li class="menu-item">
+								<div class="user-photo"><img src="img/avatar.png" /></div> Welcome, User!
+		  						<span aria-hidden="true" class="dropdown-icon icon" data-icon="&#9662;"></span>
+								<ul class="dropdown">
+									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128319;"></span> <span class="dropdown-text">Support</span></a></li>
+									<li class="sub-menu-item"><a href="#/settings"><span class="account-icon icon" aria-hidden="true" data-icon="&#9881;"></span> <span class="dropdown-text">Settings</span></a></li>
+									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128275;"></span> <span class="dropdown-text">Logout</span></a></li>
+		        				</ul>
+							</li>
+						</ul><!-- .account-primary -->
+					</nav><!-- .account-navigation -->
+
+					<section class="notifications">
+						<ul>
+							<li class="notification-icon"><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128276;"></span>
+								<ul class="dropdown">
+									<li class="title">Notifications</li>
+									<li><img src="img/avatar3.png" /> Gabe sent you a message</li>
+									<li><img src="img/avatar2.png" /> Brenna shared a document with you</li>
+									<li>Justin assigned you a task.</li>
+									<li class="footer">See all notifications</li>
+								</ul>
+							</li>
+							<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#59168;"></span></li>
+							<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128101;"></span></li>
+						</ul>
+					</section><!-- .notifications -->
+				</div><!-- .container -->
+			</section><!-- .toolbar -->
+    	</header><!-- END #masthead -->
+
+	   	<aside id="secondary" class="sidebar">
+			<nav id="nav" class="site-navigation" ng-controller="Nav">
+		        <a ng-class="{active: $location.path() == '/'}" href="/app" id="dashboard">Dashboard</a>
+		        <a ng-class="{active: $location.path() == '/clients'}" href="#/clients" id="clients">Clients</a>
+		        <a ng-class="{active: $location.path() == '/leads'}" href="#/leads" id="leads">Leads</a>
+		        <a ng-class="{active: $location.path() == '/projects'}" href="#/projects" id="projects">Projects</a>
+		        <a ng-class="{active: $location.path() == '/documents'}" href="#/documents" id="documents">Documents</a>
+		        <a ng-class="{active: $location.path() == '/invoices'}" href="#/invoices" id="invoices">Invoices</a>
+		        <a ng-class="{active: $location.path() == '/reports'}" href="#/reports" id="reports">Reports</a>
+		    </nav><!-- .site-navigation -->
+		</aside><!-- .sidebar -->
+
+		<%-body%>
+
+		<footer id="colophon" class="site-footer" role="contentinfo"></footer>
+		<!-- END #colophon -->
+
+		<script src="lib/jquery.knob.js"></script>
+		<script src="lib/angular/angular.min.js"></script>
+		<script src="lib/angular-route/angular-route.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/services.js"></script>
+		<script src="js/controllers.js"></script>
+		<script src="js/filters.js"></script>
+		<script src="js/directives.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

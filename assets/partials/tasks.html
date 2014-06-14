@@ -13,18 +13,16 @@
 				<button class="button button-green" ng-click='toggleModal()'><span class="add">+</span> Add Task</button>
 			</section>
 		</div>
-		<div class="container">
-			<ul class="header-menu">
-				<li><a ng-modal="template" ng-href="{{template[0]}}" class="selected">Overview</a></li>
-				<li><a ng-modal="template" ng-href="{{template[1]}}">Tasks</a></li>
-				<li><a href>Discussion</a></li>
-				<li><a href>Files</a></li>
-				<li><a href>Settings</a></li>
-			</ul>
 
-			<select ng-model="template" ng-options="t.name for t in templates">
-			   <option value="">(blank)</option>
-			  </select>
+		<div class="container">
+			<ul class="header-menu" sub-nav>
+				<li><a href ng-click="loadOverview()" class="selected">Overview</a></li>
+				<li><a href ng-click="loadTasks()">Tasks</a></li>
+				<li><a href ng-click="loadDiscussion()">Discussion</a></li>
+				<li><a href ng-click="loadFiles()">Files</a></li>
+				<li><a href ng-click="loadTeam()">Team</a></li>
+				<li><a href ng-click="loadSettings()">Settings</a></li>
+			</ul>
 		</div>
 	</header>
 

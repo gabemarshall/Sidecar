@@ -8,6 +8,7 @@ angular.module('sidecar.directives', []).
 			elm.text(version);
 		};
 	}])
+
 	.directive('modalDialog', function() {
 	  return {
 	    restrict: 'E',
@@ -28,4 +29,21 @@ angular.module('sidecar.directives', []).
 	    },
 	    templateUrl: 'partials/modal.html' // See below
 	  };
+	})
+
+	.directive('subNav', function () {
+		return {
+			restrict: 'A',
+
+			link: function (scope, element) {
+				var $anchor = element.find('a');
+
+				$anchor.on('click', function () {
+					var $this = $(this);
+
+					$anchor.removeClass('selected');
+					$this.addClass('selected');
+				})
+			}
+		}
 	});

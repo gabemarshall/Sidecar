@@ -22,19 +22,19 @@
 /* Page Header
 ----------------------------------------------- */
 .page-header {
+	background-color: #fff;
 	clear: both;
 	color: #3a4257;
 	border-bottom: 1px solid $gray-border;
-	padding-bottom: 16px;
 	max-width: 100%;
 	margin-bottom: 30px;
-	height: 70px;
 
 	.page-title {
 		float: left;
-		margin: 25px 30px 0 0;
+		margin: 35px 30px 40px 0;
 
 		h2 {
+			margin-bottom: 8px;
 			width: 100%;
 		}
 	}
@@ -45,7 +45,35 @@
 	}
 
 	.button-wrap {
-		margin-top: 20px;
+		margin-top: 50px;
+	}
+
+	.header-menu {
+		float: left;
+		list-style: none;
+		margin-left: -20px;
+
+		li {
+			float: left;
+			margin: 0 20px;
+		}
+
+		a {
+			color: $blue-gray;
+			display: block;
+			font-size: 13px;
+			font-weight: 800;
+			padding-bottom: 16px;
+			text-transform: uppercase;
+		}
+
+		a:hover {
+			text-decoration: none;
+		}
+
+		.selected {
+			border-bottom: 2px solid #428bca;
+		}
 	}
 }
 

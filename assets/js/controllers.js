@@ -23,8 +23,12 @@ angular.module('sidecar.controllers', [])
     		$scope.modalShown = !$scope.modalShown;
   		};
 
-  		// Set default tab to the project overview
-  		$scope.selected=1;
+  		// Templates
+  		$scope.templates = [
+  			{ name: 'Overview', url: 'partials/project/overview.html' },
+  			{ name: 'Tasks', url: 'partials/project/tasks.html' }
+  		];
+  		$scope.template = $scope.templates[0];
 	}])
 	.controller('Dashboard', ['$scope', function ($scope) {
 

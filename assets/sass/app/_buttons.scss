@@ -37,10 +37,10 @@
 	@include transition(all 0.25s linear);
 	background: $green;
 	color: #fff;
-}
 
-.button-green:hover {
-	background: #82cace;
+	:hover {
+		background: #82cace;
+	}
 }
 
 /* Purple */

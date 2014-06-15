@@ -38,6 +38,16 @@
 				margin-left: 0;
 				margin-right: 0;
 				padding: 10px 0;
+				color: #000;
+			}
+
+			a.row {
+				display: block;
+				@include transition(background, 0.1s);
+
+				&:hover {
+					background: $light-gray-border;
+				}
 			}
 		}
 

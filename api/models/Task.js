@@ -11,7 +11,9 @@ module.exports = {
   attributes: {
   	
   	title: 'string',
-  	project_id: 'integer'
+  	project: {
+  		model: 'project'
+  	}
     
   }
 

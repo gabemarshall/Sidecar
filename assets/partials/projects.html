@@ -12,6 +12,15 @@
 				<button class="button button-green" ng-click='toggleModal()'><span class="add">+</span> Create New</button>
 			</section><!-- .button-wrap -->
 		</div><!-- .container -->
+
+		<div class="container">
+			<ul class="header-menu" sub-nav>
+				<li><a href ng-click="loadOverview()" class="selected">All</a></li>
+				<li><a href ng-click="loadTasks()">Active</a></li>
+				<li><a href ng-click="loadDiscussion()">Completed</a></li>
+				<li><a href ng-click="loadFiles()">Settings</a></li>
+			</ul>
+		</div>
 	</header><!-- .page-header -->
 
 	<!-- PROJECTS LIST -->

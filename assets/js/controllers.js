@@ -1,7 +1,6 @@
 'use strict';
 
 /* Controllers */
-
 angular.module('sidecar.controllers', [])
 	.controller('Nav', ['$scope', '$location', function ($scope, $location) {
 		$scope.$location = $location;
@@ -14,7 +13,6 @@ angular.module('sidecar.controllers', [])
   		};
 	}])
 	.controller('Tasks', ['$scope', function ($scope) {
-		// jQuery Knobs for Project Health radial progress bars
 		$('.dial').knob();
 
 		// Modal controller

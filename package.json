@@ -4,10 +4,10 @@
     "version": "0.0.0",
     "description": "a Sails application",
     "dependencies": {
-        "sails": "0.9.16",
+        "sails": "0.10.x",
         "grunt": "0.4.1",
         "grunt-contrib-sass": "~0.7.3",
-        "sails-disk": "~0.9.0",
+        "sails-disk": "0.10.x",
         "ejs": "0.8.4",
         "optimist": "0.3.4"
     },

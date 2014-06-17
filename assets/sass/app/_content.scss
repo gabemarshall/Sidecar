@@ -59,7 +59,7 @@
 		}
 
 		a {
-			color: $blue-gray;
+			color: $charcoal;
 			display: block;
 			font-size: 13px;
 			font-weight: 800;
@@ -72,7 +72,7 @@
 		}
 
 		.selected {
-			border-bottom: 2px solid #428bca;
+			border-bottom: 2px solid $green;
 		}
 	}
 }

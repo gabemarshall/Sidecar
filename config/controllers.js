@@ -132,7 +132,7 @@ module.exports.controllers = {
      * PUT    /foos/:id?
      * DELETE /foos/:id?
      */
-    pluralize: false
+    pluralize: true
 
   },
 
@@ -167,3 +167,5 @@ module.exports.controllers = {
   expectIntegerId: false
 
 };
+
+module.exports.controllers.blueprints.rest = false

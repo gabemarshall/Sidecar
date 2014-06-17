@@ -82,7 +82,7 @@ module.exports.controllers = {
      *
      * `rest` blueprints are enabled by default, and suitable for a production scenario.
      */
-    rest: true,
+    rest: false,
 
 
     /**
@@ -94,7 +94,7 @@ module.exports.controllers = {
      *
      * `shortcuts` are enabled by default, but SHOULD BE DISABLED IN PRODUCTION!!!!!
      */
-    shortcuts: true,
+    shortcuts: false,
 
 
 
@@ -132,7 +132,7 @@ module.exports.controllers = {
      * PUT    /foos/:id?
      * DELETE /foos/:id?
      */
-    pluralize: true
+    pluralize: false
 
   },
 
@@ -167,5 +167,3 @@ module.exports.controllers = {
   expectIntegerId: false
 
 };
-
-module.exports.controllers.blueprints.rest = false

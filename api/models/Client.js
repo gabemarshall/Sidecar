@@ -14,7 +14,11 @@ module.exports = {
   	location: 'string',
   	email: 'string',
   	avatar: 'string',
-  	project_id: 'integer'
+    projects: {
+      collection: 'project',
+      via: 'client',
+      dominant: true
+    }
     
   }
 

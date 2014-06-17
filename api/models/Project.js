@@ -22,6 +22,9 @@ module.exports = {
       collection: 'task',
       via : 'project',
       dominant : true
+    },
+    client: {
+      model: 'client'
     }
 
     

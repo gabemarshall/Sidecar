@@ -11,7 +11,6 @@ module.exports = {
   attributes: {
   	
   	title: 'string',
-  	completed: false,
   	project: {
   		model: 'project'
   	}

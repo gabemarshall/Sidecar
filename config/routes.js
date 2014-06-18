@@ -81,7 +81,21 @@ module.exports.routes = {
 
 
 // ############ Custom Routes for Tasks ############
-  'post /tasks/create': 'TaskController.create'
+
+// ##### Create #####
+  'post /tasks/create': 'TaskController.create',
+
+// ##### Read #####
+  'get /tasks/:id?': 'TaskController.find',
+
+// ##### Update #####
+  'post /tasks/update/:id?': 'TaskController.update',
+  'put /tasks/:id?': 'TaskController.update',
+
+// ##### Delete #####
+  
+  'post /tasks/delete/:id?': 'TaskController.delete',
+  'delete /tasks/:id?': 'TaskController.delete',
 
   /*
   // But what if you want your home page to display

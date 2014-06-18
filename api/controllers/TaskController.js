@@ -5,19 +5,20 @@ module.exports = {
 
         var params = req.params.all();
 
-        Task.create(params, function(err, sleep) {
+        console.log(params)
+
+        Task.create(params, function(err, task) {
 
             if (err) return next(err);
 
             res.status(201);
 
-            res.json(sleep);
+            res.json(task);
+            console.log(task)
 
         });
 
-        if (params.client) {
-            console.log(params.client)
-        }
+
         // console.log(params)
     },
 

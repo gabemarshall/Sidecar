@@ -32,17 +32,15 @@ module.exports = {
         }
 
         if (id) {
-
-            Project.findOne(id, function(err, project) {
-
+            
+            Project.findOne(id).populate('tasks').exec(function(err, project){
                 if (project === undefined) return res.notFound();
 
                 if (err) return next(err);
+                res.json(project)
+            })
 
-                res.json(project);
-
-            });
-
+        
         } else {
 
             var where = req.param('where');

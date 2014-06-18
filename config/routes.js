@@ -61,8 +61,27 @@ module.exports.routes = {
     action: 'index'
   },
 
+// ############ Custom Routes for Projects ############
 
-  'post /projects/create': 'ProjectController.create'
+// ##### Create #####
+  'post /projects/create': 'ProjectController.create',
+
+// ##### Read #####
+  'get /projects/:id?': 'ProjectController.find',
+
+// ##### Update #####
+  'post /projects/update/:id?': 'ProjectController.update',
+  'put /projects/:id?': 'ProjectController.update',
+
+// ##### Delete #####
+  
+  'post /projects/delete/:id?': 'ProjectController.delete',
+  'delete /projects/:id?': 'ProjectController.delete',
+
+
+
+// ############ Custom Routes for Tasks ############
+  'post /tasks/create': 'TaskController.create'
 
   /*
   // But what if you want your home page to display

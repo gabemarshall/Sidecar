@@ -17,7 +17,21 @@
 
 module.exports = {
     
-  
+create: function(req, res, next) {
+
+    var params = req.params.all();
+
+    Task.create(params, function(err, task) {
+
+        if (err) return next(err);
+
+        res.status(201);
+
+        res.json(task);
+
+    });
+},
+
 
 
   /**

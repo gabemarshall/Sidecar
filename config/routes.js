@@ -59,7 +59,10 @@ module.exports.routes = {
   '/app': {
     controller: 'route',
     action: 'index'
-  }
+  },
+
+
+  'post /projects/create': 'ProjectController.create'
 
   /*
   // But what if you want your home page to display

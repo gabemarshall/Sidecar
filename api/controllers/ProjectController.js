@@ -18,7 +18,25 @@
 module.exports = {
     
   
+create: function(req, res, next) {
 
+    var params = req.params.all();
+
+    Project.create(params, function(err, sleep) {
+
+        if (err) return next(err);
+
+        res.status(201);
+
+        res.json(sleep);
+
+    });
+
+    if (params.client){
+    	console.log(params.client)
+    }
+   // console.log(params)
+},
 
   /**
    * Overrides for the settings in `config/controllers.js`

@@ -12,6 +12,13 @@ angular.module('sidecar.controllers', [])
     		$scope.modalShown = !$scope.modalShown;
   		};
 	}])
+  .controller('Clients', ['$scope', function ($scope) {
+    // Modal controller
+    $scope.modalShown = false;
+      $scope.toggleModal = function() {
+        $scope.modalShown = !$scope.modalShown;
+      };
+  }])
 	.controller('Tasks', ['$scope', function ($scope) {
 		$('.dial').knob();
 

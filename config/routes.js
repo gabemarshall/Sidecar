@@ -97,6 +97,24 @@ module.exports.routes = {
   'post /tasks/delete/:id?': 'TaskController.delete',
   'delete /tasks/:id?': 'TaskController.delete',
 
+
+// ############ Custom Routes for Clients ############
+
+// ##### Create #####
+  'post /clients/create': 'ClientController.create',
+
+// ##### Read #####
+  'get /clients/:id?': 'ClientController.find',
+
+// ##### Update #####
+  'post /clients/update/:id?': 'ClientController.update',
+  'put /clients/:id?': 'ClientController.update',
+
+// ##### Delete #####
+  
+  'post /clients/delete/:id?': 'ClientController.delete',
+  'delete /clients/:id?': 'ClientController.delete',
+
   /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?

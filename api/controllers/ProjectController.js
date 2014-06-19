@@ -77,8 +77,7 @@ module.exports = {
     },
 
     update: function(req, res, next) {
-        console.log("hmm")
-
+        
         var criteria = {};
 
         criteria = _.merge({}, req.params.all(), req.body);
@@ -86,7 +85,7 @@ module.exports = {
         var id = req.param('id');
 
         if (!id) {
-            return res.badRequest('No id provided.');
+            return res.badRequest('No id found.');
         }
 
         Project.update(id, criteria, function(err, project) {
@@ -105,7 +104,7 @@ module.exports = {
         var id = req.param('id');
 
         if (!id) {
-            return res.badRequest('No id provided.');
+            return res.badRequest('No id found.');
         }
 
         Project.findOne(id).exec(function(err, result) {

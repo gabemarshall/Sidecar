@@ -80,8 +80,7 @@ module.exports = {
     },
 
     update: function(req, res, next) {
-        console.log("hmm")
-
+        
         var criteria = {};
 
         criteria = _.merge({}, req.params.all(), req.body);
@@ -89,7 +88,7 @@ module.exports = {
         var id = req.param('id');
 
         if (!id) {
-            return res.badRequest('No id provided.');
+            return res.badRequest('No id found.');
         }
 
         Task.update(id, criteria, function(err, task) {
@@ -108,7 +107,7 @@ module.exports = {
         var id = req.param('id');
 
         if (!id) {
-            return res.badRequest('No id provided.');
+            return res.badRequest('No id found.');
         }
 
         Task.findOne(id).exec(function(err, result) {

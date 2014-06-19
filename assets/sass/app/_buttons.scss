@@ -32,6 +32,10 @@
 	}
 }
 
+.button-small {
+	padding: 6px 10px 7px;
+}
+
 /* Green */
 .button-green {
 	@include transition(all 0.25s linear);

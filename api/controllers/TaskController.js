@@ -18,8 +18,6 @@ module.exports = {
 
         });
 
-
-        // console.log(params)
     },
 
     find: function(req, res, next) {

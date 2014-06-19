@@ -5,13 +5,13 @@ module.exports = {
 
         var params = req.params.all();
 
-        Client.create(params, function(err, sleep) {
+        Client.create(params, function(err, client) {
 
             if (err) return next(err);
 
             res.status(201);
 
-            res.json(sleep);
+            res.json(client);
 
         });
 

@@ -5,20 +5,15 @@ module.exports = {
 
         var params = req.params.all();
 
-        Project.create(params, function(err, sleep) {
+        Project.create(params, function(err, project) {
 
             if (err) return next(err);
 
             res.status(201);
 
-            res.json(sleep);
+            res.json(project);
 
         });
-
-        if (params.client) {
-            console.log(params.client)
-        }
-        // console.log(params)
     },
 
     find: function(req, res, next) {

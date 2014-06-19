@@ -115,6 +115,44 @@ module.exports.routes = {
   'post /clients/delete/:id?': 'ClientController.delete',
   'delete /clients/:id?': 'ClientController.delete',
 
+
+
+
+// ############ Custom Routes for Teams ############
+
+// ##### Create #####
+  'post /teams/create': 'TeamController.create',
+
+// ##### Read #####
+  'get /teams/:id?': 'TeamController.find',
+
+// ##### Update #####
+  'post /teams/update/:id?': 'TeamController.update',
+  'put /teams/:id?': 'TeamController.update',
+
+// ##### Delete #####
+  
+  'post /teams/delete/:id?': 'TeamController.delete',
+  'delete /teams/:id?': 'TeamController.delete',
+
+
+// ############ Custom Routes for Users ############
+
+// ##### Create #####
+  'post /users/create': 'UserController.create',
+
+// ##### Read #####
+  'get /users/:id?': 'UserController.find',
+
+// ##### Update #####
+  'post /users/update/:id?': 'UserController.update',
+  'put /users/:id?': 'UserController.update',
+
+// ##### Delete #####
+  
+  'post /users/delete/:id?': 'UserController.delete',
+  'delete /users/:id?': 'UserController.delete',
+
   /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?

@@ -14,8 +14,6 @@ module.exports = {
   	nickname: 'string'
   	*/
   	title: 'string',
-  	client: 'string',
-  	client_id: 'integer',
   	due: 'datetime',
   	progress: 'integer',
   	tasks : {

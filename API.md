@@ -1,6 +1,6 @@
 # Sidecar API
 
-![SideCar icon](http://)
+![SideCar icon](./assets/img/logo.png)
 
 ----
 ## Projects
@@ -48,3 +48,50 @@ Update project specified by id
 POST /projects/delete/:id
 ```
 Delete project specified by id
+
+<br><br>
+
+## Tasks
+<br>
+#### Create
+
+```
+POST /tasks/create 
+```
+Create a new task using the following parameters:
+
+- title:string
+- completed: boolean
+- project:id (Project to associate the task with)
+
+<br>
+#### Read
+
+```
+GET /tasks
+```
+Retrieve all tasks
+
+<br>
+
+```
+GET /tasks/:id    (Retrieve project with specified id)
+```
+Retrieve task with specified id
+
+<br>
+
+#### Update
+
+```
+POST /tasks/update/:id
+```
+Update task specified by id
+
+<br>
+
+### Delete
+```
+POST /tasks/delete/:id
+```
+Delete task specified by id

@@ -32,15 +32,19 @@
 	}
 }
 
+.button-small {
+	padding: 6px 10px 7px;
+}
+
 /* Green */
 .button-green {
 	@include transition(all 0.25s linear);
 	background: $green;
 	color: #fff;
-}
 
-.button-green:hover {
-	background: #82cace;
+	:hover {
+		background: #82cace;
+	}
 }
 
 /* Purple */

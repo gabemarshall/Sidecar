@@ -1,0 +1,27 @@
+<main class="content content-clients" role="main" ng-controller="Client">
+	<header class="page-header">
+		<div class="container">
+			<section class="page-title">
+				<h2>Apple Inc.</h2>
+			</section>
+
+			<section class="button-wrap">
+				<button class="button button-gray">
+					Edit Client
+				</button>
+			</section>
+		</div>
+
+		<div class="container">
+			<ul class="header-menu" sub-nav>
+				<li><a href ng-click="loadOverview()" class="selected">Overview</a></li>
+				<li><a href ng-click="loadNotes()">Notes</a></li>
+				<li><a href ng-click="loadProjects()">Projects</a></li>
+				<li><a href ng-click="loadDocuments()">Documents</a></li>
+				<li><a href ng-click="loadInvoices()">Invoices</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<section class="client-overview" ng-include="clientTemplate.url"></section>
+</main>

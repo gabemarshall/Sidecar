@@ -12,6 +12,13 @@ angular.module('sidecar.controllers', [])
     		$scope.modalShown = !$scope.modalShown;
   		};
 	}])
+  .controller('Clients', ['$scope', function ($scope) {
+    // Modal controller
+    $scope.modalShown = false;
+      $scope.toggleModal = function() {
+        $scope.modalShown = !$scope.modalShown;
+      };
+  }])
 	.controller('Tasks', ['$scope', function ($scope) {
 		$('.dial').knob();
 
@@ -57,6 +64,38 @@ angular.module('sidecar.controllers', [])
   			$scope.template = $scope.templates[5];
   		}
 	}])
+  .controller('Client', ['$scope', function ($scope) {
+    // Templates
+    $scope.clientTemplates = [
+      { name: 'Overview', url: 'partials/client/overview.html' },
+      { name: 'Notes', url: 'partials/client/notes.html' },
+      { name: 'Projects', url: 'partials/client/projects.html' },
+      { name: 'Documents', url: 'partials/client/documents.html' },
+      { name: 'Invoices', url: 'partials/client/invoices.html' }
+    ];
+
+    $scope.clientTemplate = $scope.clientTemplates[0];
+
+    $scope.loadOverview = function () {
+      $scope.clientTemplate = $scope.clientTemplates[0];
+    }
+
+    $scope.loadNotes = function () {
+      $scope.clientTemplate = $scope.clientTemplates[1];
+    }
+
+    $scope.loadProjects = function () {
+      $scope.clientTemplate = $scope.clientTemplates[2];
+    }
+
+    $scope.loadDocuments = function () {
+      $scope.clientTemplate = $scope.clientTemplates[3];
+    }
+
+    $scope.loadInvoices = function () {
+      $scope.clientTemplate = $scope.clientTemplates[4];
+    }
+  }])
 	.controller('Dashboard', ['$scope', function ($scope) {
 
 	}]);

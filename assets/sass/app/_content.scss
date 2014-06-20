@@ -31,10 +31,9 @@
 
 	.page-title {
 		float: left;
-		margin: 35px 30px 40px 0;
+		margin: 25px 30px 20px 0;
 
 		h2 {
-			margin-bottom: 8px;
 			width: 100%;
 		}
 	}
@@ -45,12 +44,13 @@
 	}
 
 	.button-wrap {
-		margin-top: 50px;
+		margin-top: 19px;
 	}
 
 	.header-menu {
 		float: left;
 		list-style: none;
+		margin-top: 10px;
 		margin-left: -20px;
 
 		li {
@@ -59,11 +59,11 @@
 		}
 
 		a {
-			color: $blue-gray;
+			color: $charcoal;
 			display: block;
 			font-size: 13px;
 			font-weight: 800;
-			padding-bottom: 16px;
+			padding-bottom: 13px;
 			text-transform: uppercase;
 		}
 
@@ -72,7 +72,7 @@
 		}
 
 		.selected {
-			border-bottom: 2px solid #428bca;
+			border-bottom: 2px solid $green;
 		}
 	}
 }

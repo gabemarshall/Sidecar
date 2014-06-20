@@ -1,0 +1,45 @@
+.notes-contain {
+	padding-top: 20px;
+	padding-bottom: 10px;
+
+	&:last-child {
+		padding-bottom: 20px;
+	}
+}
+
+.note {
+	border-top: 1px solid #e3e9ed;
+
+	.note-inner {
+		position: relative;
+		min-height: 150px;
+		padding-bottom: 20px;
+
+		p {
+			padding: .5em 0 1em;
+			line-height: 1.25em;
+		}
+
+		.note-date {
+			font-size: .875em;
+			color: #7a8ca2;
+		}
+
+		.button {
+			position: absolute;
+			bottom: -12px;
+			left: 0;
+			width: 100%;
+		}
+	}
+}
+
+.note-button {
+	position: absolute;
+	top: -6px;
+	right: 5px;
+	font-size: 14px;
+	margin: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

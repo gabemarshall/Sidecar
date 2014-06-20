@@ -1,0 +1,59 @@
+.matrix-contain {
+	padding-top: 20px;
+	padding-bottom: 10px;
+
+	&:last-child {
+		padding-bottom: 20px;
+	}
+}
+
+.matrix {
+	border-top: 1px solid #e3e9ed;
+}
+
+.matrix-inner {
+	position: relative;
+	min-height: 150px;
+	padding-bottom: 20px;
+
+	p {
+		padding: .5em 0 1em;
+		line-height: 1.25em;
+	}
+
+	.matrix-date {
+		font-size: .875em;
+		color: #7a8ca2;
+	}
+
+	.button {
+		position: absolute;
+		bottom: -12px;
+		left: 0;
+		width: 100%;
+	}
+}
+
+.matrix-title {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-size: 18px;
+}
+
+.matrix-status {
+	font-size: 15px;
+}
+
+.matrix-button {
+	position: absolute;
+	top: -6px;
+	right: 5px;
+	font-size: 14px;
+	margin: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

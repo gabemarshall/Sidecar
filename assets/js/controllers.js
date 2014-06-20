@@ -19,8 +19,24 @@ angular.module('sidecar.controllers', [])
         $scope.modalShown = !$scope.modalShown;
       };
   }])
-	.controller('Tasks', ['$scope', function ($scope) {
+	.controller('Tasks', ['$scope', '$http', function ($scope, $http) {
 		$('.dial').knob();
+
+    $scope.newTaskTitle = '';
+    $scope.tasks = []
+
+    var ajaxGetTasks = function(){
+      $http({
+        method: 'GET',
+        url: '/tasks'
+      })
+      .success(function (data, status, headers, config){
+        $scope.tasks = data;
+      })   
+    }
+
+    ajaxGetTasks()
+
 
 		// Modal controller
 		$scope.modalShown = false;
@@ -39,6 +55,22 @@ angular.module('sidecar.controllers', [])
   		];
 
   		$scope.template = $scope.templates[0];
+
+      $scope.saveNewTask = function(value){
+        var title = this.newTaskTitle
+        
+        $http({
+            method: "post",
+            url: "/tasks/create",
+            data: {
+                title: title
+            }
+        })
+        .success(function(){
+          ajaxGetTasks()
+        })
+
+      }
 
   		$scope.loadOverview = function () {
   			$scope.template = $scope.templates[0];

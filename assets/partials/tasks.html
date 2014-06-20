@@ -32,6 +32,9 @@
 	<!-- modal test -->
 	<modal-dialog show='modalShown' width='750px' height='400px'>
 		<p>Yay! This is the create new tasks modal!<p>
+		<input type="text" ng-model="newTaskTitle" placeholder="Title:" />
+		<button class="button button-green submit" ng-click="saveNewTask();toggleModal()">Add</button>
+
 	</modal-dialog>
 
 </main>

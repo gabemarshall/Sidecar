@@ -67,7 +67,7 @@ module.exports.routes = {
   'post /projects/create': 'ProjectController.create',
 
 // ##### Read #####
-  'get /projects/:id?': 'ProjectController.find',
+  'get /projects/:title?': 'ProjectController.find',
 
 // ##### Update #####
   'post /projects/update/:id?': 'ProjectController.update',

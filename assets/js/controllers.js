@@ -19,25 +19,27 @@ angular.module('sidecar.controllers', [])
         $scope.modalShown = !$scope.modalShown;
       };
   }])
-	.controller('Tasks', ['$scope', '$http', function ($scope, $http) {
+	.controller('Tasks', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
 		$('.dial').knob();
-
+    var title = $routeParams.title
+    console.log(title)
     $scope.newTaskTitle = '';
-    $scope.tasks = []
+    $scope.project = []
 
     var ajaxGetTasks = function(){
       $http({
         method: 'GET',
-        url: '/tasks'
+        url: '/projects/'+title
       })
       .success(function (data, status, headers, config){
-        $scope.tasks = data;
+        $scope.project = data;
       })   
     }
+    
 
     ajaxGetTasks()
 
-
+    
 		// Modal controller
 		$scope.modalShown = false;
   		$scope.toggleModal = function() {
@@ -58,12 +60,15 @@ angular.module('sidecar.controllers', [])
 
       $scope.saveNewTask = function(value){
         var title = this.newTaskTitle
+
+
         
         $http({
             method: "post",
             url: "/tasks/create",
             data: {
-                title: title
+                title: title,
+                project: $scope.project.id
             }
         })
         .success(function(){

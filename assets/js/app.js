@@ -16,8 +16,8 @@ config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/leads', {templateUrl: 'partials/leads.html', contoller: 'Leads'});
 	$routeProvider.when('/clients', {templateUrl: 'partials/clients.html', controller: 'Clients'});
 	$routeProvider.when('/clients/client', {templateUrl: 'partials/client.html', controller: 'Client'});
+	$routeProvider.when('/projects/:title', {templateUrl: 'partials/tasks.html', controller: 'Tasks'});
 	$routeProvider.when('/projects', {templateUrl: 'partials/projects.html', controller: 'Project'});
-	$routeProvider.when('/tasks', {templateUrl: 'partials/tasks.html', controller: 'Tasks'});
 	$routeProvider.when('/', {templateUrl: 'partials/dashboard.html', controller: 'Dashboard'});
 	$routeProvider.otherwise({redirectTo: 'dashboard'});
 }]);

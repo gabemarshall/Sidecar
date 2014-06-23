@@ -33,51 +33,15 @@
 				<section class="project-progress col-lg-3 col-md-3 col-sm-3 hidden-xs">Progress</section>
 			</header><!-- .module-header -->
 
-			<section class="module-list">
+			<section class="module-list" ng-repeat="project in projects">
 				<div class="row">
-					<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6"><a href="#/tasks">Project</a></section>
+					<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6"><a href="#/projects/{{ project.title }}">{{ project.title }}</a></section>
 					<section class="project-client col-lg-3 col-md-3 col-sm-3 hidden-xs">Client</section>
 					<section class="project-due col-lg-2 col-md-2 col-sm-2 col-xs-3">Due Date</section>
 					<section class="project-progress col-lg-3 col-md-3 col-sm-3 hidden-xs">
 						<div class="progress">
   							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
 						    	<span class="sr-only">60% Complete</span>
-							</div>
-						</div>
-					</section>
-				</div><!-- .row -->
-				<div class="row">
-					<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6"><a href="#/tasks">Project</a></section>
-					<section class="project-client col-lg-3 col-md-3 col-sm-3 hidden-xs">Client</section>
-					<section class="project-due col-lg-2 col-md-2 col-sm-2 col-xs-3">Due Date</section>
-					<section class="project-progress col-lg-3 col-md-3 col-sm-3 hidden-xs">
-						<div class="progress">
-  							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
-						    	<span class="sr-only">30% Complete</span>
-							</div>
-						</div>
-					</section>
-				</div><!-- .row -->
-				<div class="row">
-					<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6"><a href="#/tasks">Project</a></section>
-					<section class="project-client col-lg-3 col-md-3 col-sm-3 hidden-xs">Client</section>
-					<section class="project-due col-lg-2 col-md-2 col-sm-2 col-xs-3">Due Date</section>
-					<section class="project-progress col-lg-3 col-md-3 col-sm-3 hidden-xs">
-						<div class="progress">
-  							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-						    	<span class="sr-only">80% Complete</span>
-							</div>
-						</div>
-					</section>
-				</div><!-- .row -->
-				<div class="row">
-					<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6"><a href="#/tasks">Project</a></section>
-					<section class="project-client col-lg-3 col-md-3 col-sm-3 hidden-xs">Client</section>
-					<section class="project-due col-lg-2 col-md-2 col-sm-2 col-xs-3">Due Date</section>
-					<section class="project-progress col-lg-3 col-md-3 col-sm-3 hidden-xs">
-						<div class="progress">
-  							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 44%;">
-						    	<span class="sr-only">44% Complete</span>
 							</div>
 						</div>
 					</section>
@@ -91,4 +55,6 @@
 <!-- modal test -->
 <modal-dialog show='modalShown' width='750px' height='400px'>
 	<p>Yay! This is the create new projects modal!<p>
+	<input type="text" ng-model="newProjectTitle" placeholder="Title:" />
+	<button class="button button-green submit" ng-click="saveNewProject();toggleModal()">Add</button>
 </modal-dialog>

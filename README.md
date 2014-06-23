@@ -1,4 +1,4 @@
-# sidecar-sails
+# Sidecar
 
 ### Upgrading to Sails 0.10.x
 

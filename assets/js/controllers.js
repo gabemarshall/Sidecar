@@ -49,7 +49,10 @@ angular.module('sidecar.controllers', [])
       };
   }])
 	.controller('Tasks', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
-		$('.dial').knob();
+		
+      setTimeout(function(){
+        $('.dial').knob();
+      }, 25)
     
     var title = $routeParams.title
   

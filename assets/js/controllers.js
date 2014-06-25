@@ -20,8 +20,6 @@ angular.module('sidecar.controllers', [])
       };
   }])
 	.controller('Tasks', ['$scope', function ($scope) {
-		$('.dial').knob();
-
 		//Modal controller
 		$scope.modalShown = false;
   		$scope.toggleModal = function() {

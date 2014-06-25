@@ -21,7 +21,7 @@ module.exports = {
     },
 
     find: function(req, res, next) {
-
+        
         var id = req.param('id');
 
         var idShortCut = isShortcut(id);

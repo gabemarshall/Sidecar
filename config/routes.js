@@ -153,6 +153,8 @@ module.exports.routes = {
   'post /users/delete/:id?': 'UserController.delete',
   'delete /users/:id?': 'UserController.delete',
 
+// ##### Login #####
+  'post /users/login/:email?': 'UserController.login'
   /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?

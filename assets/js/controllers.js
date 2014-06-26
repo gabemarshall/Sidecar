@@ -168,4 +168,11 @@ angular.module('sidecar.controllers', [])
   }])
 	.controller('Dashboard', ['$scope', function ($scope) {
 
-	}]);
+	}])
+  .controller('Prospects', ['$scope', '$http', function ($scope, $http) {
+    // Modal controller
+    $scope.modalShown = false;
+      $scope.toggleModal = function() {
+        $scope.modalShown = !$scope.modalShown;
+      };
+  }]);

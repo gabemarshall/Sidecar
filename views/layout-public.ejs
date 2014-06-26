@@ -143,7 +143,14 @@
 			  url: "users/login",
 			  type: "POST",
 			  data: { email: userEmail, password: userPassword },
-			  dataType: "json"
+			  dataType: "json",
+			}).done(function(){
+				alert("Login success! Crappily using javascript to redirect you to /app#")
+				setTimeout(function(){
+					window.location = '/app#projects'
+				}, 500)
+			}).fail(function(){
+				alert("Nope!")
 			});
 		})
 	});

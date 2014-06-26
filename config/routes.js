@@ -140,6 +140,7 @@ module.exports.routes = {
 
 // ##### Create #####
   'post /users/create': 'UserController.create',
+  'get /users/create': 'UserController.create',
 
 // ##### Read #####
   'get /users/:id?': 'UserController.find',

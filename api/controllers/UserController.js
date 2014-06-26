@@ -136,6 +136,7 @@ module.exports = {
               if (match) {
                 // password match
                 req.session.user = user.id;
+                
                 res.json(user);
               } else {
                 // invalid password

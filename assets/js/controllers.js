@@ -175,4 +175,11 @@ angular.module('sidecar.controllers', [])
       $scope.toggleModal = function() {
         $scope.modalShown = !$scope.modalShown;
       };
+  }])
+  .controller('Prospect', ['$scope', '$http', function ($scope, $http) {
+    // Modal controller
+    $scope.modalShown = false;
+      $scope.toggleModal = function() {
+        $scope.modalShown = !$scope.modalShown;
+      };
   }]);

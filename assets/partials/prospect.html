@@ -1,0 +1,109 @@
+<main class="content content-prospects" role="main" ng-controller="Prospect">
+  <header class="page-header">
+    <div class="container">
+      <section class="page-title">
+        <h2>Google</h2>
+      </section>
+
+      <section class="button-wrap">
+        <button class="button button-gray">Edit Client</button>
+      </section>
+    </div>
+  </header>
+
+  <section class="module-container container">
+    <div class="row">
+      <section class="module">
+        <header class="module-header clearfix">
+          <section class="col-lg-12">
+            Interactions
+
+            <button class="button button-green button-small right matrix-button" ng-click='toggleModal()'>
+              <span class="add">+</span> Record interaction
+            </button>
+          </section>
+        </header>
+
+        <section class="module-list">
+          <div class="row">
+            <div class="col-lg-12 matrix-contain">
+              <div class="module col-sm-12">
+                <div class="module-list">
+                  <div class="row matrix matrix-full">
+                    <div class="col-sm-12 matrix-inner">
+                      <span class="interaction-type type-email"></span>
+                      <small class="matrix-date">5/16/2014</small>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis neque id vestibulum sagittis. Duis non egestas velit. Vivamus non lacinia turpis, eu sagittis felis...</p>
+                      <p><strong>Action item:</strong> Lorem ipsum dolor sit amet in <em class="action-date">20 days</em></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module col-sm-12">
+                <div class="module-list">
+                  <div class="row matrix matrix-full">
+                    <div class="col-sm-12 matrix-inner">
+                      <span class="interaction-type type-phone"></span>
+                      <small class="matrix-date">5/6/2014</small>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis neque id vestibulum sagittis. Duis non egestas velit. Vivamus non lacinia turpis felis...</p>
+                      <p><strong>Action item:</strong> Lorem ipsum dolor sit amet in <em class="action-date">20 days</em></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module col-sm-12">
+                <div class="module-list">
+                  <div class="row matrix matrix-full">
+                    <div class="col-sm-12 matrix-inner">
+                      <span class="interaction-type type-person"></span>
+                      <small class="matrix-date">5/16/2014</small>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis neque id vestibulum sagittis. Duis non egestas velit. Vivamus non lacinia turpis, eu sagittis felis...</p>
+                      <p><strong>Action item:</strong> Lorem ipsum dolor sit amet in <em class="action-date">20 days</em></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module col-sm-12">
+                <div class="module-list">
+                  <div class="row matrix matrix-full">
+                    <div class="col-sm-12 matrix-inner">
+                      <span class="interaction-type type-other"></span>
+                      <small class="matrix-date">5/6/2014</small>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis neque id vestibulum sagittis. Duis non egestas velit. Vivamus non lacinia turpis felis...</p>
+                      <p><strong>Action item:</strong> Lorem ipsum dolor sit amet in <em class="action-date">20 days</em></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+  </section>
+
+  <modal-dialog show='modalShown' width='550px'>
+    <div class="modal-header">Record Interaction</div>
+
+    <form class="modal-form">
+      <label>Date of interaction</label>
+      <input type="text">
+
+      <label>Type of interaction</label>
+      <input type="text">
+
+      <label>Details</label>
+      <textarea></textarea>
+
+      <label>Action item</label>
+      <input type="text">
+
+      <label>When?</label>
+      <input type="text">
+
+      <button type="submit" class="button button-green">Record</button>
+    </form>
+  </modal-dialog>
+</main>

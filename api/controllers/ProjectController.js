@@ -19,6 +19,7 @@ module.exports = {
     find: function(req, res, next) {
 
         var id = req.param('id');
+        var title = req.param('title');
 
         var idShortCut = isShortcut(id);
 
@@ -26,9 +27,9 @@ module.exports = {
             return next();
         }
 
-        if (id) {
+        if (title) {
             
-            Project.findOne(id).populate('tasks').exec(function(err, project){
+            Project.findOne({where:{title: title}}).populate('tasks').exec(function(err, project){
                 if (project === undefined) return res.notFound();
 
                 if (err) return next(err);

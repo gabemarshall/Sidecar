@@ -1,9 +1,18 @@
 # Sidecar
 
-### Upgrading to Sails 0.10.x
+### Sidecar 0.0.1 Super Cool Alpha Instructions
 
-cd into the Sidecar directory and run the following
+Okay so auth is almost complete... I don't have an account creation completed so for now you'll have to cheat and create an account by pasting the following url (just once) into your browser. 
 
 ```
-npm install sails-disk@0.10.x && npm install sails@0.10.x
+http://localhost:1337/users/create?email=madeupemail@address.com&password=somepassword
 ```
+
+Once you've done that you should have an account. You can try navigating to /app# but you should get a forbidden message since you aren't logged in.
+
+Browse to /login, enter your credentials, and it *should* work.
+
+From here navigate to /app#/projects , create a new project. It should show up on your list...click on it, create some tasks. That's all I have so far.
+
+Cheers!
+

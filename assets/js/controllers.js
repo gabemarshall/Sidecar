@@ -5,12 +5,41 @@ angular.module('sidecar.controllers', [])
 	.controller('Nav', ['$scope', '$location', function ($scope, $location) {
 		$scope.$location = $location;
 	}])
-	.controller('Project', ['$scope', function ($scope) {
+	.controller('Project', ['$scope', '$http', function ($scope, $http) {
 		// Modal controller
 		$scope.modalShown = false;
   		$scope.toggleModal = function() {
     		$scope.modalShown = !$scope.modalShown;
   		};
+    $scope.projects = []
+    $scope.newProjectTitle = '';
+
+    var ajaxGetProjects = function(){
+      $http({
+        method: 'GET',
+        url: '/projects'
+      })
+      .success(function (data, status, headers, config){
+        $scope.projects = data
+      })
+    }
+    ajaxGetProjects()
+
+    $scope.saveNewProject = function(value){
+      var title = this.newProjectTitle
+
+      $http({
+          method: "post",
+          url: "/projects/create",
+          data: {
+              title: title
+          }
+      })
+      .success(function(){
+        ajaxGetProjects()
+      })
+
+    }
 	}])
   .controller('Clients', ['$scope', function ($scope) {
     // Modal controller
@@ -19,9 +48,31 @@ angular.module('sidecar.controllers', [])
         $scope.modalShown = !$scope.modalShown;
       };
   }])
-	.controller('Tasks', ['$scope', function ($scope) {
-		$('.dial').knob();
+	.controller('Tasks', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
+		
+      setTimeout(function(){
+        $('.dial').knob();
+      }, 25)
+    
+    var title = $routeParams.title
+  
+    $scope.newTaskTitle = '';
+    $scope.project = []
 
+    var ajaxGetTasks = function(){
+      $http({
+        method: 'GET',
+        url: '/projects/'+title
+      })
+      .success(function (data, status, headers, config){
+        $scope.project = data;
+      })   
+    }
+    
+
+    ajaxGetTasks()
+
+    
 		// Modal controller
 		$scope.modalShown = false;
   		$scope.toggleModal = function() {
@@ -39,6 +90,25 @@ angular.module('sidecar.controllers', [])
   		];
 
   		$scope.template = $scope.templates[0];
+
+      $scope.saveNewTask = function(value){
+        var title = this.newTaskTitle
+
+
+        
+        $http({
+            method: "post",
+            url: "/tasks/create",
+            data: {
+                title: title,
+                project: $scope.project.id
+            }
+        })
+        .success(function(){
+          ajaxGetTasks()
+        })
+
+      }
 
   		$scope.loadOverview = function () {
   			$scope.template = $scope.templates[0];

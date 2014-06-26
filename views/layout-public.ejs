@@ -103,9 +103,9 @@
 			</div><!-- END .copyright -->
 		</footer><!-- #colophon .site-footer -->
 
-	<script src="js/lib/jquery.liquidslider.min.js"></script>
-	<script src="js/lib/jquery.touchswipe.min.js"></script>
-	<script src="js/lib/jquery.easing.js"></script>
+	<script src="lib/jquery.liquidslider.min.js"></script>
+	<script src="lib/jquery.touchswipe.min.js"></script>
+	<script src="lib/jquery.easing.js"></script>
 
 	<script>
 	$(function() {
@@ -132,8 +132,27 @@
 
 	<script>
 	$(function() {
-		$( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+		//$( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
 		$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+		$('#login').on('click', function(){
+
+			var userEmail = $('#mce-EMAIL').val()
+			var userPassword = $('#mce-PASSWORD').val()
+
+			$.ajax({
+			  url: "users/login",
+			  type: "POST",
+			  data: { email: userEmail, password: userPassword },
+			  dataType: "json",
+			}).done(function(){
+				alert("Login success! Crappily using javascript to redirect you to /app#")
+				setTimeout(function(){
+					window.location = '/app#projects'
+				}, 500)
+			}).fail(function(){
+				alert("Nope!")
+			});
+		})
 	});
 	</script>
 </body>

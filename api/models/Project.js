@@ -23,6 +23,9 @@ module.exports = {
     },
     client: {
       model: 'client'
+    },
+    team: {
+      model: 'team'
     }
 
     

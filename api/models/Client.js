@@ -12,8 +12,13 @@ module.exports = {
   	
   	name: 'string',
   	location: 'string',
+    contact: 'string',
+    phone: 'string',
   	email: 'string',
   	avatar: 'string',
+    team: {
+      model: 'team'
+    },
     projects: {
       collection: 'project',
       via: 'client',

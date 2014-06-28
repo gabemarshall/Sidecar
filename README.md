@@ -1,15 +1,36 @@
 # Sidecar
 
-### Sidecar 0.0.1 Super Cool Alpha Instructions
+
+
+### Sidecar 0.0.1a (6-28-14)
+
+
+##### New Dependencies
+* yargs
+
+```
+npm install yargs (or just npm install)
+```
+
+
+##### Authorization Implemented for Projects/Tasks
+
+Projects and Tasks now have authorization in place, meaning one account can only view projects and tasks created by them (before an account would see every task/project by default). Due to the changes, any projects or tasks you may have created in the past likely won't show up anymore.
+
+##### New Debug Functionality
+I got tired of restarting the server and having to manually login again each time, so I implemented a bypass for debugging/testing. Simply run ``` sails lift --userid=<id of your account> ``` and you'll automatically be logged in as that user. This is where the *yargs* dependency comes in.
+
 <br>
+### Sidecar 0.0.1 (6-25-14)
+
 ##### New Dependencies
 * bcrypt
 
 ```
-npm install bcrypt
+npm install bcrypt (or just npm install)
 ```
-<br>
-Okay so auth is almost complete... I don't have an account creation completed so for now you'll have to cheat and create an account by pasting the following url (just once) into your browser. 
+
+Okay so auth is almost complete... I don't have an account creation completed so for now you'll have to cheat and create an account by pasting the following url (just once) into your browser.
 
 ```
 http://localhost:1337/users/create?email=madeupemail@address.com&password=somepassword

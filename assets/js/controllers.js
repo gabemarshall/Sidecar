@@ -109,6 +109,20 @@ angular.module('sidecar.controllers', [])
         })
 
       }
+      $scope.deleteTask = function (index) {
+
+          
+          $http({
+              method: "post",
+              url: "/tasks/delete",
+              data: {
+                  id: $scope.project.tasks[index].id
+              }
+          })
+          .success(function(){
+            $scope.project.tasks.splice(index, 1)
+          })
+      };
 
   		$scope.loadOverview = function () {
   			$scope.template = $scope.templates[0];

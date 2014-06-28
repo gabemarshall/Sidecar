@@ -14,6 +14,9 @@ module.exports = {
   	completed: 'boolean',
   	project: {
   		model: 'project'
+  	},
+  	user: {
+  		model: 'user'
   	}
     
   }

@@ -16,6 +16,11 @@ module.exports = {
         password: 'string',
         team: {
             model: 'team'
+        },
+        projects: {
+            collection: 'project',
+            via: 'user',
+            dominant: true
         }
     },
     beforeCreate: function(attrs, next) {

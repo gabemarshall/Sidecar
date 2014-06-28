@@ -13,6 +13,9 @@ module.exports = {
       collection: 'user',
       via: 'team',
       dominant: true
+    },
+    owner: {
+    	model: 'user'
     }
   }
 };

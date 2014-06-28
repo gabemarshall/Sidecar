@@ -5,8 +5,6 @@ module.exports = {
 
         var params = req.params.all();
 
-        console.log(params)
-
         User.create(params, function(err, user) {
 
             if (err) return next(err);
@@ -14,7 +12,6 @@ module.exports = {
             res.status(201);
 
             res.json(user);
-            console.log(user)
 
         });
 
@@ -136,6 +133,7 @@ module.exports = {
               if (match) {
                 // password match
                 req.session.user = user.id;
+                req.session.team = user.team;
                 
                 res.json(user);
               } else {

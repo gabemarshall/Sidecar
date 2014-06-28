@@ -5,6 +5,9 @@ module.exports = {
 
         var params = req.params.all();
 
+        // Make sure the project is assigned to the logged in user
+        params.user = req.session.user
+        
         Project.create(params, function(err, project) {
 
             if (err) return next(err);
@@ -29,7 +32,7 @@ module.exports = {
 
         if (title) {
             
-            Project.findOne({where:{title: title}}).populate('tasks').exec(function(err, project){
+            Project.findOne({where:{title: title, user: req.session.user}}).populate('tasks').exec(function(err, project){
                 if (project === undefined) return res.notFound();
 
                 if (err) return next(err);
@@ -39,19 +42,10 @@ module.exports = {
         
         } else {
 
-            var where = req.param('where');
-
-            if (_.isString(where)) {
-                where = JSON.parse(where);
-            }
-
             var options = {
-                limit: req.param('limit') || undefined,
-                skip: req.param('skip') || undefined,
-                sort: req.param('sort') || undefined,
-                where: where || undefined
+                where: { user: req.session.user }
             };
-
+            
             Project.find(options, function(err, project) {
 
                 if (project === undefined) return res.notFound();

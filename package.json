@@ -10,7 +10,8 @@
         "sails-disk": "0.10.x",
         "ejs": "0.8.4",
         "optimist": "0.3.4",
-        "bcrypt": "*"
+        "bcrypt": "*",
+        "yargs" : "*"
     },
     "scripts": {
         "start": "node app.js",

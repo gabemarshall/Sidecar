@@ -26,6 +26,9 @@ module.exports = {
     },
     team: {
       model: 'team'
+    },
+    user: {
+      model: 'user'
     }
 
     

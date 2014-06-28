@@ -4,8 +4,7 @@ module.exports = {
     create: function(req, res, next) {
 
         var params = req.params.all();
-
-        console.log(params)
+        params.user = req.session.user
 
         Task.create(params, function(err, task) {
 
@@ -43,20 +42,12 @@ module.exports = {
             });
 
         } else {
-
-            var where = req.param('where');
-
-            if (_.isString(where)) {
-                where = JSON.parse(where);
-            }
+            console.log("hey")
 
             var options = {
-                limit: req.param('limit') || undefined,
-                skip: req.param('skip') || undefined,
-                sort: req.param('sort') || undefined,
-                where: where || undefined
+                where: { user: req.session.user }
             };
-
+            
             Task.find(options, function(err, task) {
 
                 if (task === undefined) return res.notFound();

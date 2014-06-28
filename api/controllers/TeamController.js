@@ -29,7 +29,7 @@ module.exports = {
 
         if (id) {
             
-            Team.findOne(id).populate('users').exec(function(err, team){
+            Team.findOne(id).populate('users').populate('users').exec(function(err, team){
                 if (team === undefined) return res.notFound();
 
                 if (err) return next(err);

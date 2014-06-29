@@ -42,7 +42,6 @@ module.exports = {
             });
 
         } else {
-            console.log("hey")
 
             var options = {
                 where: { user: req.session.user }

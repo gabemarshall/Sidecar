@@ -13,6 +13,7 @@ angular.module('sidecar.controllers', [])
   		};
     $scope.projects = []
     $scope.newProjectTitle = '';
+    
 
     var ajaxGetProjects = function(){
       $http({
@@ -50,10 +51,12 @@ angular.module('sidecar.controllers', [])
   }])
 	.controller('Tasks', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
 		
-      setTimeout(function(){
-        $('.dial').knob();
-      }, 25)
-    
+      // setTimeout(function(){
+      //   $('.dial').knob();
+      // }, 25)
+    $scope.dialValue1 = 10
+    $scope.dialValue2 = 75
+
     var title = $routeParams.title
   
     $scope.newTaskTitle = '';

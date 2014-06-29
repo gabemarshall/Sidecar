@@ -193,7 +193,6 @@
 ----------------------------------------------- */
 .comment-module {
 	background-color: #fff;
-	margin-bottom: 32px;
 	padding: 0;
 
 	.comment-meta {
@@ -214,8 +213,13 @@
 
 	.comment {
 		border: 1px solid $light-gray-border;
+		border-bottom: none;
 		border-top: none;
 		padding: 10px 20px 20px;
+	}
+
+	.comment:nth-last-child(1) {
+		border-bottom: 1px solid $light-gray-border;
 	}
 
 	.comment-replies,

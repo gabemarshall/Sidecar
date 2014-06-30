@@ -192,4 +192,17 @@ angular.module('sidecar.controllers', [])
       $scope.toggleModal = function() {
         $scope.modalShown = !$scope.modalShown;
       };
+  }])
+  .controller('Prospect', ['$scope', '$http', function ($scope, $http) {
+    // Record Interaction Modal controller
+    $scope.recordModalShown = false;
+      $scope.recordToggleModal = function() {
+        $scope.recordModalShown = !$scope.recordModalShown;
+      };
+
+      // Edit Interaction Modal controller
+    $scope.editModalShown = false;
+      $scope.editToggleModal = function() {
+        $scope.editModalShown = !$scope.editModalShown;
+      };
   }]);

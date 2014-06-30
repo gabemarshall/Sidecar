@@ -34,6 +34,17 @@
 	}
 }
 
+.matrix-full {
+	margin-bottom: 20px;
+
+	.matrix-inner {
+		min-height: 0;
+		padding-bottom: 0;
+		padding-left: 4.5em;
+		padding-top: .5em;
+	}
+}
+
 .matrix-title {
 	position: absolute;
 	top: 50%;
@@ -56,4 +67,83 @@
 	margin: 0;
 	padding-top: 5px;
 	padding-bottom: 5px;
+}
+
+// Prospect matrix
+.action-date {
+	color: #e85344;
+}
+
+.interaction-type {
+	position: relative;
+	float: left;
+	margin: -.5em 0 0 -3.5em;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: .25em;
+		left: 0;
+		width: 2em;
+		height: 2em;
+		@include border-radius(50%);
+		border-width: 1px;
+		border-style: solid;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: .05em;
+		left: 0;
+		width: .875em;
+		height: .875em;
+		text-align: center;
+		font-family: 'icons';
+		font-size: 2.5em;
+	}
+
+	&.type-email {
+		&:before {
+			border-color: #43496f;
+		}
+
+		&:after {
+			content: "\2709";
+			color: #43496f;
+		}
+	}
+
+	&.type-phone {
+		&:before {
+			border-color: #62b5ba;
+		}
+
+		&:after {
+			content: "\1F4DE";
+			color: #62b5ba;
+		}
+	}
+
+	&.type-person {
+		&:before {
+			border-color: #e85344;
+		}
+
+		&:after {
+			content: "\1F464";
+			color: #e85344;
+		}
+	}
+
+	&.type-other {
+		&:before {
+			border-color: #32d491;
+		}
+
+		&:after {
+			content: "\2753";
+			color: #32d491;
+		}
+	}
 }

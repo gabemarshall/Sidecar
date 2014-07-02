@@ -5,6 +5,9 @@ module.exports = {
 
         var params = req.params.all();
 
+        // Make sure the client is assigned to the logged in user
+        params.user = req.session.user
+
         Client.create(params, function(err, client) {
 
             if (err) return next(err);
@@ -15,15 +18,12 @@ module.exports = {
 
         });
 
-        if (params.client) {
-            console.log(params.client)
-        }
-        // console.log(params)
     },
 
     find: function(req, res, next) {
 
         var id = req.param('id');
+        var name = req.param('name')
 
         var idShortCut = isShortcut(id);
 
@@ -31,9 +31,9 @@ module.exports = {
             return next();
         }
 
-        if (id) {
+        if (name) {
             
-            Client.findOne(id).populate('projects').exec(function(err, client){
+            Client.findOne({where: {name: name, user: req.session.user }}).populate('projects').exec(function(err, client){
                 if (client === undefined) return res.notFound();
 
                 if (err) return next(err);
@@ -43,17 +43,8 @@ module.exports = {
         
         } else {
 
-            var where = req.param('where');
-
-            if (_.isString(where)) {
-                where = JSON.parse(where);
-            }
-
             var options = {
-                limit: req.param('limit') || undefined,
-                skip: req.param('skip') || undefined,
-                sort: req.param('sort') || undefined,
-                where: where || undefined
+                where: { user: req.session.user }
             };
 
             Client.find(options, function(err, client) {

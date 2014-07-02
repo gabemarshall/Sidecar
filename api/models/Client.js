@@ -11,11 +11,13 @@ module.exports = {
   attributes: {
   	
   	name: 'string',
-  	location: 'string',
+  	city: 'string',
+    state: 'string',
     contact: 'string',
     phone: 'string',
   	email: 'string',
   	avatar: 'string',
+    website: 'string',
     team: {
       model: 'team'
     },
@@ -23,6 +25,9 @@ module.exports = {
       collection: 'project',
       via: 'client',
       dominant: true
+    },
+    user: {
+      model: 'user'
     }
     
   }

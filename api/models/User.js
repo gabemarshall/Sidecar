@@ -21,6 +21,11 @@ module.exports = {
             collection: 'project',
             via: 'user',
             dominant: true
+        },
+        clients: {
+            collection: 'client',
+            via: 'user',
+            dominant: true
         }
     },
     beforeCreate: function(attrs, next) {

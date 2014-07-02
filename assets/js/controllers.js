@@ -13,6 +13,7 @@ angular.module('sidecar.controllers', [])
   		};
     $scope.projects = []
     $scope.newProjectTitle = '';
+
     
 
     var ajaxGetProjects = function(){
@@ -42,12 +43,30 @@ angular.module('sidecar.controllers', [])
 
     }
 	}])
-  .controller('Clients', ['$scope', function ($scope) {
+  .controller('Clients', ['$scope', '$http', function ($scope, $http) {
     // Modal controller
     $scope.modalShown = false;
       $scope.toggleModal = function() {
         $scope.modalShown = !$scope.modalShown;
       };
+
+    $scope.clients = []
+    $scope.clientInfo = {
+      name: ''
+    }
+
+
+    var ajaxGetClients = function(){
+      $http({
+        method: 'GET',
+        url: '/clients'
+      })
+      .success(function (data, status, headers, config){
+        $scope.clients = data
+      })
+    }
+    ajaxGetClients()
+
   }])
 	.controller('Tasks', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
 		

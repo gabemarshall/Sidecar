@@ -18,6 +18,7 @@ module.exports = {
   	email: 'string',
   	avatar: 'string',
     website: 'string',
+    address: 'string',
     team: {
       model: 'team'
     },

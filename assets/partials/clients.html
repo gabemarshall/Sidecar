@@ -26,10 +26,10 @@
 			<section class="module-list">
 				<a href="#/clients/client" class="row" ng-repeat="client in clients">
 					<section class="col-lg-3">{{ client.name }}</section>
-					<section class="col-lg-3">Steve Jobs</section>
-					<section class="col-lg-2">555-555-1234</section>
-					<section class="col-lg-2">Hollywood, CA</section>
-					<section class="col-lg-2">05/16/2013</section>
+					<section class="col-lg-3">{{ client.contact }}</section>
+					<section class="col-lg-2">{{ client.phone }}</section>
+					<section class="col-lg-2">{{ client.city }}</section>
+					<section class="col-lg-2">{{ client.createdAt }}</section>
 				</a>
 			</section>
 		</section>
@@ -42,29 +42,24 @@
 	      <input type="text" ng-model="clientInfo.name">
 
 	      <label>Contact</label>
-	      <input type="text">
+	      <input type="text" ng-model="clientInfo.contact">
 
 	      <label>Phone</label>
-	      <input type="text">
+	      <input type="text" ng-model="clientInfo.phone">
 
 	      <label>Website</label>
-	      <input type="text">
+	      <input type="text" ng-model="clientInfo.website">
 
 	      <label>Address</label>
-	      <input type="text">
+	      <input type="text" ng-model="clientInfo.address">
 
 	      <label>City</label>
-	      <input type="text">
+	      <input type="text" ng-model="clientInfo.city">
 
 	      <label>State</label>
-	      <input type="text">
-
-	      <label>Contacted because</label>
-	      <textarea></textarea>
+	      <input type="text" ng-model="clientInfo.state">
 
 	      <button type="submit" class="button button-green" ng-click="saveNewClient();toggleModal()">Create client</button>
 	    </form>
-		<input type="text" ng-model="clientInfo.name" placeholder="Title:" />
-		
 	</modal-dialog>
 </main>

@@ -5,6 +5,9 @@ angular.module('sidecar.controllers', [])
 	.controller('Nav', ['$scope', '$location', function ($scope, $location) {
 		$scope.$location = $location;
 	}])
+
+// Projects
+// ************************************************************************
 	.controller('Project', ['$scope', '$http', function ($scope, $http) {
 		// Modal controller
 		$scope.modalShown = false;
@@ -13,8 +16,6 @@ angular.module('sidecar.controllers', [])
   		};
     $scope.projects = []
     $scope.newProjectTitle = '';
-
-    
 
     var ajaxGetProjects = function(){
       $http({
@@ -43,69 +44,11 @@ angular.module('sidecar.controllers', [])
 
     }
 	}])
-  .controller('Clients', ['$scope', '$http', 'convertDate', function ($scope, $http, convertDate) {
-    // Modal controller
-    $scope.modalShown = false;
-      $scope.toggleModal = function() {
-        $scope.modalShown = !$scope.modalShown;
-      };
 
-    $scope.clients = []
-    $scope.clientInfo = {
-      name: '',
-      city: '',
-      state: '',
-      contact: '',
-      phone: '',
-      avatar: '',
-      website: '',
-      address: '',
-      createdAt: ''
-    }
-
-
-    var ajaxGetClients = function(){
-      $http({
-        method: 'GET',
-        url: '/clients'
-      })
-      .success(function (data, status, headers, config){
-       
-       // hack, lets improve this later...#TODO
-       var i
-        for (i=0;i<data.length;i++){
-          data[i].createdAt = convertDate.monthDateYear(data[i].createdAt)
-        }
-        $scope.clients = data
-      })
-    }
-    ajaxGetClients()
-
-    $scope.saveNewClient = function(value){
-
-      $http({
-          method: "post",
-          url: "/clients/create",
-          data: {
-              name: this.clientInfo.name,
-              city: this.clientInfo.city,
-              state: this.clientInfo.state,
-              contact: this.clientInfo.contact,
-              phone: this.clientInfo.phone,
-              avatar: this.clientInfo.avatar,
-              website: this.clientInfo.website,
-              address: this.clientInfo.address
-          }
-      })
-      .success(function(){
-        ajaxGetClients()
-      })
-
-    }
-
-  }])
-	.controller('Tasks', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
-		
+// Tasks
+// ************************************************************************
+  .controller('Tasks', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
+    
       // setTimeout(function(){
       //   $('.dial').knob();
       // }, 25)
@@ -131,23 +74,23 @@ angular.module('sidecar.controllers', [])
     ajaxGetTasks()
 
     
-		// Modal controller
-		$scope.modalShown = false;
-  		$scope.toggleModal = function() {
-    		$scope.modalShown = !$scope.modalShown;
-  		};
+    // Modal controller
+    $scope.modalShown = false;
+      $scope.toggleModal = function() {
+        $scope.modalShown = !$scope.modalShown;
+      };
 
-  		// Templates
-  		$scope.templates = [
-  			{ name: 'Overview', url: 'partials/project/overview.html' },
-  			{ name: 'Tasks', url: 'partials/project/tasks.html' },
-  			{ name: 'Discussion', url: 'partials/project/discussion.html' },
-  			{ name: 'Files', url: 'partials/project/files.html' },
-  			{ name: 'Team', url: 'partials/project/team.html' },
-  			{ name: 'Settings', url: 'partials/project/settings.html' }
-  		];
+      // Templates
+      $scope.templates = [
+        { name: 'Overview', url: 'partials/project/overview.html' },
+        { name: 'Tasks', url: 'partials/project/tasks.html' },
+        { name: 'Discussion', url: 'partials/project/discussion.html' },
+        { name: 'Files', url: 'partials/project/files.html' },
+        { name: 'Team', url: 'partials/project/team.html' },
+        { name: 'Settings', url: 'partials/project/settings.html' }
+      ];
 
-  		$scope.template = $scope.templates[0];
+      $scope.template = $scope.templates[0];
 
       $scope.saveNewTask = function(value){
         var title = this.newTaskTitle
@@ -182,31 +125,100 @@ angular.module('sidecar.controllers', [])
           })
       };
 
-  		$scope.loadOverview = function () {
-  			$scope.template = $scope.templates[0];
-  		}
+      $scope.loadOverview = function () {
+        $scope.template = $scope.templates[0];
+      }
 
-  		$scope.loadTasks = function () {
-  			$scope.template = $scope.templates[1];
-  		}
+      $scope.loadTasks = function () {
+        $scope.template = $scope.templates[1];
+      }
 
-  		$scope.loadDiscussion = function () {
-  			$scope.template = $scope.templates[2];
-  		}
+      $scope.loadDiscussion = function () {
+        $scope.template = $scope.templates[2];
+      }
 
-  		$scope.loadFiles = function () {
-  			$scope.template = $scope.templates[3];
-  		}
+      $scope.loadFiles = function () {
+        $scope.template = $scope.templates[3];
+      }
 
-  		$scope.loadTeam = function () {
-  			$scope.template = $scope.templates[4];
-  		}
+      $scope.loadTeam = function () {
+        $scope.template = $scope.templates[4];
+      }
 
-  		$scope.loadSettings = function () {
-  			$scope.template = $scope.templates[5];
-  		}
-	}])
-  .controller('Client', ['$scope', function ($scope) {
+      $scope.loadSettings = function () {
+        $scope.template = $scope.templates[5];
+      }
+  }])
+
+// Clients
+// ************************************************************************
+  .controller('Clients', ['$scope', '$http', 'convertDate', function ($scope, $http, convertDate) {
+    // Modal controller
+    $scope.modalShown = false;
+      $scope.toggleModal = function() {
+        $scope.modalShown = !$scope.modalShown;
+      };
+
+    $scope.clients = []
+    $scope.clientInfo = {
+      name: '',
+      address: '',
+      city: '',
+      state: '',
+      contact: '',
+      email: '',
+      phone: '',
+      avatar: '',
+      website: '',
+      createdAt: ''
+    }
+
+
+    var ajaxGetClients = function(){
+      $http({
+        method: 'GET',
+        url: '/clients'
+      })
+      .success(function (data, status, headers, config){
+       
+       // hack, lets improve this later...#TODO
+       var i
+        for (i=0;i<data.length;i++){
+          data[i].createdAt = convertDate.monthDateYear(data[i].createdAt)
+        }
+        $scope.clients = data
+      })
+    }
+    ajaxGetClients()
+
+    $scope.saveNewClient = function(value){
+
+      $http({
+          method: "post",
+          url: "/clients/create",
+          data: {
+              name: this.clientInfo.name,
+              address: this.clientInfo.address,
+              city: this.clientInfo.city,
+              state: this.clientInfo.state,
+              contact: this.clientInfo.contact,
+              email: this.clientInfo.email,
+              phone: this.clientInfo.phone,
+              avatar: this.clientInfo.avatar,
+              website: this.clientInfo.website
+          }
+      })
+      .success(function(){
+        ajaxGetClients()
+      })
+
+    }
+
+  }])
+
+// Client
+// ************************************************************************
+  .controller('Client', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
     // Templates
     $scope.clientTemplates = [
       { name: 'Overview', url: 'partials/client/overview.html' },
@@ -215,6 +227,23 @@ angular.module('sidecar.controllers', [])
       { name: 'Documents', url: 'partials/client/documents.html' },
       { name: 'Invoices', url: 'partials/client/invoices.html' }
     ];
+
+    var name = $routeParams.name
+  
+    $scope.client = ''
+
+    var ajaxGetClient = function(){
+      $http({
+        method: 'GET',
+        url: '/clients/'+name
+      })
+      .success(function (data, status, headers, config){
+        $scope.client = data;
+      })   
+    }
+    
+
+    ajaxGetClient()
 
     $scope.clientTemplate = $scope.clientTemplates[0];
 
@@ -238,9 +267,15 @@ angular.module('sidecar.controllers', [])
       $scope.clientTemplate = $scope.clientTemplates[4];
     }
   }])
+
+// Dashboard
+// ************************************************************************
 	.controller('Dashboard', ['$scope', function ($scope) {
 
 	}])
+
+// Prospects
+// ************************************************************************
   .controller('Prospects', ['$scope', '$http', function ($scope, $http) {
     // Modal controller
     $scope.modalShown = false;
@@ -248,6 +283,9 @@ angular.module('sidecar.controllers', [])
         $scope.modalShown = !$scope.modalShown;
       };
   }])
+
+// Prospect
+// ************************************************************************
   .controller('Prospect', ['$scope', '$http', function ($scope, $http) {
     // Record Interaction Modal controller
     $scope.recordModalShown = false;

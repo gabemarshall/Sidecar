@@ -104,7 +104,7 @@ module.exports.routes = {
   'post /clients/create': 'ClientController.create',
 
 // ##### Read #####
-  'get /clients/:id?': 'ClientController.find',
+  'get /clients/:name?': 'ClientController.find',
 
 // ##### Update #####
   'post /clients/update/:id?': 'ClientController.update',

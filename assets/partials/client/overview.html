@@ -10,15 +10,15 @@
 						<div class="col-lg-12">
 							<div class="well row">
 								<p class="col-lg-3"><strong>Company:</strong></p>
-								<p class="col-lg-9">Apple Inc.</p>
+								<p class="col-lg-9">{{ client.name || 'Unknown' }}</p>
 								<p class="col-lg-3"><strong>Contact:</strong></p>
-								<p class="col-lg-9">Steve Jobs</p>
+								<p class="col-lg-9">{{ client.contact || 'Unknown' }}</p>
 								<p class="col-lg-3"><strong>Email:</strong></p>
-								<p class="col-lg-9"><a href="mailto:steve@apple.com">steve@apple.com</a></p>
+								<p class="col-lg-9"><a href="mailto:steve@apple.com">{{ client.email || 'Unknown' }}</a></p>
 								<p class="col-lg-3"><strong>Phone:</strong></p>
-								<p class="col-lg-9">555-555-1234</p>
+								<p class="col-lg-9">{{ client.phone || 'Unknown' }}</p>
 								<p class="col-lg-3"><strong>Address:</strong></p>
-								<p class="col-lg-9">123 Apple Drive<br>Hollywood, CA 55555</br>
+								<p class="col-lg-9">{{ client.address || 'Unknown' }}<br>{{ Unknown || 'Unknown'}}, {{ client.state || 'Unknown'}} 55555</br>
 							</div>
 						</div>
 					</div>

@@ -24,7 +24,7 @@
 			</header>
 
 			<section class="module-list">
-				<a href="#/clients/client" class="row" ng-repeat="client in clients">
+				<a href="#/clients/{{ client.name }}" class="row" ng-repeat="client in clients">
 					<section class="col-lg-3">{{ client.name }}</section>
 					<section class="col-lg-3">{{ client.contact }}</section>
 					<section class="col-lg-2">{{ client.phone }}</section>
@@ -43,6 +43,9 @@
 
 	      <label>Contact</label>
 	      <input type="text" ng-model="clientInfo.contact">
+
+	      <label>Email</label>
+	      <input type="text" ng-model="clientInfo.email"
 
 	      <label>Phone</label>
 	      <input type="text" ng-model="clientInfo.phone">

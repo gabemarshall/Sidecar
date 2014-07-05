@@ -13,6 +13,7 @@ module.exports = {
   	name: 'string',
   	city: 'string',
     state: 'string',
+    address: 'string',
     contact: 'string',
     phone: 'string',
   	email: 'string',

@@ -28,132 +28,132 @@
 
 module.exports.routes = {
 
-  // By default, your root route (aka home page) points to a view
-  // located at `views/home/index.ejs`
-  //
-  // (This would also work if you had a file at: `/views/home.ejs`)
-  '/': {
-    view: 'public/index'
-  },
+    // By default, your root route (aka home page) points to a view
+    // located at `views/home/index.ejs`
+    //
+    // (This would also work if you had a file at: `/views/home.ejs`)
+    '/': {
+        view: 'public/index'
+    },
 
-  '/about': {
-  	view: 'public/about'
-  },
+    '/about': {
+        view: 'public/about'
+    },
 
-  '/features': {
-  	view: 'public/features'
-  },
+    '/features': {
+        view: 'public/features'
+    },
 
-  '/pricing': {
-  	view: 'public/pricing'
-  },
+    '/pricing': {
+        view: 'public/pricing'
+    },
 
-  '/login': {
-  	view: 'public/login'
-  },
+    '/login': {
+        view: 'public/login'
+    },
 
-  '/register': {
-  	view: 'public/register'
-  },
+    '/register': {
+        view: 'public/register'
+    },
 
-  '/app': {
-    controller: 'route',
-    action: 'index'
-  },
+    '/app': {
+        controller: 'route',
+        action: 'index'
+    },
 
-// ############ Custom Routes for Projects ############
+    // ############ Custom Routes for Projects ############
 
-// ##### Create #####
-  'post /projects/create': 'ProjectController.create',
+    // ##### Create #####
+    'post /projects/create': 'ProjectController.create',
 
-// ##### Read #####
-  'get /projects/:id?': 'ProjectController.find',
+    // ##### Read #####
+    'get /projects/:id?': 'ProjectController.find',
 
-// ##### Update #####
-  'post /projects/update/:id?': 'ProjectController.update',
-  'put /projects/:id?': 'ProjectController.update',
+    // ##### Update #####
+    'post /projects/update/:id?': 'ProjectController.update',
+    'put /projects/:id?': 'ProjectController.update',
 
-// ##### Delete #####
-  
-  'post /projects/delete/:id?': 'ProjectController.delete',
-  'delete /projects/:id?': 'ProjectController.delete',
+    // ##### Delete #####
 
-
-
-// ############ Custom Routes for Tasks ############
-
-// ##### Create #####
-  'post /tasks/create': 'TaskController.create',
-
-// ##### Read #####
-  'get /tasks/:id?': 'TaskController.find',
-
-// ##### Update #####
-  'post /tasks/update/:id?': 'TaskController.update',
-  'put /tasks/:id?': 'TaskController.update',
-
-// ##### Delete #####
-  
-  'post /tasks/delete/:id?': 'TaskController.delete',
-  'delete /tasks/:id?': 'TaskController.delete',
-
-
-// ############ Custom Routes for Clients ############
-
-// ##### Create #####
-  'post /clients/create': 'ClientController.create',
-
-// ##### Read #####
-  'get /clients/:id?': 'ClientController.find',
-
-// ##### Update #####
-  'post /clients/update/:id?': 'ClientController.update',
-  'put /clients/:id?': 'ClientController.update',
-
-// ##### Delete #####
-  
-  'post /clients/delete/:id?': 'ClientController.delete',
-  'delete /clients/:id?': 'ClientController.delete',
+    'post /projects/delete/:id?': 'ProjectController.delete',
+    'delete /projects/:id?': 'ProjectController.delete',
 
 
 
+    // ############ Custom Routes for Tasks ############
 
-// ############ Custom Routes for Teams ############
+    // ##### Create #####
+    'post /tasks/create': 'TaskController.create',
 
-// ##### Create #####
-  'post /teams/create': 'TeamController.create',
+    // ##### Read #####
+    'get /tasks/:id?': 'TaskController.find',
 
-// ##### Read #####
-  'get /teams/:id?': 'TeamController.find',
+    // ##### Update #####
+    'post /tasks/update/:id?': 'TaskController.update',
+    'put /tasks/:id?': 'TaskController.update',
 
-// ##### Update #####
-  'post /teams/update/:id?': 'TeamController.update',
-  'put /teams/:id?': 'TeamController.update',
+    // ##### Delete #####
 
-// ##### Delete #####
-  
-  'post /teams/delete/:id?': 'TeamController.delete',
-  'delete /teams/:id?': 'TeamController.delete',
+    'post /tasks/delete/:id?': 'TaskController.delete',
+    'delete /tasks/:id?': 'TaskController.delete',
 
 
-// ############ Custom Routes for Users ############
+    // ############ Custom Routes for Clients ############
 
-// ##### Create #####
-  'post /users/create': 'UserController.create',
+    // ##### Create #####
+    'post /clients/create': 'ClientController.create',
 
-// ##### Read #####
-  'get /users/:id?': 'UserController.find',
+    // ##### Read #####
+    'get /clients/:id?': 'ClientController.find',
 
-// ##### Update #####
-  'post /users/update/:id?': 'UserController.update',
-  'put /users/:id?': 'UserController.update',
+    // ##### Update #####
+    'post /clients/update/:id?': 'ClientController.update',
+    'put /clients/:id?': 'ClientController.update',
 
-// ##### Delete #####
-  
-  'post /users/delete/:id?': 'UserController.delete',
-  'delete /users/:id?': 'UserController.delete',
+    // ##### Delete #####
 
-  /*
+    'post /clients/delete/:id?': 'ClientController.delete',
+    'delete /clients/:id?': 'ClientController.delete',
+
+
+
+
+    // ############ Custom Routes for Teams ############
+
+    // ##### Create #####
+    'post /teams/create': 'TeamController.create',
+
+    // ##### Read #####
+    'get /teams/:id?': 'TeamController.find',
+
+    // ##### Update #####
+    'post /teams/update/:id?': 'TeamController.update',
+    'put /teams/:id?': 'TeamController.update',
+
+    // ##### Delete #####
+
+    'post /teams/delete/:id?': 'TeamController.delete',
+    'delete /teams/:id?': 'TeamController.delete',
+
+
+    // ############ Custom Routes for Users ############
+
+    // ##### Create #####
+    'post /users/create': 'UserController.create',
+
+    // ##### Read #####
+    'get /users/:id?': 'UserController.find',
+
+    // ##### Update #####
+    'post /users/update/:id?': 'UserController.update',
+    'put /users/:id?': 'UserController.update',
+
+    // ##### Delete #####
+
+    'post /users/delete/:id?': 'UserController.delete',
+    'delete /users/:id?': 'UserController.delete',
+
+    /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?
   '/': {
@@ -280,4 +280,3 @@ module.exports.routes = {
  * Finally, if nothing else matched, the default 404 handler is triggered.
  * See `config/404.js` to adjust your app's 404 logic.
  */
-

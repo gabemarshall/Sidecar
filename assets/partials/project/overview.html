@@ -3,25 +3,17 @@
 	<div class="row">
 
 		<section class="module col-lg-6">
-			<header class="module-header clearfix">
-				Project Health
-			</header>
+			<input type="text" value="75" data-width="180" data-thickness="0.125" data-fgColor="#428bca" data-readOnly=true class="dial">
+			<input type="text" value="45" data-width="180" data-thickness="0.125" data-fgColor="#428bca" data-readOnly=true class="dial">
 
-			<section class="module-body project-health">
-<!-- 				<input type="text" value="75" data-width="180" data-thickness="0.125" data-fgColor="#428bca" data-readOnly=true class="dial"> -->
-				<!-- <input type="text" value="45" data-width="180" data-thickness="0.125" data-fgColor="#428bca" data-readOnly=true class="dial"> -->
-				<dial dial-value="dialValue1"></dial>
-				<dial dial-value="dialValue2"></dial>
-
-				<div class="project-breakdown">
-					Hours &amp; Costs
-					Budget
-					Amount left
-				</div>
-				<div class="project-diagnosis">
-					Your project is healthy, you're ahead!
-				</div>
-			</section>
+			<div class="project-breakdown">
+				Hours &amp; Costs
+				Budget
+				Amount left
+			</div>
+			<div class="project-diagnosis">
+				Your project is healthy, you're ahead!
+			</div>
 		</section>
 
 		<section class="module col-lg-6">
@@ -45,19 +37,44 @@
 		</header>
 
 		<section class="module-list">
-			<div class="row" ng-repeat="task in project.tasks" >
-				<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6"><a href="#/tasks">{{ task.title }}</a></section>
+			<div class="row">
+				<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6"><a href="#/tasks">Task</a></section>
 				<section class="project-client col-lg-3 col-md-3 col-sm-3 hidden-xs">Client</section>
 				<section class="project-due col-lg-2 col-md-2 col-sm-2 col-xs-3">Due Date</section>
 				<section class="project-progress col-lg-3 col-md-3 col-sm-3 hidden-xs">
 					<div class="progress">
 	  					<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
 						  	<span class="sr-only">60% Complete</span>
-						</div><a ng-click="deleteTask($index)">Delete Task</a>
+						</div>
 					</div>
 				</section>
 			</div><!-- .row -->
 
+			<div class="row">
+				<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6"><a href="#/tasks">Task</a></section>
+				<section class="project-client col-lg-3 col-md-3 col-sm-3 hidden-xs">Client</section>
+				<section class="project-due col-lg-2 col-md-2 col-sm-2 col-xs-3">Due Date</section>
+				<section class="project-progress col-lg-3 col-md-3 col-sm-3 hidden-xs">
+					<div class="progress">
+	  					<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+					    	<span class="sr-only">30% Complete</span>
+						</div>
+					</div>
+				</section>
+			</div><!-- .row -->
+
+			<div class="row">
+				<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6"><a href="#/tasks">Task</a></section>
+				<section class="project-client col-lg-3 col-md-3 col-sm-3 hidden-xs">Client</section>
+				<section class="project-due col-lg-2 col-md-2 col-sm-2 col-xs-3">Due Date</section>
+				<section class="project-progress col-lg-3 col-md-3 col-sm-3 hidden-xs">
+					<div class="progress">
+	  					<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+							<span class="sr-only">80% Complete</span>
+						</div>
+					</div>
+				</section>
+			</div><!-- .row -->
 
 		</section>
 	</section>

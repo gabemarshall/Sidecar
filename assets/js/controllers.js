@@ -126,11 +126,24 @@ angular.module('sidecar.controllers', [])
     ])
     .controller('Documents', ['$scope',
         function($scope) {
-            // Modal controller
-            $scope.modalShown = false;
-            $scope.toggleModal = function() {
-                $scope.modalShown = !$scope.modalShown;
-            };
+            // Templates
+            $scope.documentTemplates = [{
+                name: 'Overview',
+                url: 'partials/document/overview.html'
+            }, {
+                name: 'Single',
+                url: 'partials/document/single.html'
+            }];
+
+            $scope.documentTemplate = $scope.documentTemplates[0];
+
+            $scope.loadOverview = function() {
+                $scope.documentTemplate = $scope.documentTemplates[0];
+            }
+
+            $scope.loadSingle = function() {
+                $scope.documentTemplate = $scope.documentTemplates[1];
+            }
         }
     ])
     .controller('Dashboard', ['$scope',

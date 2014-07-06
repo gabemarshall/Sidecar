@@ -9,64 +9,12 @@
 			</section>
 
 			<section class="button-wrap">
-				<button class="button button-green"><span class="add-task-icon icon" aria-hidden="true" data-icon="&#57347;"></span></button>
-				<button class="button button-gray"><span class="tag-task-icon icon" aria-hidden="true" data-icon="&#59148;"></span></button>
-				<button class="button button-gray"><span class="share-task-icon icon" aria-hidden="true" data-icon="&#59136;"></span></button>
+				<button class="button button-green upload-button" ng-click='toggleModal()'>
+					<span class="upload-icon icon" aria-hidden="true" data-icon="&#59153;"></span> Upload
+				</button>
 			</section>
 		</div>
 	</header>
 
-	<!-- PROJECTS LIST -->
-	<section class="module-container container">
-		<div class="row">
-			<section class="module">
-				<section class="document-grid">
-					<div class="row">
-						<div class="col-lg-12 matrix-contain">
-							<div class="module col-md-4">
-								<div class="module-list">
-									<div class="row matrix">
-										<div class="col-sm-12 matrix-inner">
-											<small class="matrix-date">5/16/2014</small>
-											<p class="matrix-title">
-												<strong>Document Name</strong><br>
-												<em class="matrix-status">Signed</em></p>
-											<button class="button button-gray button-small">View document</button>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="module col-md-4">
-								<div class="module-list">
-									<div class="row matrix">
-										<div class="col-sm-12 matrix-inner">
-											<small class="matrix-date">5/16/2014</small>
-											<p class="matrix-title">
-												<strong>Document Name</strong><br>
-												<em class="matrix-status">Signed</em></p>
-											<button class="button button-gray button-small">View document</button>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="module col-md-4">
-								<div class="module-list">
-									<div class="row matrix">
-										<div class="col-sm-12 matrix-inner">
-											<small class="matrix-date">5/16/2014</small>
-											<p class="matrix-title">
-												<strong>Document Name</strong><br>
-												<em class="matrix-status">Signed</em></p>
-											<button class="button button-gray button-small">View document</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			</section>
-	</section>
+	<section class="document-overview" ng-include="documentTemplate.url"></section>
 </main>

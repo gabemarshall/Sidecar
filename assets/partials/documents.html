@@ -9,28 +9,12 @@
 			</section>
 
 			<section class="button-wrap">
-				<button class="button button-green"><span class="add-task-icon icon" aria-hidden="true" data-icon="&#57347;"></span></button>
-				<button class="button button-gray"><span class="tag-task-icon icon" aria-hidden="true" data-icon="&#59148;"></span></button>
-				<button class="button button-gray"><span class="share-task-icon icon" aria-hidden="true" data-icon="&#59136;"></span></button>
+				<button class="button button-green upload-button" ng-click='toggleModal()'>
+					<span class="upload-icon icon" aria-hidden="true" data-icon="&#59153;"></span> Upload
+				</button>
 			</section>
 		</div>
 	</header>
 
-	<!-- PROJECTS LIST -->
-	<section class="module-container">
-		<div class="container">
-			<section class="module full">
-				<header class="module-header clearfix">
-					<section class="project-name left"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Project</section>
-					<section class="project-client left"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Client</section>
-					<section class="project-due left"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Due Date</section>
-				</header>
-
-
-				<ul class="module-list">
-				</ul>
-			</section>
-		</div>
-	</section>
-
+	<section class="document-overview" ng-include="documentTemplate.url"></section>
 </main>

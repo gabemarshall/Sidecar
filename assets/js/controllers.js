@@ -55,25 +55,14 @@ angular.module('sidecar.controllers', [])
     $scope.dialValue1 = 10
     $scope.dialValue2 = 75
 
+    $scope.enableEdit = function() { $scope.edit = true; }
+    $scope.disableEdit = function() { $scope.edit = false;  }
+
     var title = $routeParams.title
   
     $scope.newTaskTitle = '';
     $scope.project = []
-
-    var ajaxGetTasks = function(){
-      $http({
-        method: 'GET',
-        url: '/projects/'+title
-      })
-      .success(function (data, status, headers, config){
-        $scope.project = data;
-      })   
-    }
-    
-
-    ajaxGetTasks()
-
-    
+ 
     // Modal controller
     $scope.modalShown = false;
       $scope.toggleModal = function() {
@@ -91,6 +80,20 @@ angular.module('sidecar.controllers', [])
       ];
 
       $scope.template = $scope.templates[0];
+
+      
+      var ajaxGetTasks = function(){
+        $http({
+          method: 'GET',
+          url: '/projects/'+title
+        })
+        .success(function (data, status, headers, config){
+          $scope.project = data;
+        })   
+      }
+      
+
+      ajaxGetTasks()
 
       $scope.saveNewTask = function(value){
         var title = this.newTaskTitle
@@ -110,6 +113,7 @@ angular.module('sidecar.controllers', [])
         })
 
       }
+
       $scope.deleteTask = function (index) {
 
           
@@ -122,6 +126,21 @@ angular.module('sidecar.controllers', [])
           })
           .success(function(){
             $scope.project.tasks.splice(index, 1)
+          })
+      };
+
+      $scope.updateTask = function (index) {
+        console.log("updating")
+          
+          $http({
+              method: "post",
+              url: "/tasks/update",
+              data: {
+                  id: $scope.project.tasks[index].id
+              }
+          })
+          .success(function(){
+            console.log("Task updated")
           })
       };
 

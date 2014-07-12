@@ -61,4 +61,78 @@ angular.module('sidecar.directives', []).
 				},0);
 			}
 		}
-	});
+	})
+	.directive('taskPartial', function (scope) {
+		return {
+			restrict: 'E',
+			transclude: true,
+		    scope: {
+		      
+		    },
+			template: '<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6">{{task.title}}</section>',
+			link: function (scope, element) {
+				// var input = element.find("input")[0];
+				// setTimeout(function(){
+				// 	$(input).knob()
+				// },0);
+				element.value = "Hello"
+			}
+		}
+	})
+    .directive("clickToEdit", function($http) {
+    var editorTemplate = '<section class="click-to-edit">' +
+            '<span ng-hide="view.editorEnabled" ng-click="enableEditor()">{{value}}</span>' +
+            '<input ng-keypress="watchKeys($event)" ng-show="view.editorEnabled" ng-model="view.editableValue" ng-blur="save()">' +
+    '</section>';
+
+    return {
+        restrict: "A",
+        replace: true,
+        template: editorTemplate,
+        scope: {
+            value: "=clickToEdit",
+            attr: "=taskId"
+        },
+        controller: function($scope) {
+            $scope.view = {
+                editableValue: $scope.value,
+                editorEnabled: false
+            };
+
+            $scope.watchKeys = function(event){
+            	if (event.which == 13){
+            		$scope.disableEditor()
+            	}
+            }
+
+            $scope.enableEditor = function() {
+                $scope.view.editorEnabled = true;
+                $scope.view.editableValue = $scope.value;
+            };
+
+            $scope.disableEditor = function() {
+                $scope.view.editorEnabled = false;
+            };
+
+            $scope.save = function() {
+                $scope.value = $scope.view.editableValue;
+                $scope.disableEditor();
+                $scope.updateTask();
+            };
+	        $scope.updateTask = function (index) {
+	          $http({
+	              method: "post",
+	              url: "/tasks/update/" + $scope.attr,
+	              data: {
+	                  title: $scope.value
+	              }
+	          })
+	          .success(function(){
+	            console.log("Task updated")
+	          })
+	        };
+        }
+    };
+});
+
+

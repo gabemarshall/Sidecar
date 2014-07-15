@@ -62,26 +62,9 @@ angular.module('sidecar.directives', []).
 			}
 		}
 	})
-	.directive('taskPartial', function (scope) {
-		return {
-			restrict: 'E',
-			transclude: true,
-		    scope: {
-		      
-		    },
-			template: '<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6">{{task.title}}</section>',
-			link: function (scope, element) {
-				// var input = element.find("input")[0];
-				// setTimeout(function(){
-				// 	$(input).knob()
-				// },0);
-				element.value = "Hello"
-			}
-		}
-	})
-    .directive("clickToEdit", function($http) {
+    .directive("clickToEdit", function($http, $timeout) {
     var editorTemplate = '<section class="click-to-edit">' +
-            '<span ng-hide="view.editorEnabled" ng-click="enableEditor()">{{value}}</span>' +
+            '<input type="checkbox" data-status="{{status}}" name="vehicle" value="Car"><span ng-hide="view.editorEnabled" ng-click="enableEditor()">{{value}}</span>' +
             '<input ng-keypress="watchKeys($event)" ng-show="view.editorEnabled" ng-model="view.editableValue" ng-blur="save()">' +
     '</section>';
 
@@ -91,7 +74,16 @@ angular.module('sidecar.directives', []).
         template: editorTemplate,
         scope: {
             value: "=clickToEdit",
-            attr: "=taskId"
+            attr: "=taskId",
+            status: "=statusBool"
+        },
+        link: function(scope, element, attrs) {
+            element.bind('click', function() {
+                $timeout(function() {
+                    element.find('input')[1].focus();
+                });
+            });
+
         },
         controller: function($scope) {
             $scope.view = {
@@ -129,6 +121,7 @@ angular.module('sidecar.directives', []).
 	          })
 	          .success(function(){
 	            console.log("Task updated")
+
 	          })
 	        };
         }

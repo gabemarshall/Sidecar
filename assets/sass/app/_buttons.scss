@@ -47,6 +47,17 @@
 	}
 }
 
+/* Red */
+.button-red {
+	@include transition(all 0.25s linear);
+	background: $red;
+	color: #fff;
+
+	:hover {
+		background: #c14d4c;
+	}
+}
+
 /* Purple */
 .button-purple {
 	@include transition(all 0.25s linear);

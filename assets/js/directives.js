@@ -64,20 +64,22 @@ angular.module('sidecar.directives', []).
 	})
     .directive("clickToEdit", function($http, $timeout) {
     var editorTemplate = '<section class="click-to-edit">' +
-            '<input type="checkbox" data-status="{{status}}" name="vehicle" value="Car"><span ng-hide="view.editorEnabled" ng-click="enableEditor()">{{value}}</span>' +
+            '<input type="checkbox" ng-checked="{{status}}" ng-click="save()" name="vehicle" value="Car"><span ng-hide="view.editorEnabled" ng-click="enableEditor()">{{value}}</span>' +
             '<input ng-keypress="watchKeys($event)" ng-show="view.editorEnabled" ng-model="view.editableValue" ng-blur="save()">' +
     '</section>';
 
     return {
-        restrict: "A",
+        restrict: "EA",
         replace: true,
-        template: editorTemplate,
+        transclude: true,
         scope: {
             value: "=clickToEdit",
             attr: "=taskId",
             status: "=statusBool"
         },
+        template: editorTemplate,
         link: function(scope, element, attrs) {
+        
             element.bind('click', function() {
                 $timeout(function() {
                     element.find('input')[1].focus();
@@ -107,16 +109,29 @@ angular.module('sidecar.directives', []).
             };
 
             $scope.save = function() {
+            	
+            	// Ugly hack to update checkbox based on task status
+            	if ($scope.status)
+            	{
+            		$scope.status = false
+            	}
+            	else 
+            	{
+            		$scope.status = true
+            	}
+
                 $scope.value = $scope.view.editableValue;
                 $scope.disableEditor();
                 $scope.updateTask();
             };
 	        $scope.updateTask = function (index) {
+
 	          $http({
 	              method: "post",
 	              url: "/tasks/update/" + $scope.attr,
 	              data: {
-	                  title: $scope.value
+	                  title: $scope.value,
+	                  completed: $scope.status
 	              }
 	          })
 	          .success(function(){

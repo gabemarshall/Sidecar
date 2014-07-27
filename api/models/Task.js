@@ -11,7 +11,10 @@ module.exports = {
   attributes: {
   	
   	title: 'string',
-  	completed: 'boolean',
+  	completed: { 
+      type: 'boolean', 
+      defaultsTo: false
+    },
   	project: {
   		model: 'project'
   	},

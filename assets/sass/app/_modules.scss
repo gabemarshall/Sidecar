@@ -5,15 +5,16 @@
 
 	.module {
 		.module-header {
-			background: $gray-border;
+			background: $dark-blue;
 			border-top-left-radius: 3px;
 			border-top-right-radius: 3px;
-			border: 1px solid $gray-border;
-			font-size: 14px;
+			border: 1px solid $dark-blue;
+			color: #fff;
+			font-size: 15px;
+			font-weight: bold;
 			list-style: none;
 			padding: 12px 0 10px;
 			width: 100%;
-			text-transform: uppercase;
 		}
 
 		.module-body {

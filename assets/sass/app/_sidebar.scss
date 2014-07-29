@@ -1,7 +1,7 @@
 /* Sidebar
 ----------------------------------------------- */
 .sidebar {
-	background: #2a2f36;
+	background: $dark-blue;
 	min-height: calc(100% - 55px);
 	margin: 40px 0 0;
 	min-height: 100%;
@@ -16,7 +16,7 @@
 	width: 200px;
 
 	a {
-		color: #aaa;
+		color: #fff;
 		cursor: pointer;
 		display: block;
 		font-size: 15px;
@@ -25,7 +25,6 @@
 		padding: 15px 20px 0 62px;
 		position: relative;
 		text-align: left;
-		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 	}
 
 	.active {

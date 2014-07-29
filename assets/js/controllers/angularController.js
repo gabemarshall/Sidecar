@@ -1,4 +1,3 @@
 'use strict';
-
-/* Controllers */
+/* Controllers Init*/
 angular.module('sidecar.controllers', []);

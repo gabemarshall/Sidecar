@@ -36,6 +36,12 @@ module.exports = {
                 if (project === undefined) return res.notFound();
 
                 if (err) return next(err);
+
+                // Convert Client ID to an actual Client name so it can be displayed with the project.
+                Client.findOne({where:{id:project.client}}, function(err, client){
+                    project.clientName = client.name
+                })
+
                 res.json(project)
             })
 
@@ -51,10 +57,16 @@ module.exports = {
                 if (project === undefined) return res.notFound();
 
                 if (err) return next(err);
-
+                for (i=0;i<project.length;i++){
+                    Client.findOne({where:{id:project[i].client}}, function(err, client){
+                        project[i].clientName = client.name
+                    })                    
+                }
                 res.json(project);
 
             });
+
+
 
         }
 

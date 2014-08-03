@@ -31,6 +31,7 @@ module.exports = {
             return next();
         }
 
+        // If the name parameter exists then return all info from a client including it's projects.
         if (name) {
             
             Client.findOne({where: {name: name, user: req.session.user }}).populate('projects').exec(function(err, client){
@@ -40,8 +41,18 @@ module.exports = {
                 res.json(client)
             })
 
-        
-        } else {
+        } 
+        // If only the id parameter exists then just return basic Client info
+        else if (id){
+            Client.findOne({where: {id: id, user: req.session.user }}, function(err, client){
+            if (client === undefined) return res.notFound();
+
+                if (err) return next(err);
+                res.json(client)
+            })
+        }
+        // If no parameters exist, return all Clients associated with the active session
+        else {
 
             var options = {
                 where: { user: req.session.user }
@@ -111,6 +122,25 @@ module.exports = {
             });
 
         });
+    },
+
+    activity: function(req, res, next) {
+
+        var id = req.param('id');
+        var name = req.param('name')
+
+        if (name) {
+            
+            Client.findOne({where: {name: name, user: req.session.user }}).populate('projects').exec(function(err, client){
+                if (client === undefined) return res.notFound();
+
+                if (err) return next(err);
+                res.json(client)
+            })
+
+        
+        }
+
     },
 
     /**

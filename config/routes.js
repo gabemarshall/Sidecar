@@ -105,6 +105,7 @@ module.exports.routes = {
 
 // ##### Read #####
   'get /clients/:name?': 'ClientController.find',
+  'get /clientsById/:id?': 'ClientController.find',
 
 // ##### Update #####
   'post /clients/update/:id?': 'ClientController.update',
@@ -114,6 +115,10 @@ module.exports.routes = {
   
   'post /clients/delete/:id?': 'ClientController.delete',
   'delete /clients/:id?': 'ClientController.delete',
+
+// ##### Activity #####
+
+  'get /clients/activity/:name?': 'ClientController.activity',
 
 
 

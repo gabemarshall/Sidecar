@@ -34,11 +34,11 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<ul class="activity-list">
-								<li class="al-invoice">
+								<li class="al-invoice" ng-repeat="activity in client.activities">
 									<p><small>5/28/2014</small></p>
-									<p>Invoice <strong><a href="#">00212</a></strong> was sent to client</p>
+									<p>{{ activity.type }} <strong><a href="#">{{ activity.title }}</a></strong> was {{ activity.action }}</p>
 								</li>
-								<li class="al-note">
+								<!-- <li class="al-note">
 									<p><small>5/15/2014</small></p>
 									<p>Trevan Hetzel added a new <strong><a href="#">note</a></strong></p>
 								</li>
@@ -65,7 +65,7 @@
 								<li class="al-document">
 									<p><small>4/28/2014</small></p>
 									<p>Steve Jobs signed <strong><a href="#">Document Name</a></strong></p>
-								</li>
+								</li> -->
 							</ul>
 						</div>
 					</div>

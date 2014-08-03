@@ -59,7 +59,14 @@ module.exports = {
                 if (err) return next(err);
                 for (i=0;i<project.length;i++){
                     Client.findOne({where:{id:project[i].client}}, function(err, client){
-                        project[i].clientName = client.name
+                        try {
+                            project[i].clientName = client.name
+                        }
+                        catch (err){
+                            project[i].clientName = "N/A"
+                            console.log(err)
+                        }
+                        
                     })                    
                 }
                 res.json(project);

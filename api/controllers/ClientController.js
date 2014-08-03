@@ -128,15 +128,51 @@ module.exports = {
 
         var id = req.param('id');
         var name = req.param('name')
-
-        if (name) {
+        var activityArray = []
+        if (id) {
             
-            Client.findOne({where: {name: name, user: req.session.user }}).populate('projects').exec(function(err, client){
-                if (client === undefined) return res.notFound();
+            Project.find({where: {client: id, user: req.session.user }}, function(err, project){
+                if (project === undefined) return res.notFound();
 
                 if (err) return next(err);
-                res.json(client)
-            })
+
+                for (i=0;i<project.length;i++){
+                    project[i].type = 'project'
+                    if (project[i].createdAt === project[i].updatedAt){
+                        project[i].action = "created"
+                    }
+                    else {
+                        project[i].action = "updated"
+                    }
+                    activityArray.push(project[i])
+                }
+               
+                
+            
+            });
+
+            Task.find({where: { user: req.session.user }}, function(err, task) {
+
+                if (task === undefined) return res.notFound();
+
+                if (err) return next(err);
+                for (i=0;i<task.length;i++){
+                    task[i].type = 'task'
+                    if (task[i].createdAt === task[i].updatedAt){
+                        task[i].action = "created"
+                    }
+                    else {
+                        task[i].action = "updated"
+                    }
+                    activityArray.push(task[i])
+                }
+            
+                res.json(activityArray)
+
+            });
+
+
+            //Project.find({where: {client: name}})
 
         
         }

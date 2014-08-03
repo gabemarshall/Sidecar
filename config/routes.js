@@ -118,7 +118,7 @@ module.exports.routes = {
 
 // ##### Activity #####
 
-  'get /clients/activity/:name?': 'ClientController.activity',
+  'get /clients/activity/:id?': 'ClientController.activity',
 
 
 

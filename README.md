@@ -1,6 +1,10 @@
 # Sidecar
 
+### Sidecar Updates (develop branch 8-3-14)
 
+Early draft of clients overview "activity" page is completed. A decent amount of work is left but the general idea is working.
+
+![Alt text](https://dl.dropboxusercontent.com/u/16435/Sidecar/draft_activity.png "Activities")
 
 ### Sidecar 0.0.1a (6-28-14)
 

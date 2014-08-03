@@ -13,6 +13,9 @@ angular.module('sidecar.controllers').controller('Client', ['$scope', '$http', '
   var name = $routeParams.name
 
   $scope.client = ''
+  //$scope.activities = ''
+
+  var clientID
 
   var ajaxGetClient = function(){
     $http({
@@ -21,6 +24,13 @@ angular.module('sidecar.controllers').controller('Client', ['$scope', '$http', '
     })
     .success(function (data, status, headers, config){
       $scope.client = data;
+      $http({
+        method: 'GET',
+        url: '/clients/activity/'+data.id
+      }).success(function(activityData, status, headers,config){
+        $scope.client.activities = activityData
+      })
+      
     })   
   }
   

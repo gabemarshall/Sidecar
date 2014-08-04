@@ -39,7 +39,14 @@ module.exports = {
 
                 // Convert Client ID to an actual Client name so it can be displayed with the project.
                 Client.findOne({where:{id:project.client}}, function(err, client){
-                    project.clientName = client.name
+
+                    try {
+                        project.clientName = client.name  
+                    }
+                    catch (err){
+                        project.clientName = 'None'
+                    }
+                    
                 })
 
                 res.json(project)
@@ -63,8 +70,7 @@ module.exports = {
                             project[i].clientName = client.name
                         }
                         catch (err){
-                            project[i].clientName = "N/A"
-                            console.log(err)
+                            project[i].clientName = "None"
                         }
                         
                     })                    

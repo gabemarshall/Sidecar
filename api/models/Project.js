@@ -22,7 +22,8 @@ module.exports = {
       dominant : true
     },
     client: {
-      model: 'client'
+      model: 'client',
+      defaultsTo: 'None'
     },
     team: {
       model: 'team'

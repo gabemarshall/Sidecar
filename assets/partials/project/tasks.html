@@ -9,7 +9,7 @@
 		</div>
 
 		<ul class="task-list">
-			<li draggable="true" ng-repeat="task in project.tasks"><a href="#/tasks">{{ task.title }}</a></li>
+			<li task-id="task.id" draggable="true" ng-repeat="task in project.tasks" click-to-edit="task.title"><a href="#/tasks">{{ task.title }}</a></li>
 		</ul>
 	</section>
 

@@ -1,10 +1,10 @@
 // clickToEdit
 // ************************************************************************
 angular.module('sidecar.controllers').directive("clickToEdit", function($http, $timeout) {
-    var editorTemplate = '<section class="click-to-edit">' +
-        '<input type="checkbox" ng-click="toggleStatus()" ng-checked="{{status}}" ng-click="save()" name="vehicle" value="Car"><span ng-hide="view.editorEnabled" ng-click="enableEditor()">{{value}}</span>' +
+    var editorTemplate = '<li class="click-to-edit">' +
+        '<span ng-hide="view.editorEnabled" ng-click="enableEditor()">{{value}}</span>' +
         '<input ng-keypress="watchKeys($event)" ng-show="view.editorEnabled" ng-model="view.editableValue" ng-blur="save()">' +
-        '</section>';
+        '</li>';
 
     return {
         restrict: "EA",

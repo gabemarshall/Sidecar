@@ -9,29 +9,23 @@
 			</section>
 
 			<section class="button-wrap">
-				<button class="button button-gray"><span class="tag-task-icon icon" aria-hidden="true" data-icon="&#59148;"></span></button>
-				<button class="button button-gray"><span class="share-task-icon icon" aria-hidden="true" data-icon="&#59136;"></span></button>
-				<button class="button button-green" ng-click='toggleModal()'><span class="add">+</span> Add Task</button>
+				<button class="button button-gray">Edit Project</button>
 			</section>
 		</div>
 
 		<div class="container">
 			<ul class="header-menu" sub-nav>
-				<li><a href ng-click="loadOverview()" class="selected">Overview</a></li>
-				<li><a href ng-click="loadTasks()">Tasks</a></li>
+				<li><a href ng-click="loadTasks()" class="selected">Tasks</a></li>
 				<li><a href ng-click="loadDiscussion()">Discussion</a></li>
 				<li><a href ng-click="loadFiles()">Files</a></li>
-				<li><a href ng-click="loadTeam()">Team</a></li>
-				<li><a href ng-click="loadSettings()">Settings</a></li>
+				<li><a href ng-click="loadDetails()">Project Details</a></li>
 			</ul>
 		</div>
 	</header>
 
 	<section class="project-overview" ng-include="template.url"></section>
 
-	<!-- modal test -->
 	<modal-dialog show='modalShown' width='750px' height='400px'>
-		<p>Yay! This is the create new tasks modal!<p>
 		<input type="text" ng-model="newTaskTitle" placeholder="Title:" />
 		<button class="button button-green submit" ng-click="saveNewTask();toggleModal()">Add</button>
 

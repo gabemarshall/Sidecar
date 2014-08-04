@@ -6,24 +6,6 @@ form {
 		padding: 10px 0;
 	}
 
-	input,
-	textarea {
-		border: 1px solid #dfdfdf;
-		border-radius: 3px;
-		background: #f6f6f6;
-		color: #777;
-		padding: 1em;
-		float: left;
-		width: 100%;
-		font-size: .875em;
-		margin: .75em 0 2.25em;
-		@include transition(border-color .3s ease);
-
-		&:focus {
-			border-color: $dark-blue;
-		}
-	}
-
 	label {
 		float: left;
 		width: 100%;
@@ -48,5 +30,23 @@ form {
 	select {
 		width: 100%;
 		margin: 25px 0 0;
+	}
+}
+
+input,
+textarea {
+	border: 1px solid #dfdfdf;
+	border-radius: 3px;
+	background: #f6f6f6;
+	color: #777;
+	padding: 1em;
+	float: left;
+	width: 100%;
+	font-size: .875em;
+	margin: .75em 0 2.25em;
+	@include transition(border-color .3s ease);
+
+	&:focus {
+		border-color: $dark-blue;
 	}
 }

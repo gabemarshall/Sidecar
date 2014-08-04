@@ -1,0 +1,36 @@
+.file-row {
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 1em;
+
+	&:hover {
+		background: #e3e9ed;
+
+		.button {
+			display: block;
+		}
+	}
+
+	.button {
+		position: absolute;
+		top: 1.25em;
+		right: 1em;
+		display: none;
+		border: 1px solid #d8dce0;
+	}
+}
+
+.fr-title,
+.fr-meta {
+	display: block;
+}
+
+.fr-title {
+	padding: .325em 0 .5em 60px;
+}
+
+.fr-meta {
+	padding: 0 0 0 60px;
+	font-size: 13px;
+}

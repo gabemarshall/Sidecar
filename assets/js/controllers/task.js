@@ -21,12 +21,10 @@ angular.module('sidecar.controllers').controller('Tasks', ['$scope', '$http', '$
 
   // Templates
   $scope.templates = [
-    { name: 'Overview', url: 'partials/project/overview.html' },
     { name: 'Tasks', url: 'partials/project/tasks.html' },
     { name: 'Discussion', url: 'partials/project/discussion.html' },
     { name: 'Files', url: 'partials/project/files.html' },
-    { name: 'Team', url: 'partials/project/team.html' },
-    { name: 'Settings', url: 'partials/project/settings.html' }
+    { name: 'Details', url: 'partials/project/overview.html' }
   ];
 
   $scope.template = $scope.templates[0];
@@ -94,27 +92,19 @@ angular.module('sidecar.controllers').controller('Tasks', ['$scope', '$http', '$
       })
   };
 
-  $scope.loadOverview = function () {
+  $scope.loadTasks = function () {
     $scope.template = $scope.templates[0];
   }
 
-  $scope.loadTasks = function () {
+  $scope.loadDiscussion = function () {
     $scope.template = $scope.templates[1];
   }
 
-  $scope.loadDiscussion = function () {
+  $scope.loadFiles = function () {
     $scope.template = $scope.templates[2];
   }
 
-  $scope.loadFiles = function () {
+  $scope.loadDetails = function () {
     $scope.template = $scope.templates[3];
-  }
-
-  $scope.loadTeam = function () {
-    $scope.template = $scope.templates[4];
-  }
-
-  $scope.loadSettings = function () {
-    $scope.template = $scope.templates[5];
   }
 }])

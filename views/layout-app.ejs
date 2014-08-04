@@ -59,13 +59,13 @@
 
 	   	<aside id="secondary" class="sidebar">
 			<nav id="nav" class="site-navigation" ng-controller="Nav">
-		        <a ng-class="{active: $location.path() == '/'}" href="/app" id="dashboard">Dashboard</a>
-		        <a ng-class="{active: $location.path() == '/clients'}" href="#/clients" id="clients">Clients</a>
-		        <a ng-class="{active: $location.path() == '/prospects'}" href="#/prospects" id="prospects">Prospects</a>
-		        <a ng-class="{active: $location.path() == '/projects'}" href="#/projects" id="projects">Projects</a>
-		        <a ng-class="{active: $location.path() == '/documents'}" href="#/documents" id="documents">Documents</a>
-		        <a ng-class="{active: $location.path() == '/invoices'}" href="#/invoices" id="invoices">Invoices</a>
-		        <a ng-class="{active: $location.path() == '/reports'}" href="#/reports" id="reports">Reports</a>
+		        <a ng-class="getClass('/dashboard')" href="/app" id="dashboard">Dashboard</a>
+		        <a ng-class="getClass('/clients')" href="#/clients" id="clients">Clients</a>
+		        <a ng-class="getClass('/prospects')" href="#/prospects" id="prospects">Prospects</a>
+		        <a ng-class="getClass('/projects')" href="#/projects" id="projects">Projects</a>
+		        <a ng-class="getClass('/documents')" href="#/documents" id="documents">Documents</a>
+		        <a ng-class="getClass('/invoices')" href="#/invoices" id="invoices">Invoices</a>
+		        <a ng-class="getClass('/reports')" href="#/reports" id="reports">Reports</a>
 		    </nav><!-- .site-navigation -->
 		</aside><!-- .sidebar -->
 

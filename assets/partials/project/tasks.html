@@ -1,24 +1,25 @@
-<section class="module-container container">
-	<section class="module">
-		<header class="module-header clearfix">
-			<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Task</section>
-			<section class="project-client col-lg-3 col-md-3 col-sm-3 hidden-xs"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Comments</section>
-			<section class="project-due  col-lg-2 col-md-2 col-sm-2 col-xs-3"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Due Date</section>
-		</header>
+<section class="module-container container col-lg-12">
+	<section class="module col-md-6">
+		<div class="module-header clearfix">
+			<div class="col-xs-12">To do</div>
 
-		<section class="module-list">
-			<div class="row" ng-repeat="task in project.tasks">
-				<section class="project-name col-lg-4 col-md-4 col-sm-4 col-xs-6"><a href="#/tasks">{{ task.title }}</a></section>
-				<section class="project-client col-lg-3 col-md-3 col-sm-3 hidden-xs">Client</section>
-				<section class="project-due col-lg-2 col-md-2 col-sm-2 col-xs-3">Due Date</section>
-				<section class="project-progress col-lg-3 col-md-3 col-sm-3 hidden-xs">
-					<div class="progress">
-	  					<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-						  	<span class="sr-only">60% Complete</span>
-						</div><a ng-click="deleteTask($index)">Delete Task</a>
-					</div>
-				</section>
-			</div><!-- .row -->
-		</section>
+			<button class="button button-small right task-button">
+				<span class="add">+</span>
+            </button>
+		</div>
+
+		<ul class="task-list">
+			<li draggable="true" ng-repeat="task in project.tasks"><a href="#/tasks">{{ task.title }}</a></li>
+		</ul>
+	</section>
+
+	<section class="module col-md-6">
+		<div class="module-header clearfix">
+			<div class="col-xs-12">Done</div>
+		</div>
+
+		<ul class="task-list">
+			<li draggable="true"><a href="#">Doneeee that!</a></li>
+		</ul>
 	</section>
 </section>

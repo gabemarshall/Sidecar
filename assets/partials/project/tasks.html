@@ -8,8 +8,8 @@
             </button>
 		</div>
 
-		<ul class="task-list">
-			<li task-id="task.id" draggable="true" ng-repeat="task in project.tasks" click-to-edit="task.title"><a href="#/tasks">{{ task.title }}</a></li>
+		<ul class="task-list" droppable>
+			<li task-id="task.id" draggable="true" id="task{{task.title}}" ng-repeat="task in project.tasks" click-to-edit="task.title"><a href="#/tasks">{{ task.title }}</a></li>
 		</ul>
 	</section>
 
@@ -18,8 +18,8 @@
 			<div class="col-xs-12">Done</div>
 		</div>
 
-		<ul class="task-list">
-			<li draggable="true"><a href="#">Doneeee that!</a></li>
+		<ul class="task-list" droppable>
+			
 		</ul>
 	</section>
 </section>

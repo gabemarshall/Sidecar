@@ -1,8 +1,8 @@
-<div ng-controller="Tasks">
+<div ng-controller="Project">
     <section class="app-subheader row right">
         <h1 class="as-title left">{{ project.title }}</h1>
         
-        <button type="submit" class="btn btn-secondary btn-edit right" ng-click="toggleModal()">Edit project</button>
+        <button type="submit" class="btn btn-secondary btn-edit right" ng-click="editProjToggleModal()">Edit project</button>
         
         <h2 class="as-subtitle left">{{ project.clientName}}</h2>
 
@@ -15,9 +15,26 @@
     </section>
 
     <section class="app-content row right" ng-include="template.url"></section>
-</div>
 
-<modal-dialog show='modalShown'>
-	<input type="text" ng-model="newTaskTitle" placeholder="Title:">
-	<button class="button button-green submit" ng-click="saveNewTask();toggleModal()">Add</button>
-</modal-dialog>
+    <modal-dialog show="taskModalShown">
+    	<div class="modal-header">New task</div>
+
+    	<form class="modal-form">
+    		<label>Task name</label>
+			<input type="text" ng-model="newTaskTitle">
+
+			<button class="btn btn-primary btn-add" ng-click="saveNewTask();toggleModal()">Add</button>
+		</form>
+	</modal-dialog>
+
+	<modal-dialog show="editProjModalShown">
+	    <div class="modal-header">Edit project</div>
+
+	    <form class="modal-form">
+	        <label>Project title</label>
+	        <input type="text" ng-model="newProjectTitle">
+
+	        <button type="submit" class="btn btn-primary btn-add" ng-click="saveNewProject();toggleModal()">Save</button>
+	    </form>
+	</modal-dialog>
+</div>

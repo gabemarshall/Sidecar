@@ -24,6 +24,11 @@
 	right: 0;
 	padding-top: .813em;
 	padding-bottom: .813em;
+	color: $white;
+
+	&:hover {
+		color: $white;
+	}
 
 	&::before {
 		top: .125em;
@@ -31,6 +36,7 @@
 }
 
 .module-content {
+	position: relative;
 	background: #fff;
 	border: 1px solid $grey-med;
 	padding: 1.25em;

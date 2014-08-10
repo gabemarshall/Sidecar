@@ -68,3 +68,11 @@
 		font-size: 2.125em;
 	}
 }
+
+.btn-comment {
+	&::before {
+		top: .188em;
+		content: "\E718";
+		font-size: 2.125em;
+	}
+}

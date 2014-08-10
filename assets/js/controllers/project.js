@@ -1,11 +1,19 @@
 // Projects
 // ************************************************************************
 angular.module('sidecar.controllers').controller('Project', ['$scope', '$http', function ($scope, $http) {
-	// Modal controller
-	$scope.modalShown = false;
-		$scope.toggleModal = function() {
-  		$scope.modalShown = !$scope.modalShown;
-		};
+	
+  // Edit project modal
+	$scope.editProjModalShown = false;
+    $scope.editProjToggleModal = function() {
+      $scope.editProjModalShown = !$scope.editProjModalShown;
+    };
+
+  // Add task modal
+  $scope.taskModalShown = false;
+    $scope.taskToggleModal = function() {
+      $scope.taskModalShown = !$scope.taskModalShown;
+    };
+
   $scope.projects = []
   $scope.newProjectTitle = '';
 

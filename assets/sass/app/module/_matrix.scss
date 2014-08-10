@@ -6,12 +6,12 @@
 
 .matrix-item {
 	position: relative;
-	min-height: 12em;
 	overflow: hidden;
 	margin-bottom: 1em;
 	border: 1px solid #e3e9ed;
 	background: $white;
 	border-radius: 2px;
+	min-height: 12em;
 
 	p:not(.matrix-title) {
 		padding: 2.5em 1.423em 3em;
@@ -36,7 +36,31 @@
 }
 
 .matrix-full {
-	padding-left: 4.5em !important;
+	padding: 1em !important;
+
+	p {
+		padding: 0 !important;
+	}
+
+	.matrix-date {
+		position: relative;
+		top: auto;
+		left: auto;
+		font-size: .813em;
+	}
+
+	@include breakpoint(medium) {
+		margin-bottom: 1.25em;
+		padding: 1em 1em 1em 4.5em !important;
+
+		&:nth-child(even) {
+			margin-left: 0;
+		}
+	}
+
+	@include breakpoint(large) {
+		margin-left: 0;
+	}
 }
 
 .matrix-date {
@@ -80,7 +104,13 @@
 .interaction-type {
 	position: relative;
 	float: left;
-	margin: -.5em 0 0 -3.5em;
+	margin: 0 1em 1em 0;
+	width: 2em;
+	height: 2em;
+
+	@include breakpoint(medium) {
+		margin: 0 0 0 -3.5em;
+	}
 
 	&:before {
 		content: "";

@@ -1,34 +1,23 @@
-<main class="content content-documents" role="main" ng-controller="Tasks">
+<div ng-controller="Tasks">
+    <section class="app-subheader row right">
+        <h1 class="as-title left">{{ project.title }}</h1>
+        
+        <button type="submit" class="btn btn-secondary btn-edit right" ng-click="toggleModal()">Edit project</button>
+        
+        <h2 class="as-subtitle left">{{ project.clientName}}</h2>
 
-	<!-- PAGE HEADER -->
-	<header class="page-header">
-		<div class="container">
-			<section class="page-title" ng-model="project">
-				<h2>{{ project.title }}</h2>
-				<h5>{{ project.clientName}}</h5>
-			</section>
+        <ul class="as-nav no-bullets left" sub-nav>
+	        <li class="as-nav--current"><a href ng-click="loadTasks()">Tasks</a></li>
+	        <li><a href ng-click="loadDiscussion()">Discussion</a></li>
+	        <li><a href ng-click="loadFiles()">Files</a></li>
+	        <li><a href ng-click="loadDetails()">Project Details</a></li>
+	    </ul>
+    </section>
 
-			<section class="button-wrap">
-				<button class="button button-gray">Edit Project</button>
-			</section>
-		</div>
+    <section class="app-content row right" ng-include="template.url"></section>
+</div>
 
-		<div class="container">
-			<ul class="header-menu" sub-nav>
-				<li><a href ng-click="loadTasks()" class="selected">Tasks</a></li>
-				<li><a href ng-click="loadDiscussion()">Discussion</a></li>
-				<li><a href ng-click="loadFiles()">Files</a></li>
-				<li><a href ng-click="loadDetails()">Project Details</a></li>
-			</ul>
-		</div>
-	</header>
-
-	<section class="project-overview" ng-include="template.url"></section>
-
-	<modal-dialog show='modalShown' width='750px' height='400px'>
-		<input type="text" ng-model="newTaskTitle" placeholder="Title:" />
-		<button class="button button-green submit" ng-click="saveNewTask();toggleModal()">Add</button>
-
-	</modal-dialog>
-
-</main>
+<modal-dialog show='modalShown'>
+	<input type="text" ng-model="newTaskTitle" placeholder="Title:">
+	<button class="button button-green submit" ng-click="saveNewTask();toggleModal()">Add</button>
+</modal-dialog>

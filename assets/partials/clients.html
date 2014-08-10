@@ -1,69 +1,54 @@
-<main class="content content-clients" role="main">
-	<header class="page-header">
-		<div class="container">
-			<section class="page-title">
-				<h2>Clients</h2>
-			</section>
+<section class="app-subheader row right">
+    <h1 class="as-title left">Clients</h1>
+    <button type="submit" class="btn btn-primary btn-add right" ng-click="toggleModal()">New client</button>
+</section>
 
-			<section class="button-wrap">
-				<button class="button button-green" ng-click='toggleModal()'>
-					<span class="add">+</span> New Client
-				</button>
-			</section>
-		</div>
-	</header>
+<section class="app-content row right">
+    <div class="fake-table">
+        <div class="ft-header row">
+            <div class="ft-header-col md-3">Company</div>
+            <div class="ft-header-col md-3">Contact</div>
+            <div class="ft-header-col md-3">Phone</div>
+            <div class="ft-header-col md-3">Location</div>
+        </div>
 
-	<section class="module-container container">
-		<section class="module">
-			<header class="module-header clearfix">
-				<section class="col-lg-3"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Company</section>
-				<section class="col-lg-3"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Contact</section>
-				<section class="col-lg-2"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Phone</section>
-				<section class="col-lg-2"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Location</section>
-				<section class="col-lg-2"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Date Created</section>
-			</header>
+        <a href="#/clients/{{ client.name }}" class="ft-row row" ng-repeat="client in clients">
+            <div class="ft-row-col sm-12 md-3">{{ client.name }}</div>
+            <div class="ft-row-col sm-12 md-3">{{ client.contact }}</div>
+            <div class="ft-row-col sm-12 md-3">{{ client.phone }}</div>
+            <div class="ft-row-col sm-12 md-3">{{ client.city }}</div>
+        </a>
+    </div>
+</section>
 
-			<section class="module-list">
-				<a href="#/clients/{{ client.name }}" class="row" ng-repeat="client in clients">
-					<section class="col-lg-3">{{ client.name }}</section>
-					<section class="col-lg-3">{{ client.contact }}</section>
-					<section class="col-lg-2">{{ client.phone }}</section>
-					<section class="col-lg-2">{{ client.city }}</section>
-					<section class="col-lg-2">{{ client.createdAt }}</section>
-				</a>
-			</section>
-		</section>
-	</section>
+<modal-dialog show="modalShown">
+	<div class="modal-header">New client</div>
 
-	<modal-dialog show='modalShown' width='550px'>
-		<div class="modal-header">New Prospect</div>
-	    <form class="modal-form">
-	      <label>Company</label>
-	      <input type="text" ng-model="clientInfo.name">
+	<form class="modal-form">
+		<label>Company</label>
+		<input type="text" ng-model="clientInfo.name">
 
-	      <label>Contact</label>
-	      <input type="text" ng-model="clientInfo.contact">
+		<label>Contact</label>
+		<input type="text" ng-model="clientInfo.contact">
 
-	      <label>Email</label>
-	      <input type="text" ng-model="clientInfo.email"
+		<label>Email</label>
+		<input type="text" ng-model="clientInfo.email">
 
-	      <label>Phone</label>
-	      <input type="text" ng-model="clientInfo.phone">
+		<label>Phone</label>
+		<input type="text" ng-model="clientInfo.phone">
 
-	      <label>Website</label>
-	      <input type="text" ng-model="clientInfo.website">
+		<label>Website</label>
+		<input type="text" ng-model="clientInfo.website">
 
-	      <label>Address</label>
-	      <input type="text" ng-model="clientInfo.address">
+		<label>Address</label>
+		<input type="text" ng-model="clientInfo.address">
 
-	      <label>City</label>
-	      <input type="text" ng-model="clientInfo.city">
+		<label>City</label>
+		<input type="text" ng-model="clientInfo.city">
 
-	      <label>State</label>
-	      <input type="text" ng-model="clientInfo.state">
+		<label>State</label>
+		<input type="text" ng-model="clientInfo.state">
 
-	      
-	    </form>
-	    <button type="submit" class="button button-green" ng-click="saveNewClient();toggleModal()">Create client</button>
-	</modal-dialog>
-</main>
+		<button type="submit" class="btn btn-primary btn-add left" ng-click="saveNewClient();toggleModal()">Create client</button>
+	</form>
+</modal-dialog>

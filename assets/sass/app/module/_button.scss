@@ -1,0 +1,70 @@
+.btn {
+	position: relative;
+	padding: .5em 1.25em .5em 2.375em;
+	font-weight: 300;
+	font-size: .938em;
+	color: $white;
+	border: 0;
+	border-radius: 2px;
+	transition: background .2s ease, color .2s ease;
+	outline: none;
+	text-decoration: none;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: .3em;
+		font-size: 2.5em;
+		font-family: $icon;
+		color: $white;
+		line-height: 1.063em;
+	}
+
+	@include breakpoint(medium) {
+		padding: .625em 1.25em .625em 2.5em;
+
+		&::before {
+			top: .031em;
+			left: .375em;
+		}
+	}
+}
+
+.btn-primary {
+	background: $primary;
+
+	&:hover {
+		background: darken($primary, 10);
+	}
+}
+
+.btn-secondary {
+	background: $secondary;
+
+	&:hover {
+		background: darken($secondary, 10);
+	}
+}
+
+.btn-dark {
+	background: $darker;
+
+	&:hover {
+		background: darken($darker, 10);
+	}
+}
+
+// Icons
+.btn-add {
+	&::before {
+		content: "\2795";
+	}
+}
+
+.btn-edit {
+	&::before {
+		top: .125em;
+		content: "\270E";
+		font-size: 2.125em;
+	}
+}

@@ -1,0 +1,63 @@
+.module {
+	padding: 0 !important;
+	border-radius: 2px;
+	overflow: hidden;
+	margin-bottom: 1em;
+
+	@include breakpoint(medium) {
+		margin-bottom: 1.25em;
+	}
+}
+
+.module-header {
+	position: relative;
+	background: $dark;
+	color: $white;
+	font-size: .875em;
+	padding: .857em 1.25em .714em;
+	text-transform: uppercase;
+}
+
+.mh-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding-top: .813em;
+	padding-bottom: .813em;
+
+	&::before {
+		top: .125em;
+	}
+}
+
+.module-content {
+	background: #fff;
+	border: 1px solid $grey-med;
+	padding: 1.25em;
+}
+
+.mc-well {
+	font-size: .875em;
+	padding: 1.35em;
+	background: $grey-light;
+	border: 1px solid $grey-med;
+	border-radius: 3px;
+	box-shadow: inset 0 2px 1px rgba(0,0,0,.07);
+
+	p {
+		margin: 0;
+		line-height: 1.25em;
+
+		&:nth-child(2n+2) {
+			margin: 0 0 1em;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+
+		@include breakpoint(medium) {
+			margin: 0 0 1em;
+		}
+	}
+}

@@ -1,27 +1,48 @@
-<main class="content content-clients" role="main" ng-controller="Client">
-	<header class="page-header">
-		<div class="container">
-			<section class="page-title">
-				<h2>Apple Inc.</h2>
-			</section>
+<div ng-controller="Client">
+	<section class="app-subheader row right">
+	    <h1 class="as-title left">Apple Inc.</h1>
+	    <button type="submit" class="btn btn-secondary btn-edit right" ng-click="toggleModal()">Edit client</button>
 
-			<section class="button-wrap">
-				<button class="button button-gray">
-					Edit Client
-				</button>
-			</section>
-		</div>
+	    <ul class="as-nav no-bullets left" sub-nav>
+	        <li class="as-nav--current"><a href ng-click="loadOverview()">Overview</a></li>
+	        <li><a href ng-click="loadNotes()">Notes</a></li>
+	        <li><a href ng-click="loadProjects()">Projects</a></li>
+	        <li><a href ng-click="loadDocuments()">Documents</a></li>
+	        <li><a href ng-click="loadInvoices()">Invoices</a></li>
+	    </ul>
+	</section>
 
-		<div class="container">
-			<ul class="header-menu" sub-nav>
-				<li><a href ng-click="loadOverview()" class="selected">Overview</a></li>
-				<li><a href ng-click="loadNotes()">Notes</a></li>
-				<li><a href ng-click="loadProjects()">Projects</a></li>
-				<li><a href ng-click="loadDocuments()">Documents</a></li>
-				<li><a href ng-click="loadInvoices()">Invoices</a></li>
-			</ul>
-		</div>
-	</header>
+	<section class="app-content row right" ng-include="clientTemplate.url"></section>
 
-	<section class="client-overview" ng-include="clientTemplate.url"></section>
-</main>
+	<modal-dialog show="modalShown">
+		<div class="modal-header">Edit client</div>
+
+		<form class="modal-form">
+			<label>Company</label>
+			<input type="text" ng-model="clientInfo.name">
+
+			<label>Contact</label>
+			<input type="text" ng-model="clientInfo.contact">
+
+			<label>Email</label>
+			<input type="text" ng-model="clientInfo.email">
+
+			<label>Phone</label>
+			<input type="text" ng-model="clientInfo.phone">
+
+			<label>Website</label>
+			<input type="text" ng-model="clientInfo.website">
+
+			<label>Address</label>
+			<input type="text" ng-model="clientInfo.address">
+
+			<label>City</label>
+			<input type="text" ng-model="clientInfo.city">
+
+			<label>State</label>
+			<input type="text" ng-model="clientInfo.state">
+
+			<button type="submit" class="btn btn-primary btn-edit left" ng-click="saveNewClient();toggleModal()">Save</button>
+		</form>
+	</modal-dialog>
+</div>

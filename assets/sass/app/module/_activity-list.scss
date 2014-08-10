@@ -1,0 +1,94 @@
+.activity-list {
+	li {
+		position: relative;
+		padding: 0 0 1em 3.5em;
+		margin: 0 0 1em;
+		border-bottom: 1px solid #e3e3e3;
+
+		p {
+			margin: 0;
+			font-size: .875em;
+		}
+
+		&:last-child {
+			padding: 0 0 0 3em;
+			margin: 0;
+			border-bottom: 0;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: .25em;
+			left: 0;
+			width: 2em;
+			height: 2em;
+			border-radius: 50%;
+			border-width: 1px;
+			border-style: solid;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: .05em;
+			left: 0;
+			width: .875em;
+			height: .875em;
+			text-align: center;
+			font-family: $icon;
+			font-size: 2.5em;
+		}
+
+		&.al-note {
+			&:before {
+				border-color: #43496f;
+			}
+
+			&:after {
+				content: "\270E";
+				color: #43496f;
+			}
+		}
+
+		&.al-project {
+			&:before {
+				border-color: #62b5ba;
+			}
+
+			&:after {
+				content: "\2713";
+				color: #62b5ba;
+			}
+		}
+
+		&.al-document {
+			&:before {
+				border-color: #e85344;
+			}
+
+			&:after {
+				content: "\E731";
+				color: #e85344;
+			}
+		}
+
+		&.al-invoice {
+			&:before {
+				border-color: #32d491;
+			}
+
+			&:after {
+				content: "\27A6";
+				color: #32d491;
+			}
+		}
+	}
+
+	small {
+		display: inline-block;
+		font-size: 1em;
+		padding-bottom: .25em;
+		color: #7a8ca2;
+	}
+}

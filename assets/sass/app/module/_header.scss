@@ -1,0 +1,172 @@
+.ah-hamburger {
+	position: absolute;
+	top: 1.063em;
+	left: 1em;
+	width: 2em;
+	height: 1.5625em;
+	background: url(../img/nav-icon.svg) no-repeat;
+	cursor: pointer;
+}
+
+.ah-logo {
+	display: block;
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	width: 8.5em;
+}
+
+// Left container (only contains logo at medium-up)
+.ah-left {
+	height: 3.625em;
+	padding: 1em 0;
+	width: 100%;
+	background: $primary;
+
+	@include breakpoint(medium) {
+		position:fixed;
+		width: 12.5em;
+	}
+}
+
+// Right container (contains search and user profile dropdown)
+.ah-right {
+	display: none;
+	width: calc(100% - 12.5em);
+	height: 3.625em;
+	border-bottom: 1px solid $grey-med;
+	background: $white;
+	
+	@include breakpoint(medium) {
+		display: block;
+		margin-left: 12.5em;
+	}
+}
+
+// Search
+.ah-search {
+	position: relative;
+	margin: .75em 0 0 1em;
+}
+
+.ah-search-input {
+	width: 15em;
+	padding-right: 2em;
+}
+
+.ah-search-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 2em;
+	height: 100%;
+	background: none;
+	border: 0;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		content: "\1F50D";
+		font-family: $icon;
+		font-size: 2em;
+		line-height: 1.125em;
+		color: $grey;
+		transition: color .1s ease;
+	}
+
+	&:hover {
+		&::before {
+			color: $dark;
+		}
+	}
+}
+
+// Medium-up user profile (small breakpoint one is in OC file)
+.ah-profile-contain {
+	position: relative;
+	margin: 0 1.333em 0 0;
+}
+
+.ah-profile {
+	padding: .825em 0;
+	font-size: .938em;
+	color: $dark;
+	cursor: pointer;
+
+	&:hover {
+		color: $darker;
+	}
+
+	&::after {
+		float: right;
+		margin: 1em 0 0 1.066em;
+		content: "";
+		border-top: 5px solid $dark;
+		border-right: 4px solid transparent;
+		border-left: 4px solid transparent;
+	}
+}
+
+.ah-avatar {
+	width: 2.188em;
+	border-radius: 50%;
+}
+
+.ah-user {
+	margin: .375em 0 0 1em;
+}
+
+// Medium-up user profile dropdown
+.ah-sublist {
+	position: absolute;
+	z-index: -1;
+	top: -4.125em;
+	left: 0;
+	width: 100%;
+	background: $grey-light;
+	border: 1px solid $grey-med;
+	border-top: 0;
+	transition: top .1s ease;
+
+	a {
+		display: block;
+		padding: .625em 1.333em .625em 2.25em;
+		font-size: .938em;
+		color: $dark;
+		text-decoration: none;
+		transition: background .1s ease;
+
+		&:hover {
+			background: $grey-med;
+		}
+
+		&::before {
+			position: absolute;
+			left: .48em;
+			font-size: 1.5em;
+			font-family: $icon;
+		}
+	}
+}
+
+// Icons
+.ah-sublist--support a::before {
+	content: "\1F53F";
+}
+
+.ah-sublist--settings a::before {
+	content: "\2699";
+}
+
+.ah-sublist--logout a::before {
+	content: "\1F513";
+}
+
+.ah-sublist--open {
+	top: 3.625em;
+}

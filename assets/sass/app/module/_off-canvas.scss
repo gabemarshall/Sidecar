@@ -1,0 +1,144 @@
+.off-canvas {
+	background: $dark;
+}
+
+.off-canvas-contain.left-align {
+	@include breakpoint(medium) {
+		.off-canvas {
+			top: 3.625em;
+			left: 0;
+		}
+	}
+}
+
+.off-canvas-contain.left-align.off-canvas--open {
+	@include breakpoint(medium) {
+		.off-canvas-content {
+			left: 0;
+		}
+	}
+}
+
+.oc-profile {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	padding: .825em 1.333em;
+	font-size: .938em;
+	color: $grey;
+	background: $darker;
+
+	&::after {
+		position: absolute;
+		top: 1.825em;
+		right: 1.333em;
+		content: "";
+		border-top: 5px solid $grey;
+		border-right: 4px solid transparent;
+		border-left: 4px solid transparent;
+	}
+
+	@include breakpoint(medium) {
+		display: none;
+	}
+}
+
+.oc-profile--open {
+	color: $white;
+
+	&::after {
+		border-top: 0;
+		border-bottom: 5px solid $white;
+	}
+}
+
+.oc-avatar {
+	width: 2.188em;
+	border-radius: 50%;
+}
+
+.oc-user {
+	margin: .325em 0 0 1em;
+}
+
+.oc-sublist {
+	margin-top: -7.5625em;
+	height: 7.5625em;
+	background: $darker;
+	padding: 0 0 1em;
+	transition: margin-top .1s ease;
+
+	a {
+		display: block;
+		padding: .5em 1.333em;
+		font-size: .938em;
+		color: $grey;
+		text-decoration: none;
+	}
+}
+
+.oc-sublist--open {
+	margin-top: 0;
+
+	@include breakpoint(medium) {
+		display: none;
+	}
+}
+
+.oc-nav {
+	a {
+		position: relative;
+		display: block;
+		padding: 0 1.333em 0 4em;
+		height: 3.2em;
+		color: $grey;
+		font-size: .938em;
+		text-decoration: none;
+		line-height: 3.2em;
+		transition: background .1s ease;
+
+		&:hover {
+			background: $darker;
+		}
+
+		&::before {
+			position: absolute;
+			left: .48em;
+			font-size: 2.625em;
+			font-family: $icon;
+		}
+	}
+
+	.active a {
+		background: $darker;
+		color: $white;
+	}
+}
+
+.oc-nav--dashboard a::before {
+	content: "\1F6C7";
+}
+
+.oc-nav--clients a::before {
+	content: "\1F464";
+}
+
+.oc-nav--prospects a::before {
+	content: "\E700";
+}
+
+.oc-nav--projects a::before {
+	content: "\E800";
+}
+
+.oc-nav--documents a::before {
+	content: "\1F4C4";
+}
+
+.oc-nav--invoices a::before {
+	content: "\1F4E5";
+}
+
+.oc-nav--reports a::before {
+	content: "\1F4C8";
+}

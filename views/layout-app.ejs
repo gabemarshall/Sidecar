@@ -10,95 +10,86 @@
 
   		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	</head>
-	<body>
-		<header id="masthead" class="site-header clear" role="banner">
-			<section class="header-left logo left">
-        		<a href="/app"><img src="/img/logo.svg" /></a>
-        	</section><!-- .logo -->
 
-        	<section class="toolbar">
-        		<div class="container">
-	        		<section class="searchbox">
-						<form>
-							<input type="text" class="search" placeholder="Search...">
-						</form>
-					</section><!-- .searchbox -->
+	<body class="off-canvas-contain left-align">
+		<section class="off-canvas">
+            <a href="#" class="oc-profile row toggle-trigger">
+                <img src="img/avatar.png" class="oc-avatar left">
+                <p class="oc-user left">Jon Bellah</p>
+            </a>
 
-		        	<nav class="account-navigation">
-						<ul class="account-primary clear">
-							<li class="menu-item">
-								<div class="user-photo"><img src="img/avatar.png" /></div> Welcome, User!
-		  						<span aria-hidden="true" class="dropdown-icon icon" data-icon="&#9662;"></span>
-								<ul class="dropdown">
-									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128319;"></span> <span class="dropdown-text">Support</span></a></li>
-									<li class="sub-menu-item"><a href="#/settings"><span class="account-icon icon" aria-hidden="true" data-icon="&#9881;"></span> <span class="dropdown-text">Settings</span></a></li>
-									<li class="sub-menu-item"><a href="#"><span class="account-icon icon" aria-hidden="true" data-icon="&#128275;"></span> <span class="dropdown-text">Logout</span></a></li>
-		        				</ul>
-							</li>
-						</ul><!-- .account-primary -->
-					</nav><!-- .account-navigation -->
+            <ul class="oc-sublist no-bullets">
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Log out</a></li>
+            </ul>
 
-					<section class="notifications">
-						<ul>
-							<li class="notification-icon"><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128276;"></span>
-								<ul class="dropdown">
-									<li class="title">Notifications</li>
-									<li><img src="img/avatar3.png" /> Gabe sent you a message</li>
-									<li><img src="img/avatar2.png" /> Brenna shared a document with you</li>
-									<li>Justin assigned you a task.</li>
-									<li class="footer">See all notifications</li>
-								</ul>
-							</li>
-							<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#59168;"></span></li>
-							<li><span aria-hidden="true" class="dropdown-icon icon" data-icon="&#128101;"></span></li>
-						</ul>
-					</section><!-- .notifications -->
-				</div><!-- .container -->
-			</section><!-- .toolbar -->
-    	</header><!-- END #masthead -->
+            <ul class="oc-nav no-bullets" ng-controller="Nav">
+                <li ng-class="getClass('/dashboard')" class="oc-nav--dashboard"><a href="/app">Dashboard</a></li>
+                <li ng-class="getClass('/clients')" class="oc-nav--clients"><a href="#/clients">Clients</a></li>
+                <li ng-class="getClass('/prospects')" class="oc-nav--prospects"><a href="#/prospects">Prospects</a></li>
+                <li ng-class="getClass('/projects')" class="oc-nav--projects"><a href="#/projects">Projects</a></li>
+                <li ng-class="getClass('/documents')" class="oc-nav--documents"><a href="#/documents">Documents</a></li>
+                <li ng-class="getClass('/invoices')" class="oc-nav--invoices"><a href="#/invoices">Invoices</a></li>
+                <li ng-class="getClass('/reports')" class="oc-nav--reports"><a href="#/reports">Reports</a></li>
+            </ul>
+        </section>
 
-	   	<aside id="secondary" class="sidebar">
-			<nav id="nav" class="site-navigation" ng-controller="Nav">
-		        <a ng-class="getClass('/dashboard')" href="/app" id="dashboard">Dashboard</a>
-		        <a ng-class="getClass('/clients')" href="#/clients" id="clients">Clients</a>
-		        <a ng-class="getClass('/prospects')" href="#/prospects" id="prospects">Prospects</a>
-		        <a ng-class="getClass('/projects')" href="#/projects" id="projects">Projects</a>
-		        <a ng-class="getClass('/documents')" href="#/documents" id="documents">Documents</a>
-		        <a ng-class="getClass('/invoices')" href="#/invoices" id="invoices">Invoices</a>
-		        <a ng-class="getClass('/reports')" href="#/reports" id="reports">Reports</a>
-		    </nav><!-- .site-navigation -->
-		</aside><!-- .sidebar -->
+        <section class="off-canvas-content">
+            <header class="app-header row">
+                <div class="ah-left left">
+                    <a class="ah-hamburger off-canvas-trigger hide-md left"></a>
+                    <a href="/app" class="ah-logo"><img src="img/logo.svg" class="center"></a>
+                </div>
 
-		<%-body%>
+                <div class="ah-right left">
+                    <form class="ah-search left">
+                        <input type="search" class="ah-search-input" placeholder="Search...">
+                        <button type="submit" class="ah-search-btn"></button>
+                    </form>
 
-		<footer id="colophon" class="site-footer" role="contentinfo"></footer>
-		<!-- END #colophon -->
+                    <div class="ah-profile-contain right">
+                        <a class="ah-profile right">
+                            <img src="img/avatar.png" class="ah-avatar left">
+                            <p class="ah-user left">Jon Bellah</p>
+                        </a>
 
-		<script src="lib/jquery.knob.js"></script>
+                        <ul class="ah-sublist no-bullets">
+                            <li class="ah-sublist--support"><a href="#">Support</a></li>
+                            <li class="ah-sublist--settings"><a href="#">Settings</a></li>
+                            <li class="ah-sublist--logout"><a href="#">Log out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <%-body%>
+        </section>
+
+        <script src="/lib/barekit/js/barekit.min.js"></script>
+
 		<script src="lib/angular/angular.min.js"></script>
 		<script src="lib/angular-route/angular-route.min.js"></script>
 
-		<!--SCRIPTS-->
-<script src="/js/app.js"></script>
-<script src="/js/filters.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/services.js"></script>
-<script src="/js/controllers/angularController.js"></script>
-<script src="/js/controllers/client.js"></script>
-<script src="/js/controllers/clients.js"></script>
-<script src="/js/controllers/dashboard.js"></script>
-<script src="/js/controllers/documents.js"></script>
-<script src="/js/controllers/nav.js"></script>
-<script src="/js/controllers/project.js"></script>
-<script src="/js/controllers/prospect.js"></script>
-<script src="/js/controllers/prospects.js"></script>
-<script src="/js/controllers/task.js"></script>
-<script src="/js/directives/angularDirective.js"></script>
-<script src="/js/directives/appVersion.js"></script>
-<script src="/js/directives/clickToEdit.js"></script>
-<script src="/js/directives/dial.js"></script>
-<script src="/js/directives/modalDialog.js"></script>
-<script src="/js/directives/subNav.js"></script>
-<!--SCRIPTS END-->
+		<script src="/js/app.js"></script>
+		<script src="/js/filters.js"></script>
+		<script src="/js/main.js"></script>
+		<script src="/js/services.js"></script>
+		<script src="/js/controllers/angularController.js"></script>
+		<script src="/js/controllers/client.js"></script>
+		<script src="/js/controllers/clients.js"></script>
+		<script src="/js/controllers/dashboard.js"></script>
+		<script src="/js/controllers/documents.js"></script>
+		<script src="/js/controllers/nav.js"></script>
+		<script src="/js/controllers/project.js"></script>
+		<script src="/js/controllers/prospect.js"></script>
+		<script src="/js/controllers/prospects.js"></script>
+		<script src="/js/controllers/task.js"></script>
+		<script src="/js/directives/angularDirective.js"></script>
+		<script src="/js/directives/appVersion.js"></script>
+		<script src="/js/directives/clickToEdit.js"></script>
+		<script src="/js/directives/dial.js"></script>
+		<script src="/js/directives/modalDialog.js"></script>
+		<script src="/js/directives/subNav.js"></script>
 	</body>
 </html>

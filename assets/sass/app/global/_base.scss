@@ -1,6 +1,21 @@
+html,body {
+	overflow-x: hidden;
+
+	@include breakpoint(medium) {
+		overflow-x: scroll;
+	}
+}
+
 body {
+	position: relative;
+	min-height: 100%;
+	z-index: 1;
 	font-family: $sans;
 	background: $grey-light;
+
+	@include breakpoint(medium) {
+		position: static;
+	}
 }
 
 a {

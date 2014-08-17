@@ -1,8 +1,8 @@
 // clickToEdit
 // ************************************************************************
 angular.module('sidecar.controllers').directive("clickToEdit", function($http, $timeout) {
-    var editorTemplate = '<li class="click-to-edit">' +
-        '<span ng-hide="view.editorEnabled" ng-click="enableEditor()">{{value}}</span>' +
+    var editorTemplate = '<li id="{{status}}" class="click-to-edit">' +
+        '<span drop="handleDrop()" ng-hide="view.editorEnabled" ng-click="enableEditor()">{{value}}</span>' +
         '<input ng-keypress="watchKeys($event)" ng-show="view.editorEnabled" ng-model="view.editableValue" ng-blur="save()">' +
         '</li>';
 
@@ -23,6 +23,12 @@ angular.module('sidecar.controllers').directive("clickToEdit", function($http, $
                     element.find('input')[1].focus();
                 });
             });
+
+            element.bind('drop', function(){
+            
+                //alert($(this).attr("id"))
+                
+            })
 
         },
         controller: function($scope) {
@@ -55,6 +61,7 @@ angular.module('sidecar.controllers').directive("clickToEdit", function($http, $
                 $scope.updateTask();
             };
             $scope.toggleStatus = function(){
+
                 if ($scope.status) 
                 {
                     $scope.status = false

@@ -1,6 +1,6 @@
 // Droppable 
 // ************************************************************************
-angular.module('sidecar.controllers').directive('droppable', function () {
+angular.module('sidecar.controllers').directive('droppable', function ($http) {
   return {
     scope: {
       drop: '&', // parent

@@ -39,7 +39,42 @@ angular.module('sidecar.controllers').controller('Tasks', ['$scope', '$http', '$
       $scope.project = data;
     })   
   }
-    
+  
+  $scope.checkCompleted = function($task) {
+      if ($task.completed){
+        return true
+      }
+  }
+
+// Used to check whether or not the 'completed' list is empty. 
+// If empty, we'll put in a default value saying 'drag tasks here'
+  $scope.checkForTasksCompleted = function(){
+      var count = 0
+      var tasks = $scope.project.tasks
+
+      for (i=0;i<tasks.length;i++){
+        if (tasks[i].completed){
+          count++
+        }
+        if (count <= 0){
+          return true
+        }
+      }
+  }
+
+  $scope.checkForTasksNotCompleted = function(){
+      var count = 0
+      var tasks = $scope.project.tasks
+
+      for (i=0;i<tasks.length;i++){
+        if (!tasks[i].completed){
+          count++
+        }
+        if (count <= 0){
+          return true
+        }
+      }
+  }
 
   ajaxGetTasks()
 

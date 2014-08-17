@@ -1,12 +1,12 @@
-<section class="module sm-12 md-6">
+<section class="module sm-12 md-6" ng-controller="DragDropCtrl">
 	<header class="module-header">
 		To do
 		<a href ng-click="taskToggleModal()" class="btn btn-dark btn-add mh-btn">Add</a>
 	</header>
 
 	<div class="module-content">
-		<ul class="task-list row no-bullets" droppable>
-			<li task-id="task.id" draggable="true" id="task{{task.title}}" ng-repeat="task in project.tasks" click-to-edit="task.title"><a href="#/tasks">{{ task.title }}</a></li>
+		<ul class="task-list row no-bullets new" droppable>
+			<li task-id="task.id" data-taskId="{{task.id}}" draggable="true" id="{{task.completed}}" ng-repeat="task in project.tasks | filter:!checkCompleted" click-to-edit="task.title"><a href="#/tasks">{{ task.title }}</a></li>
 		</ul>
 	</div>
 </section>
@@ -15,8 +15,8 @@
 	<header class="module-header">Done</header>
 
 	<div class="module-content">
-		<ul class="task-list row no-bullets" droppable>
-			
+		<ul class="task-list row no-bullets done" droppable drop="handleDrop()">
+			<li task-id="task.id" data-taskId="{{task.id}}" draggable="true" id="{{task.completed}}" ng-repeat="task in project.tasks | filter:checkCompleted" click-to-edit="task.title"><a href="#/tasks">{{ task.title }}</a></li>
 		</ul>
 	</div>
 </section>

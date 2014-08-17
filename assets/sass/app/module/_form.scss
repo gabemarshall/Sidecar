@@ -1,0 +1,21 @@
+input,
+textarea {
+	padding: .5em;
+	background: $white;
+	border-radius: 3px;
+	border: 1px solid $grey-med;
+	color: #777;
+	font-size: .875em;
+	transition: border-color .3s ease;
+
+	&:focus {
+		border-color: $grey;
+		box-shadow: none;
+		color: $dark;
+	}
+}
+
+label {
+	float: left;
+	width: 100%;
+}

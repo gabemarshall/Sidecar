@@ -1,0 +1,62 @@
+.comment-title {
+	float: left;
+	margin: 0 0 .5em;
+	font-size: 1.125em;
+
+	@include breakpoint(large) {
+		font-size: 1.25em;
+	}
+}
+
+.comment-input {
+	width: 100%;
+	float: left;
+
+	@include breakpoint(medium) {
+		width: 55%;
+	}
+}
+
+.comment-btn {
+	margin: 1.25em 0 0;
+	float: left;
+
+	@include breakpoint(medium) {
+		margin: 0 0 0 1.25em;
+	}
+}
+
+.author-thumb {
+	display: none;
+
+	@include breakpoint(medium) {
+		display: block;
+		position: absolute;
+		top: 1.25em;
+		left: 1.25em;
+		width: 2.813em;
+	}
+}
+
+.comment {
+	padding-right: 1.25em;
+
+	p {
+		font-size: .938em;
+		line-height: 1.5em;
+		margin: 0 0 .938em;
+	}
+
+	.comment-meta {
+		font-size: .875em;
+		color: #999;
+
+		strong {
+			color: black;
+		}
+	}
+
+	@include breakpoint(medium) {
+		padding-left: 4.063em;
+	}
+}

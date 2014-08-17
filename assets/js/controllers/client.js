@@ -1,6 +1,13 @@
 // Client
 // ************************************************************************
 angular.module('sidecar.controllers').controller('Client', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+    // Modal controller
+  $scope.modalShown = false;
+  
+  $scope.toggleModal = function() {
+    $scope.modalShown = !$scope.modalShown;
+  };
+
   // Templates
   $scope.clientTemplates = [
     { name: 'Overview', url: 'partials/client/overview.html' },
@@ -12,10 +19,10 @@ angular.module('sidecar.controllers').controller('Client', ['$scope', '$http', '
 
   var name = $routeParams.name
 
-  $scope.client = ''
+  $scope.client = '';
   //$scope.activities = ''
 
-  var clientID
+  var clientID;
 
   var ajaxGetClient = function(){
     $http({
@@ -33,9 +40,8 @@ angular.module('sidecar.controllers').controller('Client', ['$scope', '$http', '
       
     })   
   }
-  
 
-  ajaxGetClient()
+  ajaxGetClient();
 
   $scope.clientTemplate = $scope.clientTemplates[0];
 

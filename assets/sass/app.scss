@@ -1,33 +1,33 @@
-/*
+// Bare Ninja settings file
+@import "app/global/settings";
 
-	Mockingbird - Organize. Manage. Better
-	Version 0.0.2.20
+// Import Bare Ninja
+@import "../lib/barekit/css/barekit";
 
-	Primary Sass Stylesheet
+// Variables
+@import "app/global/variables";
 
-*/
+// Base styles
+@import "app/global/base";
 
-/* Import Libraries
------------------------------------------------ */
-@import "bourbon/bourbon";
-@import "app/mixins";
-@import "app/variables";
-@import "app/colors";
-@import "app/grid";
+// Icon fonts
+@import "app/global/fonts";
 
-/* Import Stylesheets
------------------------------------------------ */
-@import "app/global";
-@import "app/header";
-@import "app/sidebar";
-@import "app/modules";
-@import "app/buttons";
-@import "app/content";
-@import "app/colorbox";
-@import "app/login";
-@import "app/forms";
-@import "app/modules/matrix";
-@import "app/modules/modal";
-@import "app/modules/documents";
-@import "app/modules/task-list";
-@import "app/modules/files";
+// Utility styles
+@import "app/global/utility";
+
+// Module files
+@import "app/module/header";
+@import "app/module/off-canvas";
+@import "app/module/form";
+@import "app/module/subheader";
+@import "app/module/button";
+@import "app/module/content";
+@import "app/module/fake-table";
+@import "app/module/matrix";
+@import "app/module/modal";
+@import "app/module/module";
+@import "app/module/activity-list";
+@import "app/module/task-list";
+@import "app/module/discussion";
+@import "app/module/files";

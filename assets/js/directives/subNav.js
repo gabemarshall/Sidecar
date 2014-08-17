@@ -10,8 +10,8 @@ angular.module('sidecar.controllers').directive('subNav', function () {
 			$anchor.on('click', function () {
 				var $this = $(this);
 
-				$anchor.removeClass('selected');
-				$this.addClass('selected');
+				$anchor.parent('li').removeClass('as-nav--current');
+				$this.parent('li').addClass('as-nav--current');
 			})
 		}
 	}

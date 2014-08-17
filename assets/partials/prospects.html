@@ -1,109 +1,89 @@
-<main class="content content-prospects" role="main" ng-controller="Prospects">
-  <header class="page-header">
-    <div class="container">
-      <section class="page-title">
-        <h2>Prospects</h2>
-      </section>
+<section class="app-subheader row right">
+    <h1 class="as-title left">Prospects</h1>
+    <button type="submit" class="btn btn-primary btn-add right" ng-click="toggleModal()">New prospect</button>
+</section>
 
-      <section class="button-wrap">
-        <button class="button button-red" ng-click='toggleModal()'>
-          <span class="add">+</span> New Prospect
-        </button>
-      </section>
+<section class="app-content row right">
+    <div class="fake-table">
+        <div class="ft-header row">
+            <div class="ft-header-col md-3">Company</div>
+            <div class="ft-header-col md-3">Contact</div>
+            <div class="ft-header-col md-3">Phone</div>
+            <div class="ft-header-col md-3">Follow Up</div>
+        </div>
+
+        <a href="app#/prospects/prospect" class="ft-row row">
+            <div class="ft-row-col sm-12 md-3">Google</div>
+            <div class="ft-row-col sm-12 md-3">Larry Page</div>
+            <div class="ft-row-col sm-12 md-3">555-555-1234</div>
+            <div class="ft-row-col sm-12 md-3">Do this and that</div>
+        </a>
+
+        <a href="app#/prospects/prospect" class="ft-row row">
+            <div class="ft-row-col sm-12 md-3">Google</div>
+            <div class="ft-row-col sm-12 md-3">Larry Page</div>
+            <div class="ft-row-col sm-12 md-3">555-555-1234</div>
+            <div class="ft-row-col sm-12 md-3">Do this and that</div>
+        </a>
+
+        <a href="app#/prospects/prospect" class="ft-row row">
+            <div class="ft-row-col sm-12 md-3">Google</div>
+            <div class="ft-row-col sm-12 md-3">Larry Page</div>
+            <div class="ft-row-col sm-12 md-3">555-555-1234</div>
+            <div class="ft-row-col sm-12 md-3">Do this and that</div>
+        </a>
+
+        <a href="app#/prospects/prospect" class="ft-row row">
+            <div class="ft-row-col sm-12 md-3">Google</div>
+            <div class="ft-row-col sm-12 md-3">Larry Page</div>
+            <div class="ft-row-col sm-12 md-3">555-555-1234</div>
+            <div class="ft-row-col sm-12 md-3">Do this and that</div>
+        </a>
+
+        <a href="app#/prospects/prospect" class="ft-row row">
+            <div class="ft-row-col sm-12 md-3">Google</div>
+            <div class="ft-row-col sm-12 md-3">Larry Page</div>
+            <div class="ft-row-col sm-12 md-3">555-555-1234</div>
+            <div class="ft-row-col sm-12 md-3">Do this and that</div>
+        </a>
+
+        <a href="app#/prospects/prospect" class="ft-row row">
+            <div class="ft-row-col sm-12 md-3">Google</div>
+            <div class="ft-row-col sm-12 md-3">Larry Page</div>
+            <div class="ft-row-col sm-12 md-3">555-555-1234</div>
+            <div class="ft-row-col sm-12 md-3">Do this and that</div>
+        </a>
     </div>
-  </header>
+</section>
 
-  <section class="module-container container">
-    <section class="module">
-      <header class="module-header clearfix">
-        <section class="col-lg-3"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Company</section>
-        <section class="col-lg-3"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Contact</section>
-        <section class="col-lg-2"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Phone</section>
-        <section class="col-lg-2"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Follow Up</section>
-        <section class="col-lg-2"><span class="sortable-icon icon" aria-hidden="true" data-icon="&#59215;"></span> Last Contact</section>
-      </header>
-
-      <section class="module-list">
-        <a href="#/prospects/prospect" class="row">
-          <section class="col-lg-3">Google</section>
-          <section class="col-lg-3">Larry Page</section>
-          <section class="col-lg-2">555-555-1234</section>
-          <section class="col-lg-2">Hollywood, CA</section>
-          <section class="col-lg-2">05/16/2013</section>
-        </a>
-
-        <a href="#/prospects/prospect" class="row">
-          <section class="col-lg-3">Google</section>
-          <section class="col-lg-3">Larry Page</section>
-          <section class="col-lg-2">555-555-1234</section>
-          <section class="col-lg-2">Hollywood, CA</section>
-          <section class="col-lg-2">05/16/2013</section>
-        </a>
-
-        <a href="#/prospects/prospect" class="row">
-          <section class="col-lg-3">Google</section>
-          <section class="col-lg-3">Larry Page</section>
-          <section class="col-lg-2">555-555-1234</section>
-          <section class="col-lg-2">Hollywood, CA</section>
-          <section class="col-lg-2">05/16/2013</section>
-        </a>
-
-        <a href="#/prospects/prospect" class="row">
-          <section class="col-lg-3">Google</section>
-          <section class="col-lg-3">Larry Page</section>
-          <section class="col-lg-2">555-555-1234</section>
-          <section class="col-lg-2">Hollywood, CA</section>
-          <section class="col-lg-2">05/16/2013</section>
-        </a>
-
-        <a href="#/prospects/prospect" class="row">
-          <section class="col-lg-3">Google</section>
-          <section class="col-lg-3">Larry Page</section>
-          <section class="col-lg-2">555-555-1234</section>
-          <section class="col-lg-2">Hollywood, CA</section>
-          <section class="col-lg-2">05/16/2013</section>
-        </a>
-
-        <a href="#/prospects/prospect" class="row">
-          <section class="col-lg-3">Google</section>
-          <section class="col-lg-3">Larry Page</section>
-          <section class="col-lg-2">555-555-1234</section>
-          <section class="col-lg-2">Hollywood, CA</section>
-          <section class="col-lg-2">05/16/2013</section>
-        </a>
-      </section>
-    </section>
-  </section>
-
-  <modal-dialog show='modalShown' width='550px'>
-    <div class="modal-header">New Prospect</div>
+<modal-dialog show="modalShown">
+    <div class="modal-header">New prospect</div>
 
     <form class="modal-form">
-      <label>Company</label>
-      <input type="text">
+        <label>Company</label>
+        <input type="text">
 
-      <label>Contact</label>
-      <input type="text">
+        <label>Contact</label>
+        <input type="text">
 
-      <label>Phone</label>
-      <input type="text">
+        <label>Phone</label>
+        <input type="text">
 
-      <label>Website</label>
-      <input type="text">
+        <label>Website</label>
+        <input type="text">
 
-      <label>Address</label>
-      <input type="text">
+        <label>Address</label>
+        <input type="text">
 
-      <label>City</label>
-      <input type="text">
+        <label>City</label>
+        <input type="text">
 
-      <label>State</label>
-      <input type="text">
+        <label>State</label>
+        <input type="text">
 
-      <label>Contacted because</label>
-      <textarea></textarea>
+        <label>Contacted because</label>
+        <textarea></textarea>
 
-      <button type="submit" class="button button-green">Create prospect</button>
+        <button type="submit" class="btn btn-primary btn-add">Create prospect</button>
     </form>
-  </modal-dialog>
-</main>
+</modal-dialog>

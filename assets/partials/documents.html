@@ -1,20 +1,6 @@
-<!-- MAIN CONTENT -->
-<main class="content content-documents">
+<section class="app-subheader row right">
+    <h1 class="as-title left">Documents</h1>
+    <button type="submit" class="btn btn-primary btn-add right" ng-click="toggleModal()">New document</button>
+</section>
 
-	<!-- PAGE HEADER -->
-	<header class="page-header">
-		<div class="container">
-			<section class="page-title">
-				<h2>Documents</h2>
-			</section>
-
-			<section class="button-wrap">
-				<button class="button button-red upload-button" ng-click='toggleModal()'>
-					<span class="upload-icon icon" aria-hidden="true" data-icon="&#59153;"></span> Upload
-				</button>
-			</section>
-		</div>
-	</header>
-
-	<section class="document-overview" ng-include="documentTemplate.url"></section>
-</main>
+<section class="app-content row right" ng-include="documentTemplate.url"></section>

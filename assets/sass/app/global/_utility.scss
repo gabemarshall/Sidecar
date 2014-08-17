@@ -1,0 +1,14 @@
+.center {
+	display: block;
+	margin: 0 auto;
+	float: none;
+}
+
+.paragraph {
+	font-size: .875em;
+	margin: 0 0 1em;
+
+	&:last-child {
+		margin: 0;
+	}
+}

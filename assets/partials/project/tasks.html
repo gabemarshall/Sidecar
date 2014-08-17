@@ -1,25 +1,22 @@
-<section class="module-container container col-lg-12">
-	<section class="module col-md-6">
-		<div class="module-header clearfix">
-			<div class="col-xs-12">To do</div>
+<section class="module sm-12 md-6">
+	<header class="module-header">
+		To do
+		<a href ng-click="taskToggleModal()" class="btn btn-dark btn-add mh-btn">Add</a>
+	</header>
 
-			<button class="button button-small right task-button">
-				<span class="add">+</span>
-            </button>
-		</div>
-
-		<ul class="task-list" droppable>
-			<li task-id="task.id" draggable="true" id="task{{task.title}}" ng-repeat="task in project.tasks" click-to-edit="task.title"><a href="#/tasks">{{ task.title }}</a></li>
+	<div class="module-content">
+		<ul class="task-list row no-bullets">
+			<li task-id="task.id" draggable="true" ng-repeat="task in project.tasks" click-to-edit="task.title"><a href="#/tasks">{{ task.title }}</a></li>
 		</ul>
-	</section>
+	</div>
+</section>
 
-	<section class="module col-md-6">
-		<div class="module-header clearfix">
-			<div class="col-xs-12">Done</div>
-		</div>
+<section class="module sm-12 md-5-half md-offset-half">
+	<header class="module-header">Done</header>
 
-		<ul class="task-list" droppable>
-			
+	<div class="module-content">
+		<ul class="task-list row no-bullets">
+			<li draggable="true">Doneeee that!</li>
 		</ul>
-	</section>
+	</div>
 </section>

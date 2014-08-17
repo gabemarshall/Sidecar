@@ -12,10 +12,6 @@ body {
 	z-index: 1;
 	font-family: $sans;
 	background: $grey-light;
-
-	@include breakpoint(medium) {
-		position: static;
-	}
 }
 
 a {

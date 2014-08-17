@@ -5,8 +5,8 @@
 	</header>
 
 	<div class="module-content">
-		<ul class="task-list row no-bullets">
-			<li task-id="task.id" draggable="true" ng-repeat="task in project.tasks" click-to-edit="task.title"><a href="#/tasks">{{ task.title }}</a></li>
+		<ul class="task-list row no-bullets" droppable>
+			<li task-id="task.id" draggable="true" id="task{{task.title}}" ng-repeat="task in project.tasks" click-to-edit="task.title"><a href="#/tasks">{{ task.title }}</a></li>
 		</ul>
 	</div>
 </section>
@@ -15,8 +15,8 @@
 	<header class="module-header">Done</header>
 
 	<div class="module-content">
-		<ul class="task-list row no-bullets">
-			<li draggable="true">Doneeee that!</li>
+		<ul class="task-list row no-bullets" droppable>
+			
 		</ul>
 	</div>
 </section>

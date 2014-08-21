@@ -127,6 +127,27 @@ angular.module('sidecar.controllers').controller('Tasks', ['$scope', '$http', '$
       })
   };
 
+  $scope.dropSuccessHandler = function($event,$index, status){
+
+  };
+  $scope.onDrop = function($event,$data,array, status){
+
+    console.log($data)
+    var id = $data.id
+  
+    for (i=0;i<$scope.project.tasks.length;i++){
+        if (id===$scope.project.tasks[i].id){
+          if(status==='fresh'){
+            $scope.project.tasks[i].completed = false
+            console.log("Fresh baby")
+          }
+          else {
+            $scope.project.tasks[i].completed = true
+          }
+        }
+    }
+  };
+
   $scope.loadTasks = function () {
     $scope.template = $scope.templates[0];
   }

@@ -11,7 +11,10 @@ angular.module('sidecar.controllers').controller('Tasks', ['$scope', '$http', '$
   var title = $routeParams.title
 
   $scope.newTaskTitle = '';
-  $scope.project = []
+  $scope.project = [];
+
+  $scope.completedTasks = [];
+  $scope.freshTasks = [];
 
   // Modal controller
   $scope.modalShown = false;
@@ -37,9 +40,24 @@ angular.module('sidecar.controllers').controller('Tasks', ['$scope', '$http', '$
     })
     .success(function (data, status, headers, config){
       $scope.project = data;
+      for (i=0;i<$scope.project.tasks.length;i++){
+        if ($scope.project.tasks[i].completed){
+          $scope.completedTasks.push($scope.project.tasks[i]);
+        }
+        else {
+          $scope.freshTasks.push($scope.project.tasks[i]);
+        }
+      }
+    // var log = []
+    //  angular.forEach($scope.project.tasks, function(value, key) {
+    //    this.push(key + ': ' + value);
+    //    console.log(value)
+    //  }, log);
+     // $scope.completedTasks = chekCompleted($scope.project.tasks)
     })   
   }
   
+
   $scope.checkCompleted = function($task) {
       if ($task.completed){
         return true
@@ -112,14 +130,19 @@ angular.module('sidecar.controllers').controller('Tasks', ['$scope', '$http', '$
       })
   };
 
-  $scope.updateTask = function (index) {
+  $scope.updateTask = function (id, status, title) {
     console.log("updating")
-      
+    $scope.project = $scope.completedTasks.concat($scope.freshTasks)
+
       $http({
           method: "post",
           url: "/tasks/update",
           data: {
-              id: $scope.project.tasks[index].id
+              //id: $scope.project.tasks[index].id
+              id: id,
+              completed: status,
+              title: title
+
           }
       })
       .success(function(){
@@ -127,25 +150,32 @@ angular.module('sidecar.controllers').controller('Tasks', ['$scope', '$http', '$
       })
   };
 
-  $scope.dropSuccessHandler = function($event,$index, status){
-
+  $scope.dropSuccessHandler = function($event,index,array){
+      array.splice(index,1);
   };
-  $scope.onDrop = function($event,$data,array, status){
 
-    console.log($data)
-    var id = $data.id
-  
-    for (i=0;i<$scope.project.tasks.length;i++){
-        if (id===$scope.project.tasks[i].id){
-          if(status==='fresh'){
-            $scope.project.tasks[i].completed = false
-            console.log("Fresh baby")
-          }
-          else {
-            $scope.project.tasks[i].completed = true
-          }
+  $scope.onDropTaskFresh = function($event,$data,array){
+      array.push($data);
+      for (i=0;i<array.length;i++){
+        if ($data.id === array[i].id){
+          console.log("Found it!")
+          
         }
-    }
+      }
+      $data.status = false
+      $scope.updateTask($data.id, $data.status, $data.title);
+  };
+
+  $scope.onDropTaskComplete = function($event,$data,array){
+      array.push($data);
+      for (i=0;i<array.length;i++){
+        if ($data.id === array[i].id){
+          console.log("Found it!")
+          
+        }
+      }
+      $data.status = true
+      $scope.updateTask($data.id, $data.status, $data.title);
   };
 
   $scope.loadTasks = function () {

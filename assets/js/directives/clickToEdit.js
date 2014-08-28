@@ -20,15 +20,9 @@ angular.module('sidecar.controllers').directive("clickToEdit", function($http, $
 
             element.bind('click', function() {
                 $timeout(function() {
-                    element.find('input')[1].focus();
+                    element.find('input')[0].focus();
                 });
             });
-
-            element.bind('drop', function(){
-            
-                //alert($(this).attr("id"))
-                
-            })
 
         },
         controller: function($scope) {
@@ -53,25 +47,10 @@ angular.module('sidecar.controllers').directive("clickToEdit", function($http, $
             };
 
             $scope.save = function() {
-
-                // Ugly hack to update checkbox based on task status
-
                 $scope.value = $scope.view.editableValue;
                 $scope.disableEditor();
                 $scope.updateTask();
             };
-            $scope.toggleStatus = function(){
-
-                if ($scope.status) 
-                {
-                    $scope.status = false
-                } 
-                else 
-                {
-                    $scope.status = true
-                }
-                $scope.save()
-            }
             $scope.updateTask = function(index) {
 
                 $http({
@@ -84,7 +63,6 @@ angular.module('sidecar.controllers').directive("clickToEdit", function($http, $
                 })
                 .success(function() {
                     console.log("Task updated")
-
                 })
             };
         }

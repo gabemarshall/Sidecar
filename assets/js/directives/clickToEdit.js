@@ -1,8 +1,8 @@
 // clickToEdit
 // ************************************************************************
 angular.module('sidecar.controllers').directive("clickToEdit", function($http, $timeout) {
-    var editorTemplate = '<li class="click-to-edit">' +
-        '<span ng-hide="view.editorEnabled" ng-click="enableEditor()">{{value}}</span>' +
+    var editorTemplate = '<li id="{{status}}" class="click-to-edit">' +
+        '<span drop="handleDrop()" ng-hide="view.editorEnabled" ng-click="enableEditor()">{{value}}</span>' +
         '<input ng-keypress="watchKeys($event)" ng-show="view.editorEnabled" ng-model="view.editableValue" ng-blur="save()">' +
         '</li>';
 
@@ -20,7 +20,7 @@ angular.module('sidecar.controllers').directive("clickToEdit", function($http, $
 
             element.bind('click', function() {
                 $timeout(function() {
-                    element.find('input')[1].focus();
+                    element.find('input')[0].focus();
                 });
             });
 
@@ -47,24 +47,10 @@ angular.module('sidecar.controllers').directive("clickToEdit", function($http, $
             };
 
             $scope.save = function() {
-
-                // Ugly hack to update checkbox based on task status
-
                 $scope.value = $scope.view.editableValue;
                 $scope.disableEditor();
                 $scope.updateTask();
             };
-            $scope.toggleStatus = function(){
-                if ($scope.status) 
-                {
-                    $scope.status = false
-                } 
-                else 
-                {
-                    $scope.status = true
-                }
-                $scope.save()
-            }
             $scope.updateTask = function(index) {
 
                 $http({
@@ -77,7 +63,6 @@ angular.module('sidecar.controllers').directive("clickToEdit", function($http, $
                 })
                 .success(function() {
                     console.log("Task updated")
-
                 })
             };
         }

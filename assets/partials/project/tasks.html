@@ -5,8 +5,12 @@
 	</header>
 
 	<div class="module-content">
-		<ul class="task-list row no-bullets" droppable>
-			<li task-id="task.id" draggable="true" ng-repeat="task in project.tasks" click-to-edit="task.title"><a href="#/tasks">{{ task.title }}</a></li>
+		<ul class="task-list row no-bullets" ui-on-Drop="onDropTaskFresh($event,$data,freshTasks)">
+			<li task-id="task.id" click-to-edit="task.title" ui-draggable="true" drag="task" 
+				on-drop-success="dropSuccessHandler($event,$index,freshTasks)"
+				ng-repeat="task in freshTasks">
+			{{task.title}}
+			</li>
 		</ul>
 	</div>
 </section>
@@ -15,8 +19,12 @@
 	<header class="module-header">Done</header>
 
 	<div class="module-content">
-		<ul class="task-list row no-bullets" droppable>
-			<li draggable="true">Doneeee that!</li>
+		<ul class="task-list row no-bullets" ui-on-Drop="onDropTaskComplete($event,$data,completedTasks)">
+			<li task-id="task.id" click-to-edit="task.title" ui-draggable="true" drag="task" 
+				on-drop-success="dropSuccessHandler($event,$index,completedTasks)"
+				ng-repeat="task in completedTasks">
+			{{task.title}}
+			</li>
 		</ul>
 	</div>
 </section>

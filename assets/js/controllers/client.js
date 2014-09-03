@@ -20,8 +20,9 @@ angular.module('sidecar.controllers').controller('Client', ['$scope', '$http', '
   var name = $routeParams.name
 
   $scope.client = '';
-  //$scope.activities = ''
-
+ 
+ // Variable to watch whether or not the client's name changes.. see line 72
+  var clientName = '';
   var clientID;
 
   var ajaxGetClient = function(){
@@ -31,6 +32,8 @@ angular.module('sidecar.controllers').controller('Client', ['$scope', '$http', '
     })
     .success(function (data, status, headers, config){
       $scope.client = data;
+      clientName = data.name;
+      
       $http({
         method: 'GET',
         url: '/clients/activity/'+data.id
@@ -42,6 +45,40 @@ angular.module('sidecar.controllers').controller('Client', ['$scope', '$http', '
   }
 
   ajaxGetClient();
+
+  $scope.updateClient = function(){
+
+    var client = $scope.client
+
+    $http({
+        method: "post",
+        url: "/clients/update",
+        data: {
+  
+            id: client.id,
+            name: client.name,
+            address: client.address,
+            city: client.city,
+            state: client.state,
+            contact: client.contact,
+            email: client.email,
+            phone: client.phone,
+            avatar: client.avatar,
+            website: client.website,
+        }
+    })
+    .success(function(){
+      console.log("Client updated")
+      // If the client name is changed, refresh the hash to the correct name
+      if ($scope.client.name != clientName){
+        parent.location.hash = "/clients/"+client.name;
+        clientName = $scope.client.name
+      }
+      else {
+        // Client name wasn't changed, do nothing
+      }
+    })
+  }
 
   $scope.clientTemplate = $scope.clientTemplates[0];
 

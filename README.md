@@ -1,5 +1,9 @@
 # Sidecar
 
+### Sidecar Update - Clients (develop branch 9-3-14)
+
+Just did a little work this morning to get the clients page to correctly edit and save info on the frontend/backend.
+
 ### Sidecar Updates (develop branch 8-3-14)
 
 Early draft of clients overview "activity" page is completed. A decent amount of work is left but the general idea is working.

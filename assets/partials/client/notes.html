@@ -1,9 +1,21 @@
 <section class="module">
 	<header class="module-header">
 		Notes
-		<a href="#" class="btn btn-dark btn-add mh-btn">New note</a>
+		<button ng-click="toggleNoteModal()" class="btn btn-dark btn-add mh-btn">New note</button>
 	</header>
+	<modal-dialog show="noteModalShown">
+		<div class="modal-header">Add Note</div>
 
+		<form class="modal-form">
+			<label>Title</label>
+			<input type="text">
+
+			<label>Description</label>
+			<textarea type="text"></textarea>
+
+			<button type="submit" class="btn btn-primary btn-edit left" ng-click="toggleNoteModal()">Save</button>
+		</form>
+	</modal-dialog>
 	<div class="module-content">
 		<div class="matrix-wrapper row">
 			<div class="sm-12 md-5-half lg-2-half matrix-item">

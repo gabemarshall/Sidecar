@@ -3,10 +3,15 @@
 angular.module('sidecar.controllers').controller('Client', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
     // Modal controller
   $scope.modalShown = false;
+  $scope.noteModalShown = false;
   
   $scope.toggleModal = function() {
     $scope.modalShown = !$scope.modalShown;
   };
+
+  $scope.toggleNoteModal = function() {
+    $scope.noteModalShown = !$scope.noteModalShown;
+  }
 
   // Templates
   $scope.clientTemplates = [

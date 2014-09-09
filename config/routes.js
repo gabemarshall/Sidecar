@@ -160,7 +160,25 @@ module.exports.routes = {
   'delete /users/:id?': 'UserController.delete',
 
 // ##### Login #####
-  'post /users/login/:email?': 'UserController.login'
+  'post /users/login/:email?': 'UserController.login',
+
+
+// ############ Custom Routes for Notes ############
+
+// ##### Create #####
+  'post /notes/create': 'NoteController.create',
+
+// ##### Read #####
+  'get /notes/:id?': 'NoteController.find',
+
+// ##### Update #####
+  'post /notes/update/:id?': 'NoteController.update',
+  'put /notes/:id?': 'NoteController.update',
+
+// ##### Delete #####
+  
+  'post /notes/delete/:id?': 'NoteController.delete',
+  'delete /notes/:id?': 'NoteController.delete',
   /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?

@@ -22,7 +22,7 @@ module.exports = {
     find: function(req, res, next) {
 
         var id = req.param('id');
-        var title = req.param('title');
+        
 
         var idShortCut = isShortcut(id);
 
@@ -30,20 +30,40 @@ module.exports = {
             return next();
         }
 
-        if (title) {
+        if (id) {
+
+            Note.findOne(id, function(err, note) {
+
+                if (note === undefined) return res.notFound();
+
+                if (err) return next(err);
+
+                res.json(note);
+
+            });
+
+        } else {
+
+            var options = {
+                where: { user: req.session.user }
+            };
             
-          // TODO 
-          //  Note.findOne({where:{title: title, user: req.session.user}})
+            Note.find(options, function(err, note) {
 
-        
-        } 
+                if (note === undefined) return res.notFound();
 
+                if (err) return next(err);
+
+                res.json(note);
+
+            });
+
+        }
         function isShortcut(id) {
             if (id === 'find' || id === 'update' || id === 'create' || id === 'destroy') {
                 return true;
             }
         }
-
     },
 
     update: function(req, res, next) {

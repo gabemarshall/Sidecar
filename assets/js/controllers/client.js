@@ -25,10 +25,21 @@ angular.module('sidecar.controllers').controller('Client', ['$scope', '$http', '
   var name = $routeParams.name
 
   $scope.client = '';
+  $scope.clientNotes = '';
  
  // Variable to watch whether or not the client's name changes.. see line 72
   var clientName = '';
   var clientID;
+
+  var ajaxGetClientNotes = function(){
+    $http({
+      method: 'GET',
+      url: '/notes'
+    })
+    .success(function (data, status, headers, config){
+      $scope.clientNotes = data;
+    })
+  }
 
   var ajaxGetClient = function(){
     $http({
@@ -50,6 +61,7 @@ angular.module('sidecar.controllers').controller('Client', ['$scope', '$http', '
   }
 
   ajaxGetClient();
+  ajaxGetClientNotes();
 
   $scope.updateClient = function(){
 

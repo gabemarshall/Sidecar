@@ -32,9 +32,9 @@
 
 	    <form class="modal-form">
 	        <label>Project title</label>
-	        <input type="text" ng-model="newProjectTitle">
+	        <input type="text" ng-model="project.title">
+	        <button type="submit" class="btn btn-primary btn-add" ng-click="updateProject()">Save</button>
 
-	        <button type="submit" class="btn btn-primary btn-add" ng-click="saveNewProject();toggleModal()">Save</button>
 	    </form>
 	</modal-dialog>
 </div>

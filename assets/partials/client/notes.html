@@ -18,44 +18,10 @@
 	</modal-dialog>
 	<div class="module-content">
 		<div class="matrix-wrapper row">
-			<div class="sm-12 md-5-half lg-2-half matrix-item">
+			<div ng-repeat="note in clientNotes" class="sm-12 md-5-half lg-2-half matrix-item">
 				<small class="matrix-date">5/16/2014</small>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis neque id vestibulum sagittis. Duis non egestas velit. Vivamus non lacinia turpis, eu sagittis felis...</p>
-
-				<button class="btn btn-secondary btn-matrix">View note</button>
-			</div>
-
-			<div class="sm-12 md-5-half lg-2-half matrix-item">
-				<small class="matrix-date">5/16/2014</small>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis neque id vestibulum sagittis. Duis non egestas velit. Vivamus non lacinia turpis, eu sagittis felis...</p>
-
-				<button class="btn btn-secondary btn-matrix">View note</button>
-			</div>
-
-			<div class="sm-12 md-5-half lg-2-half matrix-item">
-				<small class="matrix-date">5/16/2014</small>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis neque id vestibulum sagittis. Duis non egestas velit. Vivamus non lacinia turpis, eu sagittis felis...</p>
-
-				<button class="btn btn-secondary btn-matrix">View note</button>
-			</div>
-
-			<div class="sm-12 md-5-half lg-2-half matrix-item">
-				<small class="matrix-date">5/16/2014</small>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis neque id vestibulum sagittis. Duis non egestas velit. Vivamus non lacinia turpis, eu sagittis felis...</p>
-
-				<button class="btn btn-secondary btn-matrix">View note</button>
-			</div>
-
-			<div class="sm-12 md-5-half lg-2-half matrix-item">
-				<small class="matrix-date">5/16/2014</small>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis neque id vestibulum sagittis. Duis non egestas velit. Vivamus non lacinia turpis, eu sagittis felis...</p>
-
-				<button class="btn btn-secondary btn-matrix">View note</button>
-			</div>
-
-			<div class="sm-12 md-5-half lg-2-half matrix-item">
-				<small class="matrix-date">5/16/2014</small>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis neque id vestibulum sagittis. Duis non egestas velit. Vivamus non lacinia turpis, eu sagittis felis...</p>
+				<span>{{note.title}}</span> <!-- TODO, Can someone work on this? Just need a title to look good for each note -->
+				<p>{{note.description}}</p>
 
 				<button class="btn btn-secondary btn-matrix">View note</button>
 			</div>

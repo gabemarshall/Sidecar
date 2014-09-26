@@ -121,6 +121,29 @@ module.exports.routes = {
   'get /clients/activity/:id?': 'ClientController.activity',
 
 
+  // ############ Custom Routes for Document Templates ############
+
+// ##### Create #####
+  'post /documentTemplates/create': 'DocumentTemplateController.create',
+
+// ##### Read #####
+  'get /documentTemplates/:name?': 'DocumentTemplateController.find',
+  'get /documentTemplatesById/:id?': 'DocumentTemplateController.find',
+
+// ##### Update #####
+  'post /documentTemplates/update/:id?': 'DocumentTemplateController.update',
+  'put /documentTemplates/:id?': 'DocumentTemplateController.update',
+
+// ##### Delete #####
+  
+  'post /documentTemplates/delete/:id?': 'DocumentTemplateController.delete',
+  'delete /documentTemplates/:id?': 'DocumentTemplateController.delete',
+
+// ##### Activity #####
+
+  'get /documentTemplates/activity/:id?': 'DocumentTemplateController.activity',
+
+
 
 
 // ############ Custom Routes for Teams ############

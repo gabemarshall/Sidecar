@@ -1,0 +1,20 @@
+<section class="app-subheader row right">
+    <h1 class="as-title left">Document Templates</h1>
+    <button type="submit" class="btn btn-primary btn-add right" ng-click="toggleTemplateModal()">New template</button>
+</section>
+
+<section class="app-content row right"></section>
+
+<modal-dialog show="templateModalShown">
+    <div class="modal-header">New template</div>
+
+    <form class="modal-form">
+        <label>Title</label>
+        <input type="text" ng-model="newDocumentTemplateTitle">
+
+        <label>Template</label>
+        <textarea></textarea>
+
+        <button type="submit" class="btn btn-primary btn-add" ng-click="saveNewDocumentTemplate(); toggleTemplateModal()">Create template</button>
+    </form>
+</modal-dialog>

@@ -20,8 +20,10 @@
 		<div class="matrix-wrapper row">
 			<div ng-repeat="note in clientNotes" class="sm-12 md-5-half lg-2-half matrix-item">
 				<small class="matrix-date">5/16/2014</small>
-				<span>{{note.title}}</span> <!-- TODO, Can someone work on this? Just need a title to look good for each note -->
-				<p>{{note.description}}</p>
+				<p class="matrix-title">
+					{{note.title}}<br>
+					<em class="matrix-status">{{note.description}}</em>
+				</p>
 
 				<button class="btn btn-secondary btn-matrix">View note</button>
 			</div>

@@ -1,61 +1,11 @@
-<div class="matrix-wrapper">
-	<div class="sm-12 md-5-half lg-2-half matrix-item">
-		<small class="matrix-date">5/16/2014</small>
-		<p class="matrix-title">
-			Document Name<br>
-			<em class="matrix-status">Signed</em>
-		</p>
+<section class="app-content row right">
+	<div class="fake-table">
+		<div class="ft-header row">
+			<div class="ft-header-col md-12">Title</div>
+		</div>
 
-		<button class="btn btn-secondary btn-matrix" ng-click="loadSingle()">View document</button>
+		<a href="#/documents/{{ document.name }}" class="ft-row row" ng-repeat="document in documents">
+			<div class="ft-row-col sm-12">{{ document.name }}</div>
+		</a>
 	</div>
-
-	<div class="sm-12 md-5-half lg-2-half matrix-item">
-		<small class="matrix-date">5/16/2014</small>
-		<p class="matrix-title">
-			Document Name<br>
-			<em class="matrix-status">Signed</em>
-		</p>
-
-		<button class="btn btn-secondary btn-matrix" ng-click="loadSingle()">View document</button>
-	</div>
-
-	<div class="sm-12 md-5-half lg-2-half matrix-item">
-		<small class="matrix-date">5/16/2014</small>
-		<p class="matrix-title">
-			Document Name<br>
-			<em class="matrix-status">Signed</em>
-		</p>
-
-		<button class="btn btn-secondary btn-matrix" ng-click="loadSingle()">View document</button>
-	</div>
-
-	<div class="sm-12 md-5-half lg-2-half matrix-item">
-		<small class="matrix-date">5/16/2014</small>
-		<p class="matrix-title">
-			Document Name<br>
-			<em class="matrix-status">Signed</em>
-		</p>
-
-		<button class="btn btn-secondary btn-matrix" ng-click="loadSingle()">View document</button>
-	</div>
-
-	<div class="sm-12 md-5-half lg-2-half matrix-item">
-		<small class="matrix-date">5/16/2014</small>
-		<p class="matrix-title">
-			Document Name<br>
-			<em class="matrix-status">Signed</em>
-		</p>
-
-		<button class="btn btn-secondary btn-matrix" ng-click="loadSingle()">View document</button>
-	</div>
-
-	<div class="sm-12 md-5-half lg-2-half matrix-item">
-		<small class="matrix-date">5/16/2014</small>
-		<p class="matrix-title">
-			Document Name<br>
-			<em class="matrix-status">Signed</em>
-		</p>
-
-		<button class="btn btn-secondary btn-matrix" ng-click="loadSingle()">View document</button>
-	</div>
-</div>
+</section>

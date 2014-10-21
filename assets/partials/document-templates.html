@@ -1,9 +1,20 @@
 <section class="app-subheader row right">
-    <h1 class="as-title left">Document Templates</h1>
+    <h1 class="as-title left"><a href="app#/documents">Documents</a> Templates</h1>
+    <a href="app#/document-types" class="btn btn-secondary as-title-btn-sec btn-edit right">Manage types</a>
     <button type="submit" class="btn btn-primary btn-add right" ng-click="toggleTemplateModal()">New template</button>
 </section>
 
-<section class="app-content row right"></section>
+<section class="app-content row right">
+    <div class="fake-table">
+        <div class="ft-header row">
+            <div class="ft-header-col sm-12">Title</div>
+        </div>
+
+        <a href="#/document-templates/{{ documentTemplate.name }}" class="ft-row row" ng-repeat="documentTemplate in documentTemplates">
+            <div class="ft-row-col sm-12">{{ documentTemplate.title }}</div>
+        </a>
+    </div>
+</section>
 
 <modal-dialog show="templateModalShown">
     <div class="modal-header">New template</div>
@@ -11,9 +22,6 @@
     <form class="modal-form">
         <label>Title</label>
         <input type="text" ng-model="newDocumentTemplateTitle">
-
-        <label>Template</label>
-        <textarea></textarea>
 
         <button type="submit" class="btn btn-primary btn-add" ng-click="saveNewDocumentTemplate(); toggleTemplateModal()">Create template</button>
     </form>

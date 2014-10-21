@@ -1,0 +1,27 @@
+<section class="app-subheader row right">
+    <h1 class="as-title left"><a href="app#/documents">Documents</a> Types</h1>
+    <button type="submit" class="btn btn-primary btn-add right" ng-click="toggleTypeModal()">New type</button>
+</section>
+
+<section class="app-content row right">
+    <div class="fake-table">
+        <div class="ft-header row">
+            <div class="ft-header-col sm-12">Title</div>
+        </div>
+
+        <a href="#/document-templates/{{ documentTemplate.name }}" class="ft-row row" ng-repeat="documentTemplate in documentTemplates">
+            <div class="ft-row-col sm-12">{{ documentTemplate.title }}</div>
+        </a>
+    </div>
+</section>
+
+<modal-dialog show="typeModalShown">
+    <div class="modal-header">New type</div>
+
+    <form class="modal-form">
+        <label>Title</label>
+        <input type="text" ng-model="newDocumentTypeTitle">
+
+        <button type="submit" class="btn btn-primary btn-add" ng-click="saveNewDocumentType(); toggleTypeModal()">Create type</button>
+    </form>
+</modal-dialog>

@@ -21,6 +21,22 @@ angular.module('sidecar.controllers').controller('Documents', ['$scope', '$http'
         $scope.documentTemplate = $scope.documentTemplates[1];
     }
 
+    // Create new document
+    $scope.saveNewDocument = function (value) {
+        var title = this.newDocumentTitle;
+
+        $http({
+            method: "post",
+            url: "/document/create",
+            data: {
+                title: title
+            }
+        })
+        .success(function () {
+            ajaxGetDocuments();
+        });
+    }
+
     // Fetch all the documents
     var ajaxGetDocuments = function () {
         $http({
@@ -35,9 +51,9 @@ angular.module('sidecar.controllers').controller('Documents', ['$scope', '$http'
     ajaxGetDocuments();
 
     // Hide modals by default
-    $scope.templateModalShown = false;
+    $scope.modalShown = false;
 
-    $scope.toggleTemplateModal = function () {
-        $scope.templateModalShown = !$scope.templateModalShown;
+    $scope.toggleModal = function () {
+        $scope.modalShown = !$scope.modalShown;
     }
 }])

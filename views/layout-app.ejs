@@ -6,7 +6,8 @@
 
   		<title>Sidecar</title>
 
-  		<link rel="stylesheet" href="stylesheets/app.css"/>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,300" rel="stylesheet">
+  		<link rel="stylesheet" href="stylesheets/app.css">
 
   		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	</head>
@@ -29,7 +30,7 @@
                 <li ng-class="getClass('/clients')" class="oc-nav--clients"><a href="#/clients">Clients</a></li>
                 <li ng-class="getClass('/prospects')" class="oc-nav--prospects"><a href="#/prospects">Prospects</a></li>
                 <li ng-class="getClass('/projects')" class="oc-nav--projects"><a href="#/projects">Projects</a></li>
-                <li ng-class="getClass('/documents')" class="oc-nav--documents"><a href="#/documents">Documents</a></li>
+                <li ng-class="getClass('/documents') || getClass('/document-templates') || getClass('/document-types')" class="oc-nav--documents"><a href="#/documents">Documents</a></li>
                 <li ng-class="getClass('/invoices')" class="oc-nav--invoices"><a href="#/invoices">Invoices</a></li>
                 <li ng-class="getClass('/reports')" class="oc-nav--reports"><a href="#/reports">Reports</a></li>
             </ul>
@@ -82,6 +83,7 @@
 		<script src="/js/controllers/dashboard.js"></script>
 		<script src="/js/controllers/documents.js"></script>
         <script src="/js/controllers/templates.js"></script>
+        <script src="/js/controllers/types.js"></script>
 		<script src="/js/controllers/nav.js"></script>
 		<script src="/js/controllers/project.js"></script>
 		<script src="/js/controllers/prospect.js"></script>

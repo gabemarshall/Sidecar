@@ -14,6 +14,7 @@ config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/invoices', {templateUrl: 'partials/invoices.html', controller: 'Invoices'});
 	$routeProvider.when('/documents', {templateUrl: 'partials/documents.html', controller: 'Documents'});
 	$routeProvider.when('/document-templates', {templateUrl: 'partials/document-templates.html', controller: 'DocumentTemplates'});
+	$routeProvider.when('/document-types', {templateUrl: 'partials/document-types.html', controller: 'DocumentTypes'});
 	$routeProvider.when('/prospects', {templateUrl: 'partials/prospects.html', controller: 'Prospects'});
 	$routeProvider.when('/prospects/prospect', {templateUrl: 'partials/prospect.html', contoller: 'Prospect'});
 	$routeProvider.when('/clients', {templateUrl: 'partials/clients.html', controller: 'Clients'});

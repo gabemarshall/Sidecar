@@ -1,5 +1,5 @@
 <section class="app-subheader row right">
-    <h1 class="as-title left">Documents</h1>
+    <h1 class="as-title left">Documents {{ document.name }}</h1>
     <a href="app#/document-templates" class="btn btn-secondary as-title-btn-sec btn-edit right">Manage templates</a>
     <button type="submit" class="btn btn-primary btn-add right" ng-click="toggleModal()">New document</button>
 </section>
@@ -11,17 +11,7 @@
     </ul>
 </aside>
 
-<section class="app-content app-content-sml row right">
-    <div class="fake-table">
-        <div class="ft-header row">
-            <div class="ft-header-col sm-12">Title</div>
-        </div>
-
-        <a href="#/documents/{{ document.name }}" class="ft-row row" ng-repeat="document in documents">
-            <div class="ft-row-col sm-12">{{ document.name }}</div>
-        </a>
-    </div>
-</section>
+<section class="app-content app-content-sml row right"></section>
 
 <modal-dialog show="modalShown">
     <div class="modal-header">New template</div>

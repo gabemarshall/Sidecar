@@ -120,6 +120,24 @@ module.exports.routes = {
 
   'get /clients/activity/:id?': 'ClientController.activity',
 
+  // ############ Custom Routes for Documents ############
+
+// ##### Create #####
+  'post /documents/create': 'DocumentController.create',
+
+// ##### Read #####
+  'get /documents/:name?': 'DocumentController.find',
+  'get /documentsById/:id?': 'DocumentController.find',
+
+// ##### Update #####
+  'post /documents/update/:id?': 'DocumentController.update',
+  'put /documents/:id?': 'DocumentController.update',
+
+// ##### Delete #####
+  
+  'post /documents/delete/:id?': 'DocumentController.delete',
+  'delete /documents/:id?': 'DocumentController.delete',
+
 
   // ############ Custom Routes for Document Templates ############
 

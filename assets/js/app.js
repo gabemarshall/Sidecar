@@ -13,6 +13,7 @@ config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/reports', {templateUrl: 'partials/reports.html', controller: 'Reports'});
 	$routeProvider.when('/invoices', {templateUrl: 'partials/invoices.html', controller: 'Invoices'});
 	$routeProvider.when('/documents', {templateUrl: 'partials/documents.html', controller: 'Documents'});
+	$routeProvider.when('/documents/:name', {templateUrl: 'partials/document.html', controller: 'Document'});
 	$routeProvider.when('/document-templates', {templateUrl: 'partials/document-templates.html', controller: 'DocumentTemplates'});
 	$routeProvider.when('/document-types', {templateUrl: 'partials/document-types.html', controller: 'DocumentTypes'});
 	$routeProvider.when('/prospects', {templateUrl: 'partials/prospects.html', controller: 'Prospects'});

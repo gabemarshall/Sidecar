@@ -1,26 +1,4 @@
 angular.module('sidecar.controllers').controller('Documents', ['$scope', '$http', function ($scope, $http) {
-    // Store partial details
-    $scope.documentTemplates = [{
-        name: 'Overview',
-        url: 'partials/document/overview.html'
-    }, {
-        name: 'Single',
-        url: 'partials/document/single.html'
-    }];
-
-    // Default partial view
-    $scope.documentTemplate = $scope.documentTemplates[0];
-
-    // Load overview partial view
-    $scope.loadOverview = function () {
-        $scope.documentTemplate = $scope.documentTemplates[0];
-    }
-
-    // Load single document partial view
-    $scope.loadSingle = function () {
-        $scope.documentTemplate = $scope.documentTemplates[1];
-    }
-
     // Create new document
     $scope.saveNewDocument = function (value) {
         var title = this.newDocumentTitle;
@@ -29,7 +7,7 @@ angular.module('sidecar.controllers').controller('Documents', ['$scope', '$http'
             method: "post",
             url: "/document/create",
             data: {
-                title: title
+                name: title
             }
         })
         .success(function () {
@@ -48,7 +26,19 @@ angular.module('sidecar.controllers').controller('Documents', ['$scope', '$http'
         });
     };
 
+    // Fetch all the document types
+    var ajaxGetDocumentTypes = function () {
+        $http({
+            method: 'GET',
+            url: '/documentType'
+        })
+        .success(function (data, status, headers, config) {
+            $scope.types = data
+        });
+    };
+
     ajaxGetDocuments();
+    ajaxGetDocumentTypes();
 
     // Hide modals by default
     $scope.modalShown = false;

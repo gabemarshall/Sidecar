@@ -19,6 +19,12 @@
 	}
 }
 
+.off-canvas-content {
+	@include breakpoint(medium) {
+		position: static;
+	}
+}
+
 .oc-profile {
 	display: block;
 	position: relative;

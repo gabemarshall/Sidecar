@@ -10,6 +10,16 @@
 				margin: 2px 0 0 1.325em;
 			}
 		}
+
+		& ~ .sidebar-list {
+			.sidebar-list--link {
+				display: none;
+			}
+
+			.sidebar-list--editable {
+				display: block;
+			}
+		}
 	}
 }
 

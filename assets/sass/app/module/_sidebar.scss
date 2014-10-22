@@ -62,6 +62,14 @@
 	}
 }
 
+.sidebar-list--editable {
+	display: none;
+
+	input {
+		width: 75%;
+	}
+}
+
 .sidebar-switch {
 	position: absolute;
 	bottom: 1.5em;

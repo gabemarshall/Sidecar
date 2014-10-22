@@ -5,14 +5,19 @@
 </section>
 
 <aside class="sidebar sm-3">
-    <div class="sidebar-switch">
-        <input type="checkbox" class="toggle-switch" id="toggle-switch">
-        <label for="toggle-switch" class="toggle-switch--label on"></label>
-    </div>
+    <input type="checkbox" class="toggle-switch" id="toggle-switch">
+    <label for="toggle-switch" class="toggle-switch--label sidebar-switch on"></label>
 
     <ul class="sidebar-list no-bullets left">
         <li class="sidebar-list--current"><a href>All</a></li>
-        <li ng-repeat="type in types"><a href>{{ type.title }}</a></li>
+        <li ng-repeat="type in types">
+            <a href class="sidebar-list--link">{{ type.title }}</a>
+            <div class="sidebar-list--editable">
+                <input type="text" value="{{ type.title }}">
+                <button type="submit" class="sle-save"></button>
+                <button type="submit" class="sle-delete"></button>
+            </div>
+        </li>
     </ul>
 </aside>
 

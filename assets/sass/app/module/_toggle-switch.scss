@@ -6,8 +6,9 @@
 			border-color: $green;
 
 			&::before {
-				background: $green;
-				margin: 2px 0 0 1.325em;
+				color: $green;
+				content: "\1F513";
+				margin: -5px 0 0 .75em;
 			}
 		}
 
@@ -24,10 +25,13 @@
 }
 
 .toggle-switch--label {
-	width: 2.75em;
-	height: 1.5em;
-	border-radius: 2em;
-	border: 2px solid $grey-med;
+	position: relative;
+	z-index: 1;
+	width: 2.5em;
+	height: 1.25em;
+	margin: 0 -1.25em -1em;
+	border-radius: 2px;
+	border: 1px solid $grey-med;
 	cursor: pointer;
 	outline: none;
 	user-select: none;
@@ -35,13 +39,16 @@
 
 	&::before {
 		position: relative;
-		content: "";
-		margin: 2px 0 0 2px;
+		content: "\1F512";
+		margin: -5px 0 0 4px;
 		float: left;
-		width: 1em;
-		height: 1em;
-		background: $grey-med;
-		border-radius: 50%;
+		font-size: 1.75em;
+		font-family: "entypo";
+		color: $grey-med;
+		// width: .75em;
+		// height: .625em;
+		// background: $grey-med;
+		// border-radius: 1px;
 		transition: margin-left .4s;
 	}
 }

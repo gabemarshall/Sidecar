@@ -66,17 +66,23 @@
 
 .modal-form {
 	padding: 4em 1em 1em;
-    overflow: hidden;
+  overflow: hidden;
 
-    input,
-    textarea {
-        float: left;
-        clear: both;
-        width: 100%;
-        margin: .25em 0 1em;
-    }
+  input,
+  textarea,
+  select {
+      float: left;
+      clear: both;
+      width: 100%;
+      margin: .25em 0 1em;
+  }
 
-    .btn {
-        clear: both;
-    }
+  label {
+    float: left;
+    width: 100%;
+  }
+
+  .btn {
+      clear: both;
+  }
 }

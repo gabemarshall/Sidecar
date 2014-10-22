@@ -1,0 +1,37 @@
+.toggle-switch {
+	display: none;
+
+	&:checked {
+		& + .toggle-switch--label {
+			border-color: $green;
+
+			&::before {
+				background: $green;
+				margin: 2px 0 0 1.325em;
+			}
+		}
+	}
+}
+
+.toggle-switch--label {
+	width: 2.75em;
+	height: 1.5em;
+	border-radius: 2em;
+	border: 2px solid $grey-med;
+	cursor: pointer;
+	outline: none;
+	user-select: none;
+	transition: border-color .4s;
+
+	&::before {
+		position: relative;
+		content: "";
+		margin: 2px 0 0 2px;
+		float: left;
+		width: 1em;
+		height: 1em;
+		background: $grey-med;
+		border-radius: 50%;
+		transition: margin-left .4s;
+	}
+}

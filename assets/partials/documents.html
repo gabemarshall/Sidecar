@@ -5,9 +5,14 @@
 </section>
 
 <aside class="sidebar sm-3">
+    <div class="sidebar-switch">
+        <input type="checkbox" class="toggle-switch" id="toggle-switch">
+        <label for="toggle-switch" class="toggle-switch--label on"></label>
+    </div>
+
     <ul class="sidebar-list no-bullets left">
+        <li class="sidebar-list--current"><a href>All</a></li>
         <li ng-repeat="type in types"><a href>{{ type.title }}</a></li>
-    </a>
     </ul>
 </aside>
 
@@ -18,20 +23,29 @@
         </div>
 
         <a href="#/documents/{{ document.name }}" class="ft-row row" ng-repeat="document in documents">
-            <div class="ft-row-col sm-12">{{ document.name }}</div>
+            <div class="ft-row-col sm-12">
+                {{ document.name }}
+            </div>
         </a>
     </div>
 </section>
 
 <modal-dialog show="modalShown">
-    <div class="modal-header">New template</div>
+    <div class="modal-header">New document</div>
 
     <form class="modal-form">
         <label>Title</label>
         <input type="text" ng-model="newDocumentTitle">
 
+        <label>Client/prospect</label>
+        <select>
+            <option>None</option>
+        </select>
+
         <label>Template</label>
-        <textarea></textarea>
+        <select>
+            <option>Select a template</option>
+        </select>
 
         <button type="submit" class="btn btn-primary btn-add" ng-click="saveNewDocument(); toggleModal()">Create document</button>
     </form>

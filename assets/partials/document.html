@@ -1,14 +1,10 @@
 <section class="app-subheader row right">
-    <h1 class="as-title left">Documents {{ document.name }}</h1>
+    <h1 class="as-title left"><a href="#">Documents</a> {{ document.name }}</h1>
     <a href="app#/document-templates" class="btn btn-secondary as-title-btn-sec btn-edit right">Manage templates</a>
     <button type="submit" class="btn btn-primary btn-add right" ng-click="toggleModal()">New document</button>
 </section>
 
 <aside class="sidebar sm-3">
-    <ul class="sidebar-list no-bullets left">
-        <li ng-repeat="type in types"><a href>{{ type.title }}</a></li>
-    </a>
-    </ul>
 </aside>
 
 <section class="app-content app-content-sml row right"></section>
